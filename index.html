@@ -1,0 +1,2800 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hukumar Hisbah Board Jihar Sokoto - Kare Al'adun Musulunci da Tsaron Al'umma" />
+  <meta name="keywords" content="Hisbah, Sokoto, Musulunci, Shariah, Nigeria" />
+  <meta name="author" content="Hisbah Board Sokoto State" />
+  <meta name="theme-color" content="#0f5c38" />
+  <title>Hisbah Board Sokoto State | هيئة الحسبة – ولاية سكوتو</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ============================================
+       CSS VARIABLES & DESIGN TOKENS
+       ============================================ */
+    :root {
+      --primary-900: #052e1b;
+      --primary-800: #0a4a2e;
+      --primary-700: #0f5c38;
+      --primary-600: #147a4a;
+      --primary-500: #1a9c5e;
+      --primary-100: #e6f5ed;
+      
+      --accent-900: #7a5e10;
+      --accent-800: #a37d16;
+      --accent-700: #c9a227;
+      --accent-600: #d4b43a;
+      --accent-500: #e0c85c;
+      --accent-100: #fcf8e8;
+      
+      --neutral-900: #0f172a;
+      --neutral-800: #1e293b;
+      --neutral-700: #334155;
+      --neutral-600: #475569;
+      --neutral-500: #64748b;
+      --neutral-400: #94a3b8;
+      --neutral-300: #cbd5e1;
+      --neutral-200: #e2e8f0;
+      --neutral-100: #f1f5f9;
+      --neutral-50: #f8fafc;
+      
+      --danger: #dc2626;
+      --danger-light: #fef2f2;
+      
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-arabic: 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+      
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --shadow-gold: 0 10px 40px -10px rgba(201, 162, 39, 0.3);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+      
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      
+      --container-max: 1280px;
+      --container-padding: 1.5rem;
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--neutral-800);
+      background: var(--neutral-50);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color var(--transition-fast);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    input, textarea {
+      font-family: inherit;
+    }
+
+    /* ============================================
+       UTILITY CLASSES
+       ============================================ */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
+    }
+
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary-600);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--neutral-900);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--neutral-500);
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-base);
+      border: 2px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary-700);
+      color: white;
+      box-shadow: 0 4px 14px 0 rgba(15, 92, 56, 0.39);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-800);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(15, 92, 56, 0.23);
+    }
+
+    .btn-gold {
+      background: var(--accent-700);
+      color: var(--primary-900);
+      box-shadow: var(--shadow-gold);
+      font-weight: 700;
+    }
+
+    .btn-gold:hover {
+      background: var(--accent-600);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -10px rgba(201, 162, 39, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--neutral-700);
+      border-color: var(--neutral-300);
+    }
+
+    .btn-secondary:hover {
+      background: var(--neutral-100);
+      border-color: var(--neutral-400);
+      color: var(--neutral-900);
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary-800);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-color: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .btn-sm {
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    /* ============================================
+       BADGES
+       ============================================ */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.875rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: var(--radius-full);
+    }
+
+    .badge-gold {
+      background: var(--accent-100);
+      color: var(--accent-900);
+    }
+
+    .badge-green {
+      background: var(--primary-100);
+      color: var(--primary-800);
+    }
+
+    /* ============================================
+       TOP BAR
+       ============================================ */
+    .top-bar {
+      background: var(--primary-900);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8125rem;
+      padding: 0.625rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .top-bar-contact {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .top-bar-contact span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .top-bar-contact i {
+      color: var(--accent-700);
+      font-size: 0.875rem;
+    }
+
+    .top-bar-social {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .top-bar-social a {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.7);
+      transition: all var(--transition-base);
+      font-size: 0.875rem;
+    }
+
+    .top-bar-social a:hover {
+      background: var(--accent-700);
+      color: var(--primary-900);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================
+       NAVBAR
+       ============================================ */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--neutral-200);
+      transition: box-shadow var(--transition-base);
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+    }
+
+    .navbar-logo {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-700);
+      color: white;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 12px rgba(15, 92, 56, 0.25);
+      flex-shrink: 0;
+    }
+
+    .navbar-brand-text h1 {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: var(--neutral-900);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    .navbar-brand-text .arabic-name {
+      display: block;
+      font-family: var(--font-arabic);
+      font-size: 0.8125rem;
+      color: var(--primary-700);
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    .navbar-brand-text span:last-child {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--neutral-500);
+      margin-top: 1px;
+      font-weight: 500;
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.625rem 1rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--neutral-600);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-700);
+      background: var(--primary-100);
+    }
+
+    .nav-link i:first-child {
+      font-size: 0.875rem;
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      min-width: 240px;
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: 0.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all var(--transition-base);
+      border: 1px solid var(--neutral-200);
+    }
+
+    .nav-item:hover .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.625rem 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--neutral-700);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+    }
+
+    .nav-dropdown a:hover {
+      background: var(--primary-100);
+      color: var(--primary-800);
+    }
+
+    .nav-dropdown a i {
+      color: var(--primary-600);
+      font-size: 0.875rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navbar-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    .navbar-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--neutral-800);
+      border-radius: 2px;
+      transition: all var(--transition-base);
+    }
+
+    /* ============================================
+       ANNOUNCEMENT TICKER
+       ============================================ */
+    .ticker {
+      background: var(--accent-100);
+      border-bottom: 1px solid var(--accent-500);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ticker::before,
+    .ticker::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 120px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ticker::before {
+      left: 0;
+      background: linear-gradient(to right, var(--accent-100), transparent);
+    }
+
+    .ticker::after {
+      right: 0;
+      background: linear-gradient(to left, var(--accent-100), transparent);
+    }
+
+    .ticker-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.75rem 0;
+    }
+
+    .ticker-label {
+      flex-shrink: 0;
+      background: var(--accent-700);
+      color: var(--primary-900);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.375rem 1rem;
+      border-radius: var(--radius-full);
+      z-index: 3;
+    }
+
+    .ticker-track {
+      overflow: hidden;
+      flex: 1;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .ticker-text {
+      display: inline-block;
+      white-space: nowrap;
+      animation: ticker-scroll 30s linear infinite;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--accent-900);
+    }
+
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+    .hero {
+      position: relative;
+      background: var(--primary-900);
+      color: white;
+      padding: 6rem 0 8rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(26, 156, 94, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201, 162, 39, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .basmala {
+      font-family: var(--font-arabic);
+      font-size: 1.5rem;
+      color: var(--accent-600);
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201, 162, 39, 0.15);
+      color: var(--accent-500);
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span {
+      display: block;
+      color: var(--accent-500);
+      margin-top: 0.25rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .hero-stat-number {
+      font-size: 1.875rem;
+      font-weight: 800;
+      color: var(--accent-500);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card-main {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      text-align: center;
+      max-width: 360px;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+
+    .hero-card-emblem {
+      width: 80px;
+      height: 80px;
+      background: var(--accent-700);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 1.5rem;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .hero-card-main h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-main p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .hero-card-main hr {
+      border: none;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin: 1.25rem 0;
+    }
+
+    .floating-card {
+      position: absolute;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-lg);
+      padding: 0.875rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+      box-shadow: var(--shadow-lg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-card .icon {
+      font-size: 1.25rem;
+    }
+
+    .floating-card-1 {
+      top: 10%;
+      left: -10%;
+      animation-delay: 0s;
+    }
+
+    .floating-card-2 {
+      top: 50%;
+      right: -5%;
+      animation-delay: 2s;
+    }
+
+    .floating-card-3 {
+      bottom: 10%;
+      left: 0%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* ============================================
+       QUICK SERVICES
+       ============================================ */
+    .quick-services {
+      background: white;
+      padding: 3rem 0;
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .quick-services-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+    }
+
+    .quick-service-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.5rem 1rem;
+      background: var(--neutral-50);
+      border: 2px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-base);
+      text-align: center;
+    }
+
+    .quick-service-btn:hover {
+      background: white;
+      border-color: var(--primary-500);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .qs-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .qs-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--neutral-700);
+    }
+
+    /* ============================================
+       SERVICES SECTION
+       ============================================ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary-600);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-base);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-200);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--primary-100);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: all var(--transition-base);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--primary-700);
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .service-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--neutral-900);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-desc {
+      font-size: 0.9375rem;
+      color: var(--neutral-600);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-700);
+      transition: gap var(--transition-fast);
+    }
+
+    .service-link:hover {
+      gap: 0.75rem;
+      color: var(--primary-900);
+    }
+
+    /* ============================================
+       STATS SECTION
+       ============================================ */
+    .stats-section {
+      background: var(--primary-900);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(26, 156, 94, 0.1) 0%, transparent 70%);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(10px);
+      transition: all var(--transition-base);
+    }
+
+    .stat-card:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent-500);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    /* ============================================
+       NEWS SECTION
+       ============================================ */
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+    }
+
+    .news-featured {
+      background: white;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition-base);
+    }
+
+    .news-featured:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .news-image {
+      height: 280px;
+      background: var(--primary-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .news-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    }
+
+    .news-category {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 1;
+    }
+
+    .news-content {
+      padding: 1.75rem;
+    }
+
+    .news-meta {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .news-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      color: var(--neutral-500);
+    }
+
+    .news-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--neutral-900);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .news-excerpt {
+      font-size: 0.9375rem;
+      color: var(--neutral-600);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--neutral-200);
+      transition: all var(--transition-base);
+      cursor: pointer;
+    }
+
+    .news-item:hover {
+      border-color: var(--primary-300);
+      box-shadow: var(--shadow-md);
+      transform: translateX(4px);
+    }
+
+    .news-item-thumb {
+      width: 64px;
+      height: 64px;
+      background: var(--primary-100);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .news-item-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .news-item-content h4 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--neutral-800);
+      line-height: 1.4;
+      margin-bottom: 0.375rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .news-item-content span {
+      font-size: 0.8125rem;
+      color: var(--neutral-500);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    /* ============================================
+       LEADERSHIP SECTION
+       ============================================ */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .leader-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+    }
+
+    .leader-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .leader-avatar {
+      height: 200px;
+      background: linear-gradient(135deg, var(--primary-100), var(--primary-200));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .leader-avatar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230f5c38' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .leader-info {
+      padding: 1.5rem;
+    }
+
+    .leader-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--neutral-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .leader-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-700);
+      margin-bottom: 0.75rem;
+    }
+
+    .leader-desc {
+      font-size: 0.9375rem;
+      color: var(--neutral-600);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       APP SECTION
+       ============================================ */
+    .app-section {
+      background: var(--neutral-900);
+      color: white;
+      overflow: hidden;
+    }
+
+    .app-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .app-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .app-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.875rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all var(--transition-base);
+    }
+
+    .app-feature:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateX(4px);
+    }
+
+    .af-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-700);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .app-feature span {
+      font-size: 0.9375rem;
+      font-weight: 600;
+    }
+
+    .download-badges {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .dl-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1.25rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-md);
+      color: white;
+      transition: all var(--transition-base);
+      cursor: pointer;
+    }
+
+    .dl-badge:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .dl-icon {
+      font-size: 1.5rem;
+    }
+
+    /* Phone Mockup */
+    .app-mockup {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone-frame {
+      width: 280px;
+      height: 560px;
+      background: var(--neutral-800);
+      border-radius: 40px;
+      padding: 12px;
+      box-shadow: 
+        0 0 0 2px var(--neutral-700),
+        0 25px 50px -12px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 20px;
+      background: var(--neutral-900);
+      border-radius: 0 0 12px 12px;
+      z-index: 10;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: var(--primary-900);
+      border-radius: 32px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .phone-status-bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 16px 4px;
+      font-size: 0.65rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .phone-app-header {
+      text-align: center;
+      padding: 12px;
+      color: white;
+    }
+
+    .phone-logo {
+      font-size: 2rem;
+      margin-bottom: 4px;
+    }
+
+    .phone-app-header h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .phone-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 10px;
+    }
+
+    .phone-menu-item {
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 12px 4px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pmi-icon {
+      font-size: 1.25rem;
+    }
+
+    .pmi-label {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 600;
+    }
+
+    /* ============================================
+       CONTACT CTA SECTION
+       ============================================ */
+    .contact-cta {
+      background: linear-gradient(135deg, var(--primary-800), var(--primary-900));
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(201, 162, 39, 0.15) 0%, transparent 60%);
+    }
+
+    .contact-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-cta .basmala {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-cta h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .contact-cta > .container > p {
+      font-size: 1.125rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem 1rem;
+      backdrop-filter: blur(10px);
+      transition: all var(--transition-base);
+    }
+
+    .contact-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-4px);
+    }
+
+    .contact-card-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-card-value {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-card-label {
+      font-size: 0.8125rem;
+      opacity: 0.7;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      background: var(--neutral-900);
+      color: rgba(255,255,255,0.7);
+      padding: 4rem 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand {
+      max-width: 360px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-logo-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-700);
+      color: white;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .footer-logo-text h3 {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .footer-logo-text span {
+      font-family: var(--font-arabic);
+      font-size: 0.8125rem;
+      color: var(--accent-600);
+      font-weight: 600;
+    }
+
+    .footer-desc {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.7);
+      transition: all var(--transition-base);
+      font-size: 0.9375rem;
+    }
+
+    .footer-social a:hover {
+      background: var(--accent-700);
+      color: var(--primary-900);
+      transform: translateY(-3px);
+    }
+
+    .footer-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--primary-700);
+      display: inline-block;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.625rem;
+    }
+
+    .footer-links a {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.6);
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-500);
+      padding-left: 4px;
+    }
+
+    .footer-newsletter {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-newsletter input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+
+    .footer-newsletter input::placeholder {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-newsletter input:focus {
+      border-color: var(--accent-700);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .footer-address {
+      margin-top: 1.5rem;
+    }
+
+    .footer-address-label {
+      font-size: 0.8125rem;
+      color: var(--accent-600);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .footer-address p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      opacity: 0.75;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-bottom a {
+      color: var(--accent-600);
+      font-weight: 600;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--accent-500);
+    }
+
+    /* ============================================
+       FLOATING ELEMENTS
+       ============================================ */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 48px;
+      height: 48px;
+      background: var(--primary-700);
+      color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all var(--transition-base);
+      z-index: 999;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-800);
+      transform: translateY(-4px);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
+      color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+      transition: all var(--transition-base);
+      z-index: 999;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+    }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                  transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ============================================
+       RESPONSIVE DESIGN
+       ============================================ */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .app-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .app-features {
+        max-width: 500px;
+        margin: 2rem auto;
+      }
+
+      .download-badges {
+        justify-content: center;
+      }
+
+      .app-mockup {
+        order: -1;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-cards {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --container-padding: 1rem;
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+
+      .top-bar-contact span:not(:first-child) {
+        display: none;
+      }
+
+      .navbar-toggle {
+        display: flex;
+      }
+
+      .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 6rem 1.5rem 2rem;
+        gap: 0.5rem;
+        transition: right var(--transition-slow);
+        box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+        overflow-y: auto;
+      }
+
+      .navbar-menu.open {
+        right: 0;
+      }
+
+      .nav-item {
+        border-bottom: 1px solid var(--neutral-200);
+      }
+
+      .nav-link {
+        padding: 1rem 0;
+        justify-content: space-between;
+      }
+
+      .nav-dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        padding: 0 0 1rem 1.5rem;
+        display: none;
+      }
+
+      .nav-item.active .nav-dropdown {
+        display: block;
+      }
+
+      .ticker-text {
+        animation-duration: 20s;
+      }
+
+      .quick-services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .services-grid,
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-actions .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .quick-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .app-features {
+        grid-template-columns: 1fr;
+      }
+
+      .download-badges {
+        flex-direction: column;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .ticker-text {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="top-bar-contact">
+          <span><i class="fas fa-phone"></i> +234 816 074 3440Abdullahi Umar Muazu </span>
+          <span><i class="fas fa-envelope"></i> info@hisbahsokoto.com.ng</span>
+          <span><i class="fas fa-map-marker-alt"></i> Sokoto, Jihar Sokoto, Najeriya</span>
+        </div>
+        <div class="top-bar-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNav">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo">🕋</div>
+          <div class="navbar-brand-text">
+            <h1>Hisbah Board Sokoto</h1>
+            <span class="arabic-name">هيئة الحسبة – ولاية سكوتو</span>
+            <span>Jihar Sokoto, Najeriya</span>
+          </div>
+        </a>
+
+        <ul class="navbar-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">
+              <i class="fas fa-home"></i> Gida
+            </a>
+            <li class="nav-item"><a href="arewa.html" class="nav-link"><i class="fas fa-globe"></i> Jihohin Arewa</a></li>
+
+          </li>
+         <li class="nav-item"><a href="lga.html" class="nav-link active"><i class="fas fa-map-marked-alt"></i> Kananan Hukumomi</a></li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">
+              <i class="fas fa-info-circle"></i> Game da Mu
+              <i class="fas fa-chevron-down" style="font-size:0.65rem; margin-left:auto;"></i>
+            </a>
+            <div class="nav-dropdown">
+              <a href="about.html#history"><i class="fas fa-history"></i> Tarihi</a>
+              <a href="about.html#mission"><i class="fas fa-bullseye"></i> Manufa</a>
+              <a href="about.html#leadership"><i class="fas fa-users"></i> Shugabanci</a>
+              <a href="about.html#organogram"><i class="fas fa-sitemap"></i> Tsarin Hukuma</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="services.html" class="nav-link">
+              <i class="fas fa-hands-helping"></i> Ayyuka
+              <i class="fas fa-chevron-down" style="font-size:0.65rem; margin-left:auto;"></i>
+            </a>
+            <div class="nav-dropdown">
+              <a href="services.html#enforcement"><i class="fas fa-gavel"></i> Tilastawa Doka</a>
+              <a href="services.html#counseling"><i class="fas fa-heart"></i> Shawarwari</a>
+              <a href="services.html#education"><i class="fas fa-book-open"></i> Ilimi & Wayar Kai</a>
+              <a href="services.html#complaints"><i class="fas fa-file-alt"></i> Koke-koke</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="news.html" class="nav-link">
+              <i class="fas fa-newspaper"></i> Labaran Yau
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">
+              <i class="fas fa-phone-alt"></i> Tuntuɓa
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+              <i class="fas fa-tachometer-alt"></i> Portal
+            </a>
+          </li>
+        </ul>
+
+        <div class="navbar-actions">
+          <a href="services.html#complaints" class="btn btn-primary btn-sm" style="display:none;">
+            <i class="fas fa-exclamation-circle"></i> Koka
+          </a>
+          <button class="navbar-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ANNOUNCEMENT TICKER -->
+  <div class="ticker">
+    <div class="container">
+      <div class="ticker-inner">
+        <span class="ticker-label">📢 Sanarwa</span>
+        <div class="ticker-track">
+          <span class="ticker-text">
+            🕋 Hisbah Board Sokoto na maraba da duk yan jiha | 
+            📅 Taron Wayar Kai: Laraba mai zuwa, Tsakiyar Birnin Sokoto, Karfe 9 na safe | 
+            🏫 Shirye-shiryen ilimi na shekara sun fara – Ku yi rajista yanzu | 
+            📞 Layin Gaggawa: 0800-HISBAH (448-2241) – Kyauta ne, Bashi 24/7 | 
+            🎓 Karɓar takardun shaidar horo – Ofishin Hisbah Babban Ofishi | 
+            ⚠️ Bayar da rahoto game da laifukan zamantakewa – Zamu kiyaye sirrinku
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            🕋 Hisbah Board Sokoto na maraba da duk yan jiha | 
+            📅 Taron Wayar Kai: Laraba mai zuwa, Tsakiyar Birnin Sokoto, Karfe 9 na safe | 
+            🏫 Shirye-shiryen ilimi na shekara sun fara – Ku yi rajista yanzu | 
+            📞 Layin Gaggawa: 0800-HISBAH (448-2241) – Kyauta ne, Bashi 24/7 | 
+            🎓 Karɓar takardun shaidar horo – Ofishin Hisbah Babban Ofishi | 
+            ⚠️ Bayar da rahoto game da laifukan zamantakewa – Zamu kiyaye sirrinku
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="basmala">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+          <div class="hero-badge">
+            <i class="fas fa-shield-alt"></i> Hukumar Gwamnatin Jihar Sokoto ce
+          </div>
+          <h1 class="hero-title">
+            Hukumar Hisbah
+            <span>Board Sokoto State</span>
+          </h1>
+          <p class="hero-description">
+            Mu ne hukumar gwamnati mai kula da aiwatar da dokokin Shari'a, 
+            kare al'adun Musulunci, da tabbatar da zaman lafiya da adalci 
+            a cikin al'ummar Jihar Sokoto.
+          </p>
+          <div class="hero-actions">
+            <a href="services.html" class="btn btn-gold">
+              <i class="fas fa-hands-helping"></i> Duba Ayyukanmu
+            </a>
+            <a href="about.html" class="btn btn-ghost">
+              <i class="fas fa-info-circle"></i> Game da Mu
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-count="2500">0</span>
+              <span class="hero-stat-label">Jami'an Hisbah</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-count="37">0</span>
+              <span class="hero-stat-label">Ofisoshi na LGA</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-count="15000">0</span>
+              <span class="hero-stat-label">Koke Warware</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-main reveal">
+            <div class="hero-card-emblem">🕋</div>
+            <h3>هيئة الحسبة</h3>
+            <p style="font-family: var(--font-arabic); direction:rtl; font-size:1rem; opacity:0.9;">
+              الأمر بالمعروف والنهي عن المنكر
+            </p>
+            <hr>
+            <p style="font-size:0.9375rem; font-weight:600;">Enjoining Good & Forbidding Evil</p>
+            <p style="font-size:0.8rem; margin-top:8px; opacity:0.6;">Sokoto State Government, Nigeria</p>
+          </div>
+          <div class="floating-card floating-card-1">
+            <div class="icon">✅</div>
+            <span>24/7 Layin Gaggawa</span>
+          </div>
+          <div class="floating-card floating-card-2">
+            <div class="icon">⚖️</div>
+            <span>Adalci & Daidaito</span>
+          </div>
+          <div class="floating-card floating-card-3">
+            <div class="icon">🛡️</div>
+            <span>Tsaron Al'umma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK SERVICES -->
+  <section class="section quick-services">
+    <div class="container">
+      <div class="quick-services-grid">
+        <a href="services.html#complaints" class="quick-service-btn reveal">
+          <span class="qs-icon">📝</span>
+          <span class="qs-label">Shigar da Koka</span>
+        </a>
+        <a href="services.html#enforcement" class="quick-service-btn reveal reveal-delay-1">
+          <span class="qs-icon">⚖️</span>
+          <span class="qs-label">Tilastawa Doka</span>
+        </a>
+        <a href="services.html#counseling" class="quick-service-btn reveal reveal-delay-2">
+          <span class="qs-icon">💬</span>
+          <span class="qs-label">Neman Shawarwari</span>
+        </a>
+        <a href="services.html#education" class="quick-service-btn reveal reveal-delay-3">
+          <span class="qs-icon">📚</span>
+          <span class="qs-label">Shirye-shiryen Ilimi</span>
+        </a>
+        <a href="news.html" class="quick-service-btn reveal reveal-delay-4">
+          <span class="qs-icon">📢</span>
+          <span class="qs-label">Sanarwa & Labarai</span>
+        </a>
+        <a href="contact.html" class="quick-service-btn reveal reveal-delay-5">
+          <span class="qs-icon">☎️</span>
+          <span class="qs-label">Tuntuɓi Hisbah</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="section" style="background: white;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">
+          <i class="fas fa-star"></i> Manyan Ayyuka
+        </div>
+        <h2 class="section-title">Ayyukanmu na Musamman</h2>
+        <p class="section-subtitle">Mun sadaukar da kanmu don kare al'adun Musulunci da tsaron al'ummar Sokoto</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">⚖️</div>
+          <h3 class="service-title">Tilastawa Dokokin Shari'a</h3>
+          <p class="service-desc">
+            Tabbatar da aiwatar da dokokin Shari'a a fadin Jihar Sokoto. Hisbah na aiki tare da 'yan sanda da sauran hukumomi.
+          </p>
+          <a href="services.html#enforcement" class="service-link">
+            Kara Karatu <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">🕊️</div>
+          <h3 class="service-title">Sulhu da Shawarwari</h3>
+          <p class="service-desc">
+            Taimaka wajen warware rikice-rikice tsakanin iyali da al'umma ta hanyar sulhu da shawarwarin musulunci.
+          </p>
+          <a href="services.html#counseling" class="service-link">
+            Kara Karatu <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">📚</div>
+          <h3 class="service-title">Ilimi da Wayar Kai</h3>
+          <p class="service-desc">
+            Shirye-shirye na wayar da kan al'umma game da dokokin Shari'a da moriyar bin hanyar gaskiya.
+          </p>
+          <a href="services.html#education" class="service-link">
+            Kara Karatu <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">👮</div>
+          <h3 class="service-title">Tsaro da Sintiri</h3>
+          <p class="service-desc">
+            Sintirin dare da rana a tituna da kasuwanni don tabbatar da tsaron al'umma da hana munanan ayyuka.
+          </p>
+          <a href="services.html#patrol" class="service-link">
+            Kara Karatu <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">📋</div>
+          <h3 class="service-title">Koke-koke da Korafe-korafe</h3>
+          <p class="service-desc">
+            Karɓar koke-koken jama'a da warware su da sauri da adalci, tare da kiyaye sirrin mai koka.
+          </p>
+          <a href="services.html#complaints" class="service-link">
+            Kara Karatu <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">🤝</div>
+          <h3 class="service-title">Haɗin Gwiwa da Hukumomi</h3>
+          <p class="service-desc">
+            Aiki tare da hukumomi kamar 'yan sanda, kotun Shari'a, da sauran hukumomi don cimma manufa ɗaya.
+          </p>
+          <a href="about.html#partners" class="service-link">
+            Kara Karatu <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <span class="stat-icon">👮</span>
+          <span class="stat-number" data-count="2500">0</span>
+          <span class="stat-label">Jami'an Hisbah da ke aiki</span>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <span class="stat-icon">🏢</span>
+          <span class="stat-number" data-count="37">0</span>
+          <span class="stat-label">Ofisoshi a LGA duka</span>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <span class="stat-icon">📝</span>
+          <span class="stat-number" data-count="15000">0</span>
+          <span class="stat-label">Koke da aka warware</span>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <span class="stat-icon">🎓</span>
+          <span class="stat-number" data-count="500">0</span>
+          <span class="stat-label">Shirye-shiryen ilimi a shekara</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS SECTION -->
+  <section class="section" style="background: var(--neutral-50);">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; flex-wrap:wrap; gap:1rem;" class="reveal">
+        <div>
+          <div class="section-label" style="justify-content:flex-start;">
+            <i class="fas fa-newspaper"></i> Labarai
+          </div>
+          <h2 class="section-title" style="text-align:left; margin-bottom:0;">Labaran Kwanakin Nan</h2>
+        </div>
+        <a href="news.html" class="btn btn-secondary btn-sm">
+          Duba Duka <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="news-grid">
+        <article class="news-featured reveal">
+          <div class="news-image">
+            🕋
+            <div class="news-category">
+              <span class="badge badge-gold">Sanarwa ta Musamman</span>
+            </div>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="fas fa-calendar"></i> Janairu 15, 2025</span>
+              <span><i class="fas fa-user"></i> Ofishin Hisbah</span>
+              <span><i class="fas fa-eye"></i> 1,240 kallo</span>
+            </div>
+            <h3 class="news-title">Hisbah Sokoto na Ƙarfafa Sintiri a Kasuwannin Jiha don Kare Haƙƙin Masu Siye</h3>
+            <p class="news-excerpt">
+              Hukumar Hisbah ta sanar da ƙarfafawa na sintiri a manyan kasuwannin birnin Sokoto da kewayenta, 
+              musamman a lokacin shirye-shiryen Azumi. Manufar ita ce tabbatar da gaskiya a kasuwanci da hana 
+              yaudarar masu siye da saye…
+            </p>
+            <a href="news.html" class="btn btn-primary btn-sm">
+              Ci gaba da Karatu <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <div class="news-list">
+          <article class="news-item reveal">
+            <div class="news-item-thumb">📢</div>
+            <div class="news-item-content">
+              <h4>Taron Wayar Kai a Ƙauyen Dange: Dubban Mutane sun halarta</h4>
+              <span><i class="fas fa-calendar"></i> Janairu 10, 2025</span>
+            </div>
+          </article>
+          <article class="news-item reveal reveal-delay-1">
+            <div class="news-item-thumb">🎓</div>
+            <div class="news-item-content">
+              <h4>Sabon Rukuni na Jami'an Hisbah 200 sun sami horo kuma sun rantse</h4>
+              <span><i class="fas fa-calendar"></i> Janairu 8, 2025</span>
+            </div>
+          </article>
+          <article class="news-item reveal reveal-delay-2">
+            <div class="news-item-thumb">🤝</div>
+            <div class="news-item-content">
+              <h4>Hisbah da Hukumar 'Yan Sanda sun ƙarfafa haɗin gwiwa ta sabon yarjejeniya</h4>
+              <span><i class="fas fa-calendar"></i> Janairu 5, 2025</span>
+            </div>
+          </article>
+          <article class="news-item reveal reveal-delay-3">
+            <div class="news-item-thumb">🏫</div>
+            <div class="news-item-content">
+              <h4>Buɗe Makarantar Horo ta Hisbah a Kwalejin Shari'a, Sokoto</h4>
+              <span><i class="fas fa-calendar"></i> Disamba 28, 2024</span>
+            </div>
+          </article>
+          <article class="news-item reveal reveal-delay-4">
+            <div class="news-item-thumb">⚖️</div>
+            <div class="news-item-content">
+              <h4>Hisbah ta ci nasara wajen rage shan giya a wuraren jama'a a LGA 5</h4>
+              <span><i class="fas fa-calendar"></i> Disamba 20, 2024</span>
+            </div>
+          </article>
+          <div style="text-align:center; margin-top:0.5rem;">
+            <a href="news.html" class="btn btn-secondary btn-sm">
+              Duba Labarai Duka <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP SECTION -->
+  <section class="section" style="background: white;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">
+          <i class="fas fa-users"></i> Shugabanci
+        </div>
+        <h2 class="section-title">Shugabancin Hukuma</h2>
+        <p class="section-subtitle">Waɗanda ke jagorancin Hukumar Hisbah Board Sokoto</p>
+      </div>
+      <div class="leadership-grid">
+        <div class="leader-card reveal">
+          <div class="leader-avatar">👤</div>
+          <div class="leader-info">
+            <h3 class="leader-name">Alhaji Abubakar Muhammad</h3>
+            <p class="leader-title">Babban Darakta Janar</p>
+            <p class="leader-desc">Jagoran hukuma tun 2020, mai kwarewa a ilimin Shari'a da gudanarwar gwamnati na shekaru 20.</p>
+          </div>
+        </div>
+        <div class="leader-card reveal reveal-delay-1">
+          <div class="leader-avatar">👤</div>
+          <div class="leader-info">
+            <h3 class="leader-name">Dr. Hauwa Usman Aliyu</h3>
+            <p class="leader-title">Mataimakiyar Darakta Janar</p>
+            <p class="leader-desc">Kwararriya a harkokin mata da iyali, mai digiri na biyu a Shari'ar Musulunci daga Jami'ar Usmanu Danfodiyo.</p>
+          </div>
+        </div>
+        <div class="leader-card reveal reveal-delay-2">
+          <div class="leader-avatar">👤</div>
+          <div class="leader-info">
+            <h3 class="leader-name">Sheikh Ibrahim Bello Kware</h3>
+            <p class="leader-title">Daraktan Harkokin Shari'a</p>
+            <p class="leader-desc">Malami mai digiri na uku a Shari'a, yana ba da jagora a harkokin addini da dokokin Musulunci.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="about.html#leadership" class="btn btn-secondary">
+          Duba Dukkan Shugabanci <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE APP SECTION -->
+  <section class="section app-section">
+    <div class="container">
+      <div class="app-content">
+        <div class="reveal">
+          <span class="badge badge-green" style="margin-bottom:1rem;">
+            📱 Sabon App
+          </span>
+          <h2 class="section-title" style="text-align:left; color:white; margin-bottom:1rem;">
+            Sauke Aikace-aikacen Hisbah App
+          </h2>
+          <p style="color: var(--neutral-400); line-height:1.8; margin-bottom:2rem; font-size:1.05rem;">
+            Yanzu zaka iya samun sabis ɗin Hisbah Board Sokoto daga wayar hannunka. 
+            Shigar da koke, karɓar sanarwa, kuma duba labarai daga ko ina kake.
+          </p>
+          <div class="app-features">
+            <div class="app-feature">
+              <div class="af-icon">📝</div>
+              <span>Shigar da Koke Online</span>
+            </div>
+            <div class="app-feature">
+              <div class="af-icon">🔔</div>
+              <span>Sanarwa ta Kai tsaye</span>
+            </div>
+            <div class="app-feature">
+              <div class="af-icon">📍</div>
+              <span>Nemo Ofishi mafi Kusa</span>
+            </div>
+            <div class="app-feature">
+              <div class="af-icon">📰</div>
+              <span>Labarai da Announcements</span>
+            </div>
+            <div class="app-feature">
+              <div class="af-icon">📞</div>
+              <span>Kiran Gaggawa 24/7</span>
+            </div>
+            <div class="app-feature">
+              <div class="af-icon">🎓</div>
+              <span>Karatun Ilimin Musulunci</span>
+            </div>
+          </div>
+          <div class="download-badges">
+            <div class="dl-badge">
+              <span class="dl-icon">🤖</span>
+              <div>
+                <div style="font-size:0.65rem; opacity:0.7;">Saukewa daga</div>
+                <div style="font-weight:700;">Google Play</div>
+              </div>
+            </div>
+            <div class="dl-badge">
+              <span class="dl-icon">🍎</span>
+              <div>
+                <div style="font-size:0.65rem; opacity:0.7;">Saukewa daga</div>
+                <div style="font-weight:700;">App Store</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-mockup reveal reveal-delay-2">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="phone-status-bar">
+                <span>9:41</span>
+                <span>📶 🔋</span>
+              </div>
+              <div class="phone-app-header">
+                <span class="phone-logo">🕋</span>
+                <h4>Hisbah Sokoto</h4>
+                <div style="font-size:0.6rem; opacity:0.7; font-family:var(--font-arabic); direction:rtl;">هيئة الحسبة</div>
+              </div>
+              <div style="background:rgba(201,162,39,0.15); margin:10px; border-radius:12px; padding:12px; text-align:center; color:white;">
+                <div style="font-size:0.7rem; font-weight:700;">Barka da zuwa!</div>
+                <div style="font-size:0.6rem; opacity:0.8; margin-top:2px;">Yaushe muke hidima? Koyaushe!</div>
+              </div>
+              <div class="phone-menu-grid">
+                <div class="phone-menu-item">
+                  <span class="pmi-icon">📝</span>
+                  <span class="pmi-label">Koka</span>
+                </div>
+                <div class="phone-menu-item">
+                  <span class="pmi-icon">📢</span>
+                  <span class="pmi-label">Sanarwa</span>
+                </div>
+                <div class="phone-menu-item">
+                  <span class="pmi-icon">📍</span>
+                  <span class="pmi-label">Ofishi</span>
+                </div>
+                <div class="phone-menu-item">
+                  <span class="pmi-icon">📰</span>
+                  <span class="pmi-label">Labarai</span>
+                </div>
+                <div class="phone-menu-item">
+                  <span class="pmi-icon">☎️</span>
+                  <span class="pmi-label">Tuntuɓa</span>
+                </div>
+                <div class="phone-menu-item">
+                  <span class="pmi-icon">🎓</span>
+                  <span class="pmi-label">Ilimi</span>
+                </div>
+              </div>
+              <div style="margin:8px 10px; background:var(--danger); border-radius:12px; padding:10px; text-align:center; color:white;">
+                <div style="font-size:0.7rem; font-weight:700;">🚨 Gaggawa – Kira yanzu</div>
+                <div style="font-size:0.65rem; opacity:0.9; margin-top:2px;">0800-HISBAH – Kyauta ne</div>
+              </div>
+              <div style="background:rgba(0,0,0,0.2); display:flex; justify-content:space-around; padding:10px; margin-top:auto;">
+                <div style="text-align:center; color:var(--accent-500);">
+                  <div style="font-size:1rem;">🏠</div>
+                  <div style="font-size:0.5rem;">Gida</div>
+                </div>
+                <div style="text-align:center; color:rgba(255,255,255,0.5);">
+                  <div style="font-size:1rem;">🔔</div>
+                  <div style="font-size:0.5rem;">Sanarwa</div>
+                </div>
+                <div style="text-align:center; color:rgba(255,255,255,0.5);">
+                  <div style="font-size:1rem;">👤</div>
+                  <div style="font-size:0.5rem;">Asusuna</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA SECTION -->
+  <section class="section contact-cta">
+    <div class="container">
+      <div class="basmala">وَأْمُرْ بِالْمَعْرُوفِ وَانْهَ عَنِ الْمُنكَرِ</div>
+      <h2>Kana da tambaya ko koka? Mu taimake ka!</h2>
+      <p>Hisbah Board Sokoto tana nan koyaushe don karɓar kokayenku da taimaka wajen warware matsaloli tare da adalci da saurin aiki.</p>
+      <div class="contact-actions">
+        <a href="contact.html" class="btn btn-gold">
+          <i class="fas fa-phone"></i> Tuntuɓe Mu Yanzu
+        </a>
+        <a href="services.html#complaints" class="btn btn-ghost">
+          <i class="fas fa-file-alt"></i> Shigar da Koka
+        </a>
+      </div>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-value">+234 806 000 1234</div>
+          <div class="contact-card-label">Layin Babban Ofishi</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🚨</div>
+          <div class="contact-card-value">0800-HISBAH</div>
+          <div class="contact-card-label">Kyauta 24/7 Gaggawa</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div class="contact-card-value" style="font-size:0.95rem;">info@hisbahsokoto.gov.ng</div>
+          <div class="contact-card-label">Email na Hukuma</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">🕋</div>
+            <div class="footer-logo-text">
+              <h3>Hisbah Board Sokoto</h3>
+              <span>هيئة الحسبة – ولاية سكوتو</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Hukumar Hisbah Board ta Jihar Sokoto tana aiki don tabbatar da aiwatar da dokokin Shari'a, 
+            kare al'adun Musulunci, da tsaron al'ummar mu ta hanyar adalci da girmama haƙƙoƙi.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Hanyoyin Gaggawa</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Gida</a></li>
+          <li class="nav-item"><a href="arewa.html" class="nav-link"><i class="fas fa-globe"></i> Jihohin Arewa</a></li>
+
+            <li><a href="about.html">Game da Mu</a></li>
+            <li><a href="services.html">Ayyukanmu</a></li>
+            <li><a href="news.html">Labarai</a></li>
+            <li><a href="contact.html">Tuntuɓa</a></li>
+            <li><a href="dashboard.html">Portal Jami'i</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Ayyukanmu</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#enforcement">Tilastawa Shari'a</a></li>
+            <li><a href="services.html#counseling">Shawarwari</a></li>
+            <li><a href="services.html#education">Ilimi da Horo</a></li>
+            <li><a href="services.html#patrol">Sintiri da Tsaro</a></li>
+            <li><a href="services.html#complaints">Shigar da Koka</a></li>
+            <li><a href="services.html#partners">Haɗin Gwiwa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Sanarwa ta Email</h4>
+          <p style="font-size:0.9375rem; line-height:1.7; margin-bottom:1rem; color:rgba(255,255,255,0.6);">
+            Yi rajista don karɓar sanarwa da labarai daga Hisbah Board Sokoto kai tsaye a email ɗinka.
+          </p>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Shigar da email ɗinka..." aria-label="Email address" />
+            <button class="btn btn-gold" style="width:100%; justify-content:center;">
+              <i class="fas fa-paper-plane"></i> Yi Rajista
+            </button>
+          </div>
+          <div class="footer-address">
+            <p class="footer-address-label">
+              <i class="fas fa-map-marker-alt"></i> Adireshinmu:
+            </p>
+            <p>
+              Babban Ofishin Hisbah Board,<br>
+              Sultan Abubakar Road, Sokoto,<br>
+              Jihar Sokoto, Najeriya.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.08);">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>© 2025 Hisbah Board Sokoto State. Dukkan haƙƙoƙi an kiyaye su.</p>
+          <p style="font-family:var(--font-arabic); direction:rtl; color:var(--accent-600); font-size:0.9rem;">
+            الأمر بالمعروف والنهي عن المنكر
+          </p>
+          <p>
+            Tsarin lissafi ta <a href="#">NinjaTech Solutions</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Koma saman shafi">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/2348160743440" class="whatsapp-float" title="Tuntuɓa mu a WhatsApp" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ============ NAVBAR SCROLL ============
+    const navbar = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // ============ MOBILE MENU TOGGLE ============
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      
+      const spans = navToggle.querySelectorAll('span');
+      if (isOpen) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Mobile dropdown toggle
+    navItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      const dropdown = item.querySelector('.nav-dropdown');
+      if (dropdown && window.innerWidth <= 768) {
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            item.classList.toggle('active');
+          }
+        });
+      }
+    });
+
+    // Close menu on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        const spans = navToggle.querySelectorAll('span');
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ============ BACK TO TOP ============
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ============ SCROLL REVEAL ============
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // ============ COUNTER ANIMATION ============
+    function animateCounter(el, target, suffix = '') {
+      const duration = 2000;
+      const startTime = performance.now();
+      const startValue = 0;
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(startValue + (target - startValue) * easeOut);
+        
+        el.textContent = current.toLocaleString() + suffix;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumbers = entry.target.querySelectorAll('[data-count]');
+          statNumbers.forEach(el => {
+            const target = parseInt(el.getAttribute('data-count'));
+            const suffix = target >= 1000 ? '+' : '';
+            animateCounter(el, target, suffix);
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.stats-section, .hero-stats').forEach(section => {
+      statsObserver.observe(section);
+    });
+
+    // ============ SMOOTH SCROLL FOR ANCHOR LINKS ============
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
