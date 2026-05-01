@@ -1,1 +1,389 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard na Admin - Hisbah Board Sokoto" />
+  <title>Dashboard | Admin Hisbah Board Sokoto</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;--primary-500:#1a9c5e;--primary-100:#e6f5ed;--accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-100:#fcf8e8;--neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;--neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;--neutral-100:#f1f5f9;--neutral-50:#f8fafc;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--transition-fast:150ms cubic-bezier(0.4,0,0.2,1);--transition-base:250ms cubic-bezier(0.4,0,0.2,1);--transition-slow:350ms cubic-bezier(0.4,0,0.2,1);--sidebar-width:260px;--sidebar-collapsed:72px}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none} button{cursor:pointer;border:none;background:none;font-family:inherit}
 
+    /* SIDEBAR */
+    .sidebar{position:fixed;left:0;top:0;height:100vh;width:var(--sidebar-width);background:var(--neutral-900);color:rgba(255,255,255,0.7);z-index:1000;transition:all var(--transition-slow);display:flex;flex-direction:column}
+    .sidebar-header{padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:0.875rem}
+    .sidebar-logo{width:40px;height:40px;background:var(--primary-600);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+    .sidebar-brand h1{font-size:1rem;font-weight:800;color:white;line-height:1.2}
+    .sidebar-brand span{font-family:var(--font-arabic);font-size:0.6875rem;color:var(--accent-600);font-weight:600}
+    .sidebar-nav{flex:1;padding:1rem 0;overflow-y:auto}
+    .nav-section{padding:0 1rem;margin-bottom:0.5rem}
+    .nav-section-title{font-size:0.6875rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.05em;padding:0.75rem 1rem 0.5rem}
+    .nav-item{display:flex;align-items:center;gap:0.875rem;padding:0.75rem 1rem;margin:0.125rem 0.75rem;border-radius:var(--radius-md);font-size:0.875rem;font-weight:500;color:rgba(255,255,255,0.6);transition:all var(--transition-fast);cursor:pointer}
+    .nav-item:hover,.nav-item.active{background:rgba(255,255,255,0.06);color:white}
+    .nav-item.active{background:var(--primary-700);color:white;box-shadow:0 4px 12px rgba(15,92,56,0.25)}
+    .nav-item i{width:20px;text-align:center;font-size:0.9375rem}
+    .sidebar-footer{padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,0.06)}
+    .admin-profile{display:flex;align-items:center;gap:0.75rem}
+    .admin-avatar{width:36px;height:36px;background:var(--primary-600);color:white;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:700}
+    .admin-info{flex:1;min-width:0}
+    .admin-info p{font-size:0.8125rem;font-weight:600;color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .admin-info span{font-size:0.6875rem;color:rgba(255,255,255,0.4)}
+    .logout-btn{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);color:rgba(255,255,255,0.5);transition:all var(--transition-fast)}
+    .logout-btn:hover{background:rgba(239,68,68,0.15);color:#ef4444}
+
+    /* MAIN CONTENT */
+    .main-content{margin-left:var(--sidebar-width);min-height:100vh;transition:margin var(--transition-slow)}
+    .top-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--neutral-200);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+    .page-title h1{font-size:1.25rem;font-weight:700;color:var(--neutral-900)}
+    .page-title p{font-size:0.8125rem;color:var(--neutral-500)}
+    .header-actions{display:flex;align-items:center;gap:1rem}
+    .header-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);background:var(--neutral-100);color:var(--neutral-600);transition:all var(--transition-fast);position:relative}
+    .header-btn:hover{background:var(--neutral-200);color:var(--neutral-800)}
+    .header-btn .badge{position:absolute;top:-2px;right:-2px;width:18px;height:18px;background:#ef4444;color:white;border-radius:50%;font-size:0.625rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid white}
+    .content-area{padding:2rem}
+
+    /* STATS CARDS */
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-bottom:2rem}
+    .stat-card{background:white;border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--neutral-200);display:flex;align-items:flex-start;gap:1rem;transition:all var(--transition-base)}
+    .stat-card:hover{box-shadow:var(--shadow-md);border-color:var(--primary-200)}
+    .stat-icon{width:48px;height:48px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+    .stat-icon.blue{background:#dbeafe;color:#1e40af}
+    .stat-icon.green{background:var(--primary-100);color:var(--primary-700)}
+    .stat-icon.amber{background:var(--accent-100);color:var(--accent-900)}
+    .stat-icon.red{background:#fee2e2;color:#991b1b}
+    .stat-details{flex:1}
+    .stat-details h3{font-size:1.75rem;font-weight:800;color:var(--neutral-900);line-height:1.2}
+    .stat-details p{font-size:0.8125rem;color:var(--neutral-500);font-weight:500}
+    .stat-trend{display:inline-flex;align-items:center;gap:0.25rem;font-size:0.75rem;font-weight:600;margin-top:0.375rem}
+    .stat-trend.up{color:var(--primary-600)}
+    .stat-trend.down{color:#dc2626}
+
+    /* CHART SECTION */
+    .dashboard-grid{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem;margin-bottom:2rem}
+    .chart-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);padding:1.5rem}
+    .chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+    .chart-header h3{font-size:1rem;font-weight:700;color:var(--neutral-900)}
+    .chart-header select{padding:0.375rem 0.75rem;border:1px solid var(--neutral-200);border-radius:var(--radius-md);font-size:0.8125rem;font-family:inherit;color:var(--neutral-700);background:white;outline:none;cursor:pointer}
+    .chart-placeholder{height:280px;background:var(--neutral-50);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;color:var(--neutral-400)}
+    .chart-placeholder i{font-size:2rem}
+    .chart-placeholder p{font-size:0.875rem}
+
+    /* RECENT ACTIVITY */
+    .activity-list{display:flex;flex-direction:column;gap:0.75rem}
+    .activity-item{display:flex;align-items:flex-start;gap:0.875rem;padding:0.875rem;background:var(--neutral-50);border-radius:var(--radius-md);transition:background var(--transition-fast)}
+    .activity-item:hover{background:var(--neutral-100)}
+    .activity-icon{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:0.8125rem;flex-shrink:0}
+    .activity-icon.complaint{background:#fee2e2;color:#991b1b}
+    .activity-icon.news{background:#dbeafe;color:#1e40af}
+    .activity-icon.user{background:var(--primary-100);color:var(--primary-700)}
+    .activity-icon.login{background:var(--accent-100);color:var(--accent-900)}
+    .activity-details{flex:1}
+    .activity-details p{font-size:0.8125rem;font-weight:600;color:var(--neutral-800);line-height:1.4}
+    .activity-details span{font-size:0.75rem;color:var(--neutral-400)}
+
+    /* TABLE */
+    .table-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);overflow:hidden}
+    .table-header{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.5rem;border-bottom:1px solid var(--neutral-100)}
+    .table-header h3{font-size:1rem;font-weight:700;color:var(--neutral-900)}
+    .table-header a{font-size:0.8125rem;font-weight:600;color:var(--primary-600)}
+    .table-header a:hover{color:var(--primary-800)}
+    .data-table{width:100%;border-collapse:collapse}
+    .data-table th{text-align:left;padding:0.875rem 1.5rem;font-size:0.75rem;font-weight:700;color:var(--neutral-500);text-transform:uppercase;letter-spacing:0.025em;background:var(--neutral-50);border-bottom:1px solid var(--neutral-200)}
+    .data-table td{padding:1rem 1.5rem;font-size:0.875rem;color:var(--neutral-700);border-bottom:1px solid var(--neutral-100)}
+    .data-table tr:last-child td{border-bottom:none}
+    .data-table tr:hover td{background:var(--neutral-50)}
+    .status-badge{display:inline-flex;align-items:center;gap:0.375rem;padding:0.375rem 0.75rem;border-radius:var(--radius-full);font-size:0.75rem;font-weight:600}
+    .status-badge::before{content:'';width:6px;height:6px;border-radius:50%;display:inline-block}
+    .status-pending{background:#fef3c7;color:#92400e}
+    .status-pending::before{background:#f59e0b}
+    .status-resolved{background:#d1fae5;color:#065f46}
+    .status-resolved::before{background:#10b981}
+    .status-review{background:#dbeafe;color:#1e40af}
+    .status-review::before{background:#3b82f6}
+    .priority-high{color:#dc2626;font-weight:700}
+    .priority-medium{color:#d97706;font-weight:700}
+    .priority-low{color:#059669;font-weight:700}
+
+    /* MOBILE */
+    .mobile-toggle{display:none;position:fixed;top:1rem;left:1rem;z-index:1001;width:40px;height:40px;background:var(--neutral-900);color:white;border-radius:var(--radius-md);align-items:center;justify-content:center;font-size:1rem}
+    .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999}
+    .sidebar-overlay.open{display:block}
+
+    @media(max-width:1024px){
+      .dashboard-grid{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:768px){
+      .sidebar{transform:translateX(-100%);width:280px}
+      .sidebar.open{transform:translateX(0)}
+      .main-content{margin-left:0}
+      .mobile-toggle{display:flex}
+      .top-header{padding:0 1rem 0 4rem}
+      .content-area{padding:1rem}
+      .stats-grid{grid-template-columns:1fr}
+      .data-table{display:block;overflow-x:auto}
+    }
+  </style>
+</head>
+<body>
+  <!-- MOBILE TOGGLE -->
+  <button class="mobile-toggle" id="mobileToggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">🕋</div>
+      <div class="sidebar-brand">
+        <h1>Hisbah Admin</h1>
+        <span>هيئة الحسبة</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Babban</div>
+        <a href="dashboard.html" class="nav-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="complaints.html" class="nav-item"><i class="fas fa-clipboard-list"></i> Koke-koke</a>
+        <a href="news.html" class="nav-item"><i class="fas fa-newspaper"></i> Labarai</a>
+        <a href="users.html" class="nav-item"><i class="fas fa-users"></i> Masu Amfani</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Gudanarwa</div>
+        <a href="lga.html" class="nav-item"><i class="fas fa-map-marked-alt"></i> Kananan Hukumomi</a>
+        <a href="offices.html" class="nav-item"><i class="fas fa-building"></i> Ofisoshin LGA</a>
+        <a href="videos.html" class="nav-item"><i class="fas fa-video"></i> Bidiyoyi</a>
+        <a href="gallery.html" class="nav-item"><i class="fas fa-images"></i> Hotuna</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title">Tsarin</div>
+        <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> Saituna</a>
+        <a href="logs.html" class="nav-item"><i class="fas fa-history"></i> Tarihin Aiki</a>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="admin-profile">
+        <div class="admin-avatar">A</div>
+        <div class="admin-info">
+          <p id="adminName">Admin</p>
+          <span>Shugaban Tsarin</span>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Fita"><i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <!-- TOP HEADER -->
+    <header class="top-header">
+      <div class="page-title">
+        <h1>Dashboard</h1>
+        <p>Barka da rana, ga bayanin yau da kullum</p>
+      </div>
+      <div class="header-actions">
+        <button class="header-btn" title="Sanarwa"><i class="fas fa-bell"></i><span class="badge">3</span></button>
+        <button class="header-btn" title="Sakonni"><i class="fas fa-envelope"></i></button>
+        <button class="header-btn" title="Taimako"><i class="fas fa-question-circle"></i></button>
+      </div>
+    </header>
+
+    <!-- CONTENT AREA -->
+    <div class="content-area">
+      <!-- STATS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue"><i class="fas fa-clipboard-list"></i></div>
+          <div class="stat-details">
+            <h3>156</h3>
+            <p>Koke-koke na Watan Yanzu</p>
+            <span class="stat-trend up"><i class="fas fa-arrow-up"></i> +12% daga baya</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-details">
+            <h3>89</h3>
+            <p>An Warware</p>
+            <span class="stat-trend up"><i class="fas fa-arrow-up"></i> +8% daga baya</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon amber"><i class="fas fa-clock"></i></div>
+          <div class="stat-details">
+            <h3>42</h3>
+            <p>Ana Bincike</p>
+            <span class="stat-trend down"><i class="fas fa-arrow-down"></i> -3% daga baya</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon red"><i class="fas fa-exclamation-triangle"></i></div>
+          <div class="stat-details">
+            <h3>25</h3>
+            <p>Na Musamman</p>
+            <span class="stat-trend up"><i class="fas fa-arrow-up"></i> +5% daga baya</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS & ACTIVITY -->
+      <div class="dashboard-grid">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Yawan Koke-koke a Shekaru</h3>
+            <select><option>2025</option><option>2024</option><option>2023</option></select>
+          </div>
+          <div class="chart-placeholder">
+            <i class="fas fa-chart-bar"></i>
+            <p>Chart na Koke-koke zai bayyana nan</p>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Abubuwan da Suka Faru Kwanan Nan</h3>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon complaint"><i class="fas fa-exclamation-circle"></i></div>
+              <div class="activity-details">
+                <p>Sabuwar koka daga Sokoto North</p>
+                <span>30 minti da suka wuce</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon news"><i class="fas fa-newspaper"></i></div>
+              <div class="activity-details">
+                <p>An wallafa sabon labari</p>
+                <span>1 awa da suka wuce</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon user"><i class="fas fa-user-plus"></i></div>
+              <div class="activity-details">
+                <p>Sabon mai amfani ya yi rajista</p>
+                <span>2 awa da suka wuce</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon login"><i class="fas fa-sign-in-alt"></i></div>
+              <div class="activity-details">
+                <p>Admin ya shiga cikin tsarin</p>
+                <span>3 awa da suka wuce</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon complaint"><i class="fas fa-check-circle"></i></div>
+              <div class="activity-details">
+                <p>An warware koka daga Wurno</p>
+                <span>5 awa da suka wuce</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT COMPLAINTS TABLE -->
+      <div class="table-card">
+        <div class="table-header">
+          <h3>Koke-koken da Suka Zo Kwanan Nan</h3>
+          <a href="complaints.html">Duba Duka <i class="fas fa-arrow-right" style="font-size:0.75rem;"></i></a>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Suna</th>
+              <th>LGA</th>
+              <th>Bangare</th>
+              <th>Matsayi</th>
+              <th>Muhimmanci</th>
+              <th>Kwanan Wata</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>#KOK-2025-00156</strong></td>
+              <td>Alh. Musa Abdullahi</td>
+              <td>Sokoto North</td>
+              <td>Tashin Hankali</td>
+              <td><span class="status-badge status-pending">Ana Bincike</span></td>
+              <td class="priority-high">High</td>
+              <td>Yau, 10:30 AM</td>
+            </tr>
+            <tr>
+              <td><strong>#KOK-2025-00155</strong></td>
+              <td>Malama Aisha Bello</td>
+              <td>Wurno</td>
+              <td>Tsaro</td>
+              <td><span class="status-badge status-resolved">An Warware</span></td>
+              <td class="priority-medium">Medium</td>
+              <td>Jiya, 2:15 PM</td>
+            </tr>
+            <tr>
+              <td><strong>#KOK-2025-00154</strong></td>
+              <td>Mal. Ibrahim Sani</td>
+              <td>Goronyo</td>
+              <td>Addini</td>
+              <td><span class="status-badge status-review">Bincike</span></td>
+              <td class="priority-low">Low</td>
+              <td>Jiya, 9:00 AM</td>
+            </tr>
+            <tr>
+              <td><strong>#KOK-2025-00153</strong></td>
+              <td>Hajiya Fatima Umar</td>
+              <td>Sabon Birni</td>
+              <td>Tashin Hankali</td>
+              <td><span class="status-badge status-pending">Ana Bincike</span></td>
+              <td class="priority-high">High</td>
+              <td>Litinin, 4:30 PM</td>
+            </tr>
+            <tr>
+              <td><strong>#KOK-2025-00152</strong></td>
+              <td>Alh. Saidu Rabah</td>
+              <td>Rabah</td>
+              <td>Lafiya</td>
+              <td><span class="status-badge status-resolved">An Warware</span></td>
+              <td class="priority-medium">Medium</td>
+              <td>Lahadi, 11:00 AM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Check login
+    if (!localStorage.getItem('adminLoggedIn')) {
+      window.location.href = 'login.html';
+    }
+
+    // Show admin name
+    const adminEmail = localStorage.getItem('adminEmail') || 'admin@hisbahsokoto.gov.ng';
+    document.getElementById('adminName').textContent = adminEmail.split('@')[0];
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('sidebarOverlay').classList.toggle('open');
+    }
+
+    function logout() {
+      if (confirm('Shin kuna tabbatar kuna son fita?')) {
+        localStorage.removeItem('adminLoggedIn');
+        localStorage.removeItem('adminEmail');
+        window.location.href = 'login.html';
+      }
+    }
+  </script>
+</body>
+</html>
