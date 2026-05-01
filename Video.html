@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bidiyon Ayyukan Hisbah Board Sokoto – Hotunan bidiyo na ayyukanmu da labarai" />
+  <title>Bidiyoyi | Hisbah Board Sokoto State</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;--primary-500:#1a9c5e;--primary-100:#e6f5ed;--accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-100:#fcf8e8;--neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;--neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;--neutral-100:#f1f5f9;--neutral-50:#f8fafc;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--transition-fast:150ms cubic-bezier(0.4,0,0.2,1);--transition-base:250ms cubic-bezier(0.4,0,0.2,1);--transition-slow:350ms cubic-bezier(0.4,0,0.2,1);--container-max:1280px;--container-padding:1.5rem}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit;transition:color var(--transition-fast)}
+    ul{list-style:none} button{cursor:pointer;border:none;background:none;font-family:inherit}
+    .container{width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--container-padding)}
+    .section{padding:5rem 0;position:relative}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-size:0.9375rem;font-weight:600;border-radius:var(--radius-md);transition:all var(--transition-base);border:2px solid transparent;white-space:nowrap}
+    .btn-primary{background:var(--primary-700);color:white;box-shadow:0 4px 14px 0 rgba(15,92,56,0.39)}
+    .btn-primary:hover{background:var(--primary-800);transform:translateY(-2px)}
+    .btn-secondary{background:transparent;color:var(--neutral-700);border-color:var(--neutral-300)}
+    .btn-secondary:hover{background:var(--neutral-100);border-color:var(--neutral-400);color:var(--neutral-900)}
+    .btn-sm{padding:0.625rem 1.25rem;font-size:0.875rem}
+
+    .top-bar{background:var(--primary-900);color:rgba(255,255,255,0.8);font-size:0.8125rem;padding:0.625rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+    .top-bar-contact{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .top-bar-contact span{display:inline-flex;align-items:center;gap:0.5rem}
+    .top-bar-contact i{color:var(--accent-700);font-size:0.875rem}
+    .top-bar-social{display:flex;gap:0.5rem}
+    .top-bar-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.875rem}
+    .top-bar-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-2px)}
+
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--neutral-200);transition:box-shadow var(--transition-base)}
+    .navbar.scrolled{box-shadow:var(--shadow-md)}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+    .navbar-brand{display:flex;align-items:center;gap:0.875rem}
+    .navbar-logo{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 12px rgba(15,92,56,0.25);flex-shrink:0}
+    .navbar-brand-text h1{font-size:1.125rem;font-weight:800;color:var(--neutral-900);line-height:1.2;letter-spacing:-0.025em}
+    .navbar-brand-text .arabic-name{display:block;font-family:var(--font-arabic);font-size:0.8125rem;color:var(--primary-700);font-weight:600;margin-top:1px}
+    .navbar-brand-text span:last-child{display:block;font-size:0.75rem;color:var(--neutral-500);margin-top:1px;font-weight:500}
+    .navbar-menu{display:flex;align-items:center;gap:0.25rem}
+    .nav-item{position:relative}
+    .nav-link{display:flex;align-items:center;gap:0.375rem;padding:0.625rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--neutral-600);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .nav-link:hover,.nav-link.active{color:var(--primary-700);background:var(--primary-100)}
+    .navbar-actions{display:flex;align-items:center;gap:1rem}
+    .navbar-toggle{display:none;flex-direction:column;gap:5px;padding:0.5rem;z-index:1001}
+    .navbar-toggle span{display:block;width:24px;height:2px;background:var(--neutral-800);border-radius:2px;transition:all var(--transition-base)}
+
+    .page-hero{position:relative;background:var(--primary-900);color:white;padding:5rem 0 4rem;text-align:center;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,162,39,0.15) 0%,transparent 60%);pointer-events:none}
+    .page-hero .container{position:relative;z-index:1}
+    .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em}
+    .page-hero > .container > p{font-size:1.1rem;opacity:0.85;max-width:600px;margin:0 auto 1.5rem;line-height:1.8;color:rgba(255,255,255,0.75)}
+    .breadcrumb{display:inline-flex;align-items:center;gap:0.75rem;background:rgba(255,255,255,0.08);padding:0.5rem 1.25rem;border-radius:var(--radius-full);font-size:0.875rem;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1)}
+    .breadcrumb a{color:var(--accent-500);font-weight:600}
+    .breadcrumb a:hover{text-decoration:underline}
+
+    /* Videos Section */
+    .videos-section{background:var(--neutral-50);padding:4rem 0}
+    .videos-intro{text-align:center;max-width:700px;margin:0 auto 3rem}
+    .videos-intro h2{font-size:1.75rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.75rem}
+    .videos-intro p{color:var(--neutral-600);font-size:1rem;line-height:1.7}
+
+    .videos-filter{display:flex;justify-content:center;gap:0.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+    .filter-btn{padding:0.625rem 1.25rem;font-size:0.875rem;font-weight:600;border-radius:var(--radius-full);background:white;color:var(--neutral-600);border:2px solid var(--neutral-200);cursor:pointer;transition:all var(--transition-base)}
+    .filter-btn:hover,.filter-btn.active{background:var(--primary-700);color:white;border-color:var(--primary-700)}
+
+    .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem}
+    .video-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);overflow:hidden;transition:all var(--transition-base)}
+    .video-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--primary-200)}
+    .video-thumbnail{position:relative;width:100%;aspect-ratio:16/9;background:var(--neutral-800);overflow:hidden;cursor:pointer}
+    .video-thumbnail img{width:100%;height:100%;object-fit:cover;transition:transform var(--transition-slow)}
+    .video-card:hover .video-thumbnail img{transform:scale(1.05)}
+    .play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);transition:background var(--transition-base)}
+    .play-overlay:hover{background:rgba(0,0,0,0.2)}
+    .play-btn{width:64px;height:64px;background:rgba(255,255,255,0.95);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all var(--transition-base);box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+    .play-btn i{color:var(--primary-700);font-size:1.5rem;margin-left:4px}
+    .play-overlay:hover .play-btn{transform:scale(1.1);background:white}
+    .video-duration{position:absolute;bottom:0.75rem;right:0.75rem;background:rgba(0,0,0,0.75);color:white;padding:0.25rem 0.5rem;border-radius:var(--radius-md);font-size:0.75rem;font-weight:600}
+    .video-body{padding:1.25rem 1.5rem}
+    .video-category{font-size:0.75rem;font-weight:600;color:var(--primary-700);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
+    .video-title{font-size:1.0625rem;font-weight:700;color:var(--neutral-900);line-height:1.4;margin-bottom:0.5rem}
+    .video-desc{font-size:0.875rem;color:var(--neutral-500);line-height:1.6;margin-bottom:1rem}
+    .video-meta{display:flex;align-items:center;gap:1rem;font-size:0.8125rem;color:var(--neutral-400)}
+    .video-meta span{display:inline-flex;align-items:center;gap:0.375rem}
+    .video-meta i{font-size:0.75rem}
+
+    .videos-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-bottom:3rem}
+    .stat-card{background:white;border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--neutral-200);text-align:center;transition:all var(--transition-base)}
+    .stat-card:hover{border-color:var(--primary-300);box-shadow:var(--shadow-md)}
+    .stat-card i{font-size:1.5rem;color:var(--primary-600);margin-bottom:0.75rem}
+    .stat-card h4{font-size:1.75rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.25rem}
+    .stat-card p{font-size:0.875rem;color:var(--neutral-500);font-weight:500}
+
+    /* Video Modal */
+    .video-modal{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:2000;display:none;align-items:center;justify-content:center;padding:2rem}
+    .video-modal.open{display:flex}
+    .modal-content{position:relative;width:100%;max-width:900px;background:var(--neutral-900);border-radius:var(--radius-lg);overflow:hidden}
+    .modal-close{position:absolute;top:-40px;right:0;color:white;font-size:1.5rem;cursor:pointer;z-index:10;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background var(--transition-fast)}
+    .modal-close:hover{background:rgba(255,255,255,0.1)}
+    .modal-video{width:100%;aspect-ratio:16/9;background:black}
+    .modal-info{padding:1.5rem}
+    .modal-info h3{color:white;font-size:1.25rem;font-weight:700;margin-bottom:0.5rem}
+    .modal-info p{color:var(--neutral-400);font-size:0.9375rem}
+
+    .footer{background:var(--neutral-900);color:rgba(255,255,255,0.7);padding:4rem 0 0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+    .footer-brand{max-width:360px}
+    .footer-logo{display:flex;align-items:center;gap:0.875rem;margin-bottom:1.25rem}
+    .footer-logo-icon{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+    .footer-logo-text h3{font-size:1.125rem;font-weight:800;color:white;line-height:1.2}
+    .footer-logo-text span{font-family:var(--font-arabic);font-size:0.8125rem;color:var(--accent-600);font-weight:600}
+    .footer-desc{font-size:0.9375rem;line-height:1.7;margin-bottom:1.5rem;color:rgba(255,255,255,0.6)}
+    .footer-social{display:flex;gap:0.5rem}
+    .footer-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.9375rem}
+    .footer-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-3px)}
+    .footer-heading{font-size:1rem;font-weight:700;color:white;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:2px solid var(--primary-700);display:inline-block}
+    .footer-links li{margin-bottom:0.625rem}
+    .footer-links a{font-size:0.9375rem;color:rgba(255,255,255,0.6);transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:0.5rem}
+    .footer-links a:hover{color:var(--accent-500);padding-left:4px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.875rem;color:rgba(255,255,255,0.5)}
+    .footer-bottom a{color:var(--accent-600);font-weight:600}
+    .footer-bottom a:hover{color:var(--accent-500)}
+
+    .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(20px);transition:all var(--transition-base);z-index:999;border:none}
+    .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+    .back-to-top:hover{background:var(--primary-800);transform:translateY(-4px)}
+
+    @media(max-width:1024px){
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .videos-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+    }
+    @media(max-width:768px){
+      :root{--container-padding:1rem}
+      .section{padding:3rem 0}
+      .top-bar-contact span:not(:first-child){display:none}
+      .navbar-toggle{display:flex}
+      .navbar-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:white;flex-direction:column;align-items:stretch;padding:6rem 1.5rem 2rem;gap:0.5rem;transition:right var(--transition-slow);box-shadow:-10px 0 40px rgba(0,0,0,0.1);overflow-y:auto;display:flex}
+      .navbar-menu.open{right:0}
+      .nav-item{border-bottom:1px solid var(--neutral-200);width:100%}
+      .nav-link{padding:1rem 0;justify-content:space-between;width:100%}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .videos-grid{grid-template-columns:1fr}
+      .videos-stats{grid-template-columns:repeat(2,1fr)}
+      .videos-filter{gap:0.375rem}
+      .filter-btn{padding:0.5rem 1rem;font-size:0.8125rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="top-bar-contact">
+          <span><i class="fas fa-phone"></i> +234 806 000 1234</span>
+          <span><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</span>
+          <span><i class="fas fa-map-marker-alt"></i> Sokoto, Jihar Sokoto, Najeriya</span>
+        </div>
+        <div class="top-bar-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNav">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo">🕋</div>
+          <div class="navbar-brand-text">
+            <h1>Hisbah Board Sokoto</h1>
+            <span class="arabic-name">هيئة الحسبة – ولاية سكوتو</span>
+            <span>Jihar Sokoto, Najeriya</span>
+          </div>
+        </a>
+        <ul class="navbar-menu" id="navMenu">
+          <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Gida</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> Game da Mu</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i> Ayyuka</a></li>
+          <li class="nav-item"><a href="videos.html" class="nav-link active"><i class="fas fa-video"></i> Bidiyoyi</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Labarai</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-phone-alt"></i> Tuntuɓa</a></li>
+        </ul>
+        <div class="navbar-actions">
+          <button class="navbar-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Bidiyon Ayyukanmu</h1>
+      <p>Hotunan bidiyo na ayyukan Hisbah Board Sokoto, taron addini, da labarai masu amfani</p>
+      <div class="breadcrumb">
+        <a href="index.html">Gida</a>
+        <span><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i></span>
+        <span>Bidiyoyi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS SECTION -->
+  <section class="videos-section">
+    <div class="container">
+      <div class="videos-intro reveal">
+        <h2>Duba Bidiyonmu</h2>
+        <p>Ga jerin bidiyon da suka shafi ayyukan Hisbah Board, taron addini, horo, da sauran abubuwan da ke faruwa a jihar.</p>
+      </div>
+
+      <div class="videos-stats reveal">
+        <div class="stat-card">
+          <i class="fas fa-video"></i>
+          <h4>12</h4>
+          <p>Bidiyoyi</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-eye"></i>
+          <h4>5.2K</h4>
+          <p>Duba</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-clock"></i>
+          <h4>3h 45m</h4>
+          <p>Jimlar Lokaci</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-calendar-alt"></i>
+          <h4>2025</h4>
+          <p>Shekarar Sabunta</p>
+        </div>
+      </div>
+
+      <div class="videos-filter reveal">
+        <button class="filter-btn active" data-filter="all">Duka</button>
+        <button class="filter-btn" data-filter="taron">Taron Addini</button>
+        <button class="filter-btn" data-filter="horo">Horo</button>
+        <button class="filter-btn" data-filter="labari">Labarai</button>
+        <button class="filter-btn" data-filter="taimako">Taimakon Al'umma</button>
+      </div>
+
+      <div class="videos-grid" id="videosGrid">
+        <div class="video-card reveal" data-category="taron">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Taron Addini na Shekara a Sokoto', 'Taron addini na musamman da aka yi a Masallacin Sultan Bello a cikin birnin Sokoto.')">
+            <img src="https://images.unsplash.com/photo-1564121211835-e88c852648ab?w=640&h=360&fit=crop" alt="Taron Addini na Shekara a Sokoto" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">45:20</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Taron</div>
+            <h3 class="video-title">Taron Addini na Shekara a Sokoto</h3>
+            <p class="video-desc">Taron addini na musamman da aka yi a Masallacin Sultan Bello a cikin birnin Sokoto.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 1.2K duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Maris 15, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="horo">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Horon Jami'an Hisbah na 2025', 'Bidiyon horon da aka yi wa jami'an Hisbah don ƙara ƙwarewa a ayyukansu.')">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=640&h=360&fit=crop" alt="Horon Jami'an Hisbah na 2025" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">32:15</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Horo</div>
+            <h3 class="video-title">Horon Jami'an Hisbah na 2025</h3>
+            <p class="video-desc">Bidiyon horon da aka yi wa jami'an Hisbah don ƙara ƙwarewa a ayyukansu.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 890 duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Fabrairu 28, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="taimako">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Rarraba Abinci a Kananan Hukumomi', 'Bidiyon yadda aka rarraba abinci ga marayu da talakawa a kananan hukumomi 23.')">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=640&h=360&fit=crop" alt="Rarraba Abinci a Kananan Hukumomi" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">18:40</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Taimako</div>
+            <h3 class="video-title">Rarraba Abinci a Kananan Hukumomi</h3>
+            <p class="video-desc">Bidiyon yadda aka rarraba abinci ga marayu da talakawa a kananan hukumomi 23.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 2.1K duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Janairu 20, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="labari">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Labarin Hisbah Board na Watan Maris', 'Takaitaccen labari game da ayyukan da Hisbah Board ta yi a watan Maris.')">
+            <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=640&h=360&fit=crop" alt="Labarin Hisbah Board na Watan Maris" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">8:55</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Labari</div>
+            <h3 class="video-title">Labarin Hisbah Board na Watan Maris</h3>
+            <p class="video-desc">Takaitaccen labari game da ayyukan da Hisbah Board ta yi a watan Maris.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 750 duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Maris 31, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="taron">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Taron Zikirin Juma'a', 'Taron zikirin Juma'a na musamman da aka yi a ofishin Hisbah Board.')">
+            <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=640&h=360&fit=crop" alt="Taron Zikirin Juma'a" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">1:12:00</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Taron</div>
+            <h3 class="video-title">Taron Zikirin Juma'a</h3>
+            <p class="video-desc">Taron zikirin Juma'a na musamman da aka yi a ofishin Hisbah Board.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 3.4K duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Maris 7, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="horo">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Horon Kare Al'adun Musulunci', 'Bidiyon horon da aka yi wa jami'an Hisbah kan yadda ake kare al'adun Musulunci.')">
+            <img src="https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=640&h=360&fit=crop" alt="Horon Kare Al'adun Musulunci" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">25:30</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Horo</div>
+            <h3 class="video-title">Horon Kare Al'adun Musulunci</h3>
+            <p class="video-desc">Bidiyon horon da aka yi wa jami'an Hisbah kan yadda ake kare al'adun Musulunci.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 640 duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Fabrairu 10, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="taimako">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Taimakon Gidaje ga Marayu', 'Bidiyon yadda aka gina gidaje ga marayu a yankin Sabon Birni.')">
+            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=640&h=360&fit=crop" alt="Taimakon Gidaje ga Marayu" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">14:20</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Taimako</div>
+            <h3 class="video-title">Taimakon Gidaje ga Marayu</h3>
+            <p class="video-desc">Bidiyon yadda aka gina gidaje ga marayu a yankin Sabon Birni.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 1.8K duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Janairu 5, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="labari">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Labarin Hisbah Board na Watan Fabrairu', 'Takaitaccen labari game da ayyukan da Hisbah Board ta yi a watan Fabrairu.')">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=640&h=360&fit=crop" alt="Labarin Hisbah Board na Watan Fabrairu" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">10:15</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Labari</div>
+            <h3 class="video-title">Labarin Hisbah Board na Watan Fabrairu</h3>
+            <p class="video-desc">Takaitaccen labari game da ayyukan da Hisbah Board ta yi a watan Fabrairu.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 920 duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Fabrairu 28, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="taron">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Taron Addini na Matasa', 'Taron addini na musamman da aka yi wa matasa a yankin Wurno.')">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=640&h=360&fit=crop" alt="Taron Addini na Matasa" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">38:00</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Taron</div>
+            <h3 class="video-title">Taron Addini na Matasa</h3>
+            <p class="video-desc">Taron addini na musamman da aka yi wa matasa a yankin Wurno.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 1.5K duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Maris 22, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="horo">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Horon Tsaro da Lafiya', 'Bidiyon horon da aka yi wa jami'an Hisbah kan tsaro da lafiya.')">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=640&h=360&fit=crop" alt="Horon Tsaro da Lafiya" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">28:45</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Horo</div>
+            <h3 class="video-title">Horon Tsaro da Lafiya</h3>
+            <p class="video-desc">Bidiyon horon da aka yi wa jami'an Hisbah kan tsaro da lafiya.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 560 duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Fabrairu 15, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="taimako">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Rarraba Kayan Taimako', 'Bidiyon yadda aka rarraba kayan taimako ga masu bukata a yankin Illela.')">
+            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=640&h=360&fit=crop" alt="Rarraba Kayan Taimako" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">16:30</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Taimako</div>
+            <h3 class="video-title">Rarraba Kayan Taimako</h3>
+            <p class="video-desc">Bidiyon yadda aka rarraba kayan taimako ga masu bukata a yankin Illela.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 1.1K duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Janairu 15, 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card reveal" data-category="labari">
+          <div class="video-thumbnail" onclick="openModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Labarin Hisbah Board na Watan Janairu', 'Takaitaccen labari game da ayyukan da Hisbah Board ta yi a watan Janairu.')">
+            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=640&h=360&fit=crop" alt="Labarin Hisbah Board na Watan Janairu" loading="lazy">
+            <div class="play-overlay">
+              <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
+            <span class="video-duration">9:40</span>
+          </div>
+          <div class="video-body">
+            <div class="video-category">Labari</div>
+            <h3 class="video-title">Labarin Hisbah Board na Watan Janairu</h3>
+            <p class="video-desc">Takaitaccen labari game da ayyukan da Hisbah Board ta yi a watan Janairu.</p>
+            <div class="video-meta">
+              <span><i class="fas fa-eye"></i> 1.3K duba</span>
+              <span><i class="fas fa-calendar-alt"></i> Janairu 31, 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-content">
+      <div class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></div>
+      <video class="modal-video" id="modalVideo" controls></video>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">🕋</div>
+            <div class="footer-logo-text">
+              <h3>Hisbah Board Sokoto</h3>
+              <span>هيئة الحسبة – ولاية سكوتو</span>
+            </div>
+          </div>
+          <p class="footer-desc">Hukumar Hisbah Board ta Jihar Sokoto tana aiki don tabbatar da adalci da kare al'adun Musulunci.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Shafukan Da Suka Fi Amfani</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Gida</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Game da Mu</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Ayyuka</a></li>
+            <li><a href="news.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Labarai</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Tuntuɓa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Ayyukanmu</h4>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Kare Al'adun Musulunci</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Taimakawa Marayu</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Tsaro da Lafiya</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Ilmi da Addini</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Taimakon Al'umma</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Tuntuɓe Mu</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+2348060001234"><i class="fas fa-phone"></i> +234 806 000 1234</a></li>
+            <li><a href="mailto:info@hisbahsokoto.gov.ng"><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</a></li>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Babban Ofishin Hisbah Board, Sultan Abubakar Road, Sokoto</a></li>
+            <li><a href="complaint.html"><i class="fas fa-exclamation-circle"></i> Yi Koka</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Hisbah Board Sokoto State. Dukkan hakkokin suna da kariya.</p>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;">
+          <a href="privacy.html">Dokar Sirri</a>
+          <a href="terms.html">Sharuddan Amfani</a>
+          <a href="sitemap.html">Taswirar Shafin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Koma sama">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      const spans = navToggle.querySelectorAll('span');
+      if (isOpen) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      });
+    });
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      revealObserver.observe(el);
+    });
+
+    // Video Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const videoCards = document.querySelectorAll('.video-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        videoCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = '';
+            card.style.animation = 'fadeIn 0.4s ease';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Video Modal
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+
+    function openModal(videoSrc, title, desc) {
+      modalVideo.src = videoSrc;
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      modalVideo.play();
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modalVideo.pause();
+      modalVideo.src = '';
+      document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</body>
+</html>
