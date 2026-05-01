@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jerin Kananan Hukumomi 23 na Jihar Sokoto – Hisbah Board" />
+  <title>Kananan Hukumomi | Hisbah Board Sokoto State</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;--primary-500:#1a9c5e;--primary-100:#e6f5ed;--accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-100:#fcf8e8;--neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;--neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;--neutral-100:#f1f5f9;--neutral-50:#f8fafc;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--transition-fast:150ms cubic-bezier(0.4,0,0.2,1);--transition-base:250ms cubic-bezier(0.4,0,0.2,1);--transition-slow:350ms cubic-bezier(0.4,0,0.2,1);--container-max:1280px;--container-padding:1.5rem}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit;transition:color var(--transition-fast)}
+    ul{list-style:none} button{cursor:pointer;border:none;background:none;font-family:inherit}
+    .container{width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--container-padding)}
+    .section{padding:5rem 0;position:relative}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-size:0.9375rem;font-weight:600;border-radius:var(--radius-md);transition:all var(--transition-base);border:2px solid transparent;white-space:nowrap}
+    .btn-primary{background:var(--primary-700);color:white;box-shadow:0 4px 14px 0 rgba(15,92,56,0.39)}
+    .btn-primary:hover{background:var(--primary-800);transform:translateY(-2px)}
+    .btn-secondary{background:transparent;color:var(--neutral-700);border-color:var(--neutral-300)}
+    .btn-secondary:hover{background:var(--neutral-100);border-color:var(--neutral-400);color:var(--neutral-900)}
+    .btn-sm{padding:0.625rem 1.25rem;font-size:0.875rem}
+
+    .top-bar{background:var(--primary-900);color:rgba(255,255,255,0.8);font-size:0.8125rem;padding:0.625rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+    .top-bar-contact{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .top-bar-contact span{display:inline-flex;align-items:center;gap:0.5rem}
+    .top-bar-contact i{color:var(--accent-700);font-size:0.875rem}
+    .top-bar-social{display:flex;gap:0.5rem}
+    .top-bar-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.875rem}
+    .top-bar-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-2px)}
+
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--neutral-200);transition:box-shadow var(--transition-base)}
+    .navbar.scrolled{box-shadow:var(--shadow-md)}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+    .navbar-brand{display:flex;align-items:center;gap:0.875rem}
+    .navbar-logo{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 12px rgba(15,92,56,0.25);flex-shrink:0}
+    .navbar-brand-text h1{font-size:1.125rem;font-weight:800;color:var(--neutral-900);line-height:1.2;letter-spacing:-0.025em}
+    .navbar-brand-text .arabic-name{display:block;font-family:var(--font-arabic);font-size:0.8125rem;color:var(--primary-700);font-weight:600;margin-top:1px}
+    .navbar-brand-text span:last-child{display:block;font-size:0.75rem;color:var(--neutral-500);margin-top:1px;font-weight:500}
+    .navbar-menu{display:flex;align-items:center;gap:0.25rem}
+    .nav-item{position:relative}
+    .nav-link{display:flex;align-items:center;gap:0.375rem;padding:0.625rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--neutral-600);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .nav-link:hover,.nav-link.active{color:var(--primary-700);background:var(--primary-100)}
+    .nav-dropdown{position:absolute;top:calc(100% + 0.5rem);left:0;min-width:240px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);padding:0.5rem;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all var(--transition-base);border:1px solid var(--neutral-200)}
+    .nav-item:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+    .nav-dropdown a{display:flex;align-items:center;gap:0.75rem;padding:0.625rem 0.875rem;font-size:0.875rem;font-weight:500;color:var(--neutral-700);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .nav-dropdown a:hover{background:var(--primary-100);color:var(--primary-800)}
+    .nav-dropdown a i{color:var(--primary-600);font-size:0.875rem;width:20px;text-align:center}
+    .navbar-actions{display:flex;align-items:center;gap:1rem}
+    .navbar-toggle{display:none;flex-direction:column;gap:5px;padding:0.5rem;z-index:1001}
+    .navbar-toggle span{display:block;width:24px;height:2px;background:var(--neutral-800);border-radius:2px;transition:all var(--transition-base)}
+
+    .page-hero{position:relative;background:var(--primary-900);color:white;padding:5rem 0 4rem;text-align:center;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,162,39,0.15) 0%,transparent 60%);pointer-events:none}
+    .page-hero .container{position:relative;z-index:1}
+    .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em}
+    .page-hero > .container > p{font-size:1.1rem;opacity:0.85;max-width:600px;margin:0 auto 1.5rem;line-height:1.8;color:rgba(255,255,255,0.75)}
+    .breadcrumb{display:inline-flex;align-items:center;gap:0.75rem;background:rgba(255,255,255,0.08);padding:0.5rem 1.25rem;border-radius:var(--radius-full);font-size:0.875rem;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1)}
+    .breadcrumb a{color:var(--accent-500);font-weight:600}
+    .breadcrumb a:hover{text-decoration:underline}
+
+    /* LGA Section Styles */
+    .lga-section{background:var(--neutral-50);padding:4rem 0}
+    .lga-intro{text-align:center;max-width:700px;margin:0 auto 3rem}
+    .lga-intro h2{font-size:1.75rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.75rem}
+    .lga-intro p{color:var(--neutral-600);font-size:1rem;line-height:1.7}
+
+    .lga-search{max-width:500px;margin:0 auto 2.5rem;position:relative}
+    .lga-search input{width:100%;padding:1rem 1rem 1rem 3rem;border:2px solid var(--neutral-200);border-radius:var(--radius-full);font-size:0.9375rem;font-family:inherit;color:var(--neutral-800);background:white;transition:all var(--transition-base);outline:none}
+    .lga-search input:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(26,156,94,0.1)}
+    .lga-search i{position:absolute;left:1.125rem;top:50%;transform:translateY(-50%);color:var(--neutral-400);font-size:1rem}
+
+    .lga-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+    .lga-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);overflow:hidden;transition:all var(--transition-base);position:relative}
+    .lga-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--primary-200)}
+    .lga-card-header{padding:1.5rem 1.5rem 1rem;display:flex;align-items:flex-start;gap:1rem}
+    .lga-number{width:44px;height:44px;background:var(--primary-100);color:var(--primary-700);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;flex-shrink:0}
+    .lga-card-title h3{font-size:1.125rem;font-weight:700;color:var(--neutral-900);margin-bottom:0.25rem}
+    .lga-card-title span{font-size:0.8125rem;color:var(--neutral-500);display:flex;align-items:center;gap:0.375rem}
+    .lga-card-body{padding:0 1.5rem 1.5rem}
+    .lga-card-body p{font-size:0.875rem;color:var(--neutral-600);line-height:1.7;margin-bottom:1rem}
+    .lga-meta{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
+    .lga-meta span{font-size:0.75rem;padding:0.375rem 0.75rem;background:var(--neutral-100);color:var(--neutral-600);border-radius:var(--radius-full);font-weight:500;display:inline-flex;align-items:center;gap:0.375rem}
+    .lga-meta span i{font-size:0.625rem;color:var(--primary-600)}
+    .lga-card-footer{padding:1rem 1.5rem;border-top:1px solid var(--neutral-100);display:flex;justify-content:space-between;align-items:center}
+    .lga-card-footer a{font-size:0.8125rem;font-weight:600;color:var(--primary-700);display:inline-flex;align-items:center;gap:0.375rem;transition:all var(--transition-fast)}
+    .lga-card-footer a:hover{color:var(--primary-900);gap:0.625rem}
+    .lga-card-footer .lga-pop{font-size:0.75rem;color:var(--neutral-400);font-weight:500}
+
+    .lga-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:3rem}
+    .stat-card{background:white;border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--neutral-200);text-align:center;transition:all var(--transition-base)}
+    .stat-card:hover{border-color:var(--primary-300);box-shadow:var(--shadow-md)}
+    .stat-card i{font-size:1.5rem;color:var(--primary-600);margin-bottom:0.75rem}
+    .stat-card h4{font-size:1.75rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.25rem}
+    .stat-card p{font-size:0.875rem;color:var(--neutral-500);font-weight:500}
+
+    .footer{background:var(--neutral-900);color:rgba(255,255,255,0.7);padding:4rem 0 0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+    .footer-brand{max-width:360px}
+    .footer-logo{display:flex;align-items:center;gap:0.875rem;margin-bottom:1.25rem}
+    .footer-logo-icon{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+    .footer-logo-text h3{font-size:1.125rem;font-weight:800;color:white;line-height:1.2}
+    .footer-logo-text span{font-family:var(--font-arabic);font-size:0.8125rem;color:var(--accent-600);font-weight:600}
+    .footer-desc{font-size:0.9375rem;line-height:1.7;margin-bottom:1.5rem;color:rgba(255,255,255,0.6)}
+    .footer-social{display:flex;gap:0.5rem}
+    .footer-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.9375rem}
+    .footer-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-3px)}
+    .footer-heading{font-size:1rem;font-weight:700;color:white;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:2px solid var(--primary-700);display:inline-block}
+    .footer-links li{margin-bottom:0.625rem}
+    .footer-links a{font-size:0.9375rem;color:rgba(255,255,255,0.6);transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:0.5rem}
+    .footer-links a:hover{color:var(--accent-500);padding-left:4px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.875rem;color:rgba(255,255,255,0.5)}
+    .footer-bottom a{color:var(--accent-600);font-weight:600}
+    .footer-bottom a:hover{color:var(--accent-500)}
+
+    .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(20px);transition:all var(--transition-base);z-index:999;border:none}
+    .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+    .back-to-top:hover{background:var(--primary-800);transform:translateY(-4px)}
+
+    @media(max-width:1024px){
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .lga-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+    }
+    @media(max-width:768px){
+      :root{--container-padding:1rem}
+      .section{padding:3rem 0}
+      .top-bar-contact span:not(:first-child){display:none}
+      .navbar-toggle{display:flex}
+      .navbar-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:white;flex-direction:column;align-items:stretch;padding:6rem 1.5rem 2rem;gap:0.5rem;transition:right var(--transition-slow);box-shadow:-10px 0 40px rgba(0,0,0,0.1);overflow-y:auto;display:flex}
+      .navbar-menu.open{right:0}
+      .nav-item{border-bottom:1px solid var(--neutral-200);width:100%}
+      .nav-link{padding:1rem 0;justify-content:space-between;width:100%}
+      .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 1rem 1.5rem;display:none}
+      .nav-item.active .nav-dropdown{display:block}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .lga-grid{grid-template-columns:1fr}
+      .lga-stats{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="top-bar-contact">
+          <span><i class="fas fa-phone"></i> +234 806 000 1234</span>
+          <span><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</span>
+          <span><i class="fas fa-map-marker-alt"></i> Sokoto, Jihar Sokoto, Najeriya</span>
+        </div>
+        <div class="top-bar-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNav">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo">🕋</div>
+          <div class="navbar-brand-text">
+            <h1>Hisbah Board Sokoto</h1>
+            <span class="arabic-name">هيئة الحسبة – ولاية سكوتو</span>
+            <span>Jihar Sokoto, Najeriya</span>
+          </div>
+        </a>
+        <ul class="navbar-menu" id="navMenu">
+          <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Gida</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> Game da Mu</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i> Ayyuka</a></li>
+          <li class="nav-item"><a href="lga.html" class="nav-link active"><i class="fas fa-map-marked-alt"></i> Kananan Hukumomi</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Labarai</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-phone-alt"></i> Tuntuɓa</a></li>
+        </ul>
+        <div class="navbar-actions">
+          <button class="navbar-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Kananan Hukumomin Jihar Sokoto</h1>
+      <p>Jerin kananan hukumomi 23 na Jihar Sokoto tare da bayanan masu amfani game da kowanne yanki</p>
+      <div class="breadcrumb">
+        <a href="index.html">Gida</a>
+        <span><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i></span>
+        <span>Kananan Hukumomi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LGA SECTION -->
+  <section class="lga-section">
+    <div class="container">
+      <div class="lga-intro reveal">
+        <h2>Taswirar Kananan Hukumomi</h2>
+        <p>Jihar Sokoto tana da kananan hukumomi 23, kowanne yana da muhimmancinsa na musamman a cikin ci gaban jihar da kiyayewar al'adun Musulunci.</p>
+      </div>
+
+      <div class="lga-stats reveal">
+        <div class="stat-card">
+          <i class="fas fa-city"></i>
+          <h4>23</h4>
+          <p>Kananan Hukumomi</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-users"></i>
+          <h4>6M+</h4>
+          <p>Jimlar Yawan Mutane</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-mosque"></i>
+          <h4>500+</h4>
+          <p>Masallatai Masu Amfani</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-landmark"></i>
+          <h4>1804</h4>
+          <p>Shekarar Kafa Jihar</p>
+        </div>
+      </div>
+
+      <div class="lga-search reveal">
+        <i class="fas fa-search"></i>
+        <input type="text" id="lgaSearch" placeholder="Nemi kananan hukumomi..." autocomplete="off">
+      </div>
+
+      <div class="lga-grid" id="lgaGrid">
+        <div class="lga-card reveal" data-name="sokoto north">
+          <div class="lga-card-header">
+            <div class="lga-number">01</div>
+            <div class="lga-card-title">
+              <h3>Sokoto North</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Sokoto</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Babban birnin Jihar Sokoto da cibiyar siyasa da addini. Yana da tarihi mai zurfi na daular Sakkwato.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~350,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~350,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="sokoto south">
+          <div class="lga-card-header">
+            <div class="lga-number">02</div>
+            <div class="lga-card-title">
+              <h3>Sokoto South</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Sokoto</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yankin da ke kewaye da birnin Sokoto, yana da manyan kasuwanni da wuraren addini masu muhimmanci.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~300,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~300,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="wurno">
+          <div class="lga-card-header">
+            <div class="lga-number">03</div>
+            <div class="lga-card-title">
+              <h3>Wurno</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Wurno</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Garin tarihi ne na daular Sakkwato. Wurin da Sheikh Usman Dan Fodiyo ya zauna bayan ya yi hijira.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~180,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~180,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="rabah">
+          <div class="lga-card-header">
+            <div class="lga-number">04</div>
+            <div class="lga-card-title">
+              <h3>Rabah</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Rabah</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. Yana da alaka mai karfi da tarihin daular Sakkwato.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~150,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~150,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="bodinga">
+          <div class="lga-card-header">
+            <div class="lga-number">05</div>
+            <div class="lga-card-title">
+              <h3>Bodinga</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Bodinga</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kasuwanci. An fi sani da noman alkama da wake.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~200,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~200,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="dange-shuni">
+          <div class="lga-card-header">
+            <div class="lga-number">06</div>
+            <div class="lga-card-title">
+              <h3>Dange-Shuni</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Dange</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai albarkatun ƙasa da ruwa. Yana da filayen noma masu yawa da kuma rafuka.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~190,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~190,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="gada">
+          <div class="lga-card-header">
+            <div class="lga-number">07</div>
+            <div class="lga-card-title">
+              <h3>Gada</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Gada</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai iyaka da Nijar. Ana yawan kiwo da noma a yankin.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~170,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~170,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="goronyo">
+          <div class="lga-card-header">
+            <div class="lga-number">08</div>
+            <div class="lga-card-title">
+              <h3>Goronyo</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Goronyo</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. An fi sani da noman shinkafa a cikin rafin Rima.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~210,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~210,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="gwadabawa">
+          <div class="lga-card-header">
+            <div class="lga-number">09</div>
+            <div class="lga-card-title">
+              <h3>Gwadabawa</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Gwadabawa</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kasuwanci. Yana da hanyar haɗin kai mai kyau zuwa babban birnin.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~160,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~160,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="illela">
+          <div class="lga-card-header">
+            <div class="lga-number">10</div>
+            <div class="lga-card-title">
+              <h3>Illela</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Illela</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai iyaka da Nijar. Babbar hanyar kasuwanci ce tsakanin Najeriya da Nijar.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~220,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~220,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="isa">
+          <div class="lga-card-header">
+            <div class="lga-number">11</div>
+            <div class="lga-card-title">
+              <h3>Isa</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Isa</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. Yana da alaka mai karfi da al'ummar arewacin jihar.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~140,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~140,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="kebbe">
+          <div class="lga-card-header">
+            <div class="lga-number">12</div>
+            <div class="lga-card-title">
+              <h3>Kebbe</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Kebbe</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. An fi sani da noman alkama da tumatir.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~155,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~155,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="kware">
+          <div class="lga-card-header">
+            <div class="lga-number">13</div>
+            <div class="lga-card-title">
+              <h3>Kware</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Kware</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kasuwanci. Yana kusa da babban birnin Sokoto.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~175,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~175,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="tambuwal">
+          <div class="lga-card-header">
+            <div class="lga-number">14</div>
+            <div class="lga-card-title">
+              <h3>Tambuwal</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Tambuwal</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. An fi sani da noman shinkafa da alkama.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~230,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~230,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="tangaza">
+          <div class="lga-card-header">
+            <div class="lga-number">15</div>
+            <div class="lga-card-title">
+              <h3>Tangaza</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Tangaza</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. Yana da kyakkyawan yanayi don noma.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~130,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~130,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="tureta">
+          <div class="lga-card-header">
+            <div class="lga-number">16</div>
+            <div class="lga-card-title">
+              <h3>Tureta</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Tureta</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. Yana da filayen noma masu faɗi.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~120,000</span>
+              <span><i class="fas fa-building"></i> Wards: 10</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~120,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="shagari">
+          <div class="lga-card-header">
+            <div class="lga-number">17</div>
+            <div class="lga-card-title">
+              <h3>Shagari</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Shagari</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Garin da aka sanya masa sunan tsohon shugaban kasa Alhaji Shehu Shagari. Yanki mai noma ne.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~165,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~165,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="silame">
+          <div class="lga-card-header">
+            <div class="lga-number">18</div>
+            <div class="lga-card-title">
+              <h3>Silame</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Silame</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. Yana da albarkatun ƙasa masu kyau.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~145,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~145,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="sabon birni">
+          <div class="lga-card-header">
+            <div class="lga-number">19</div>
+            <div class="lga-card-title">
+              <h3>Sabon Birni</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Sabon Birni</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai iyaka da Nijar. Babbar cibiyar kasuwanci ce a arewacin jihar.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~280,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~280,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="wamakko">
+          <div class="lga-card-header">
+            <div class="lga-number">20</div>
+            <div class="lga-card-title">
+              <h3>Wamakko</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Wamakko</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. Yana kusa da babban birnin Sokoto.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~195,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~195,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="yabo">
+          <div class="lga-card-header">
+            <div class="lga-number">21</div>
+            <div class="lga-card-title">
+              <h3>Yabo</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Yabo</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. An fi sani da noman shinkafa da alkama.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~185,000</span>
+              <span><i class="fas fa-building"></i> Wards: 11</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~185,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="binji">
+          <div class="lga-card-header">
+            <div class="lga-number">22</div>
+            <div class="lga-card-title">
+              <h3>Binji</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Binji</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. Yana da filayen noma masu faɗi a kusa da rafin Rima.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~125,000</span>
+              <span><i class="fas fa-building"></i> Wards: 10</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~125,000</span>
+          </div>
+        </div>
+        <div class="lga-card reveal" data-name="gudu">
+          <div class="lga-card-header">
+            <div class="lga-number">23</div>
+            <div class="lga-card-title">
+              <h3>Gudu</h3>
+              <span><i class="fas fa-map-marker-alt"></i> Hedikwata: Balle</span>
+            </div>
+          </div>
+          <div class="lga-card-body">
+            <p>Yanki mai noma da kiwo. Yana da kyakkyawan yanayi don noman shinkafa.</p>
+            <div class="lga-meta">
+              <span><i class="fas fa-users"></i> Yawan Mutane: ~135,000</span>
+              <span><i class="fas fa-building"></i> Wards: 10</span>
+            </div>
+          </div>
+          <div class="lga-card-footer">
+            <a href="#"><i class="fas fa-info-circle"></i> Ƙarin Bayani</a>
+            <span class="lga-pop"><i class="fas fa-chart-bar" style="margin-right:0.25rem;"></i>~135,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">🕋</div>
+            <div class="footer-logo-text">
+              <h3>Hisbah Board Sokoto</h3>
+              <span>هيئة الحسبة – ولاية سكوتو</span>
+            </div>
+          </div>
+          <p class="footer-desc">Hukumar Hisbah Board ta Jihar Sokoto tana aiki don tabbatar da adalci da kare al'adun Musulunci.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Shafukan Da Suka Fi Amfani</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Gida</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Game da Mu</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Ayyuka</a></li>
+            <li><a href="news.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Labarai</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Tuntuɓa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Ayyukanmu</h4>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Kare Al'adun Musulunci</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Taimakawa Marayu</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Tsaro da Lafiya</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Ilmi da Addini</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Taimakon Al'umma</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Tuntuɓe Mu</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+2348060001234"><i class="fas fa-phone"></i> +234 806 000 1234</a></li>
+            <li><a href="mailto:info@hisbahsokoto.gov.ng"><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</a></li>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Babban Ofishin Hisbah Board, Sultan Abubakar Road, Sokoto</a></li>
+            <li><a href="complaint.html"><i class="fas fa-exclamation-circle"></i> Yi Koka</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Hisbah Board Sokoto State. Dukkan hakkokin suna da kariya.</p>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;">
+          <a href="privacy.html">Dokar Sirri</a>
+          <a href="terms.html">Sharuddan Amfani</a>
+          <a href="sitemap.html">Taswirar Shafin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Koma sama">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      const spans = navToggle.querySelectorAll('span');
+      if (isOpen) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      });
+    });
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      revealObserver.observe(el);
+    });
+
+    // LGA Search
+    const searchInput = document.getElementById('lgaSearch');
+    const lgaGrid = document.getElementById('lgaGrid');
+    const lgaCards = lgaGrid.querySelectorAll('.lga-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      lgaCards.forEach(card => {
+        const name = card.getAttribute('data-name');
+        const text = card.textContent.toLowerCase();
+        if (name.includes(query) || text.includes(query)) {
+          card.style.display = '';
+          card.style.animation = 'fadeIn 0.3s ease';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</body>
+</html>
