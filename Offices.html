@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jerin Ofisoshin Hisbah Board na Kananan Hukumomi 23 na Jihar Sokoto tare da bayanan tuntuɓa" />
+  <title>Ofisoshin LGA | Hisbah Board Sokoto State</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;--primary-500:#1a9c5e;--primary-100:#e6f5ed;--accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-100:#fcf8e8;--neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;--neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;--neutral-100:#f1f5f9;--neutral-50:#f8fafc;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--transition-fast:150ms cubic-bezier(0.4,0,0.2,1);--transition-base:250ms cubic-bezier(0.4,0,0.2,1);--transition-slow:350ms cubic-bezier(0.4,0,0.2,1);--container-max:1280px;--container-padding:1.5rem}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit;transition:color var(--transition-fast)}
+    ul{list-style:none} button{cursor:pointer;border:none;background:none;font-family:inherit}
+    .container{width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--container-padding)}
+    .section{padding:5rem 0;position:relative}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-size:0.9375rem;font-weight:600;border-radius:var(--radius-md);transition:all var(--transition-base);border:2px solid transparent;white-space:nowrap}
+    .btn-primary{background:var(--primary-700);color:white;box-shadow:0 4px 14px 0 rgba(15,92,56,0.39)}
+    .btn-primary:hover{background:var(--primary-800);transform:translateY(-2px)}
+    .btn-secondary{background:transparent;color:var(--neutral-700);border-color:var(--neutral-300)}
+    .btn-secondary:hover{background:var(--neutral-100);border-color:var(--neutral-400);color:var(--neutral-900)}
+    .btn-sm{padding:0.625rem 1.25rem;font-size:0.875rem}
+
+    .top-bar{background:var(--primary-900);color:rgba(255,255,255,0.8);font-size:0.8125rem;padding:0.625rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+    .top-bar-contact{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .top-bar-contact span{display:inline-flex;align-items:center;gap:0.5rem}
+    .top-bar-contact i{color:var(--accent-700);font-size:0.875rem}
+    .top-bar-social{display:flex;gap:0.5rem}
+    .top-bar-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.875rem}
+    .top-bar-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-2px)}
+
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--neutral-200);transition:box-shadow var(--transition-base)}
+    .navbar.scrolled{box-shadow:var(--shadow-md)}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+    .navbar-brand{display:flex;align-items:center;gap:0.875rem}
+    .navbar-logo{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 12px rgba(15,92,56,0.25);flex-shrink:0}
+    .navbar-brand-text h1{font-size:1.125rem;font-weight:800;color:var(--neutral-900);line-height:1.2;letter-spacing:-0.025em}
+    .navbar-brand-text .arabic-name{display:block;font-family:var(--font-arabic);font-size:0.8125rem;color:var(--primary-700);font-weight:600;margin-top:1px}
+    .navbar-brand-text span:last-child{display:block;font-size:0.75rem;color:var(--neutral-500);margin-top:1px;font-weight:500}
+    .navbar-menu{display:flex;align-items:center;gap:0.25rem}
+    .nav-item{position:relative}
+    .nav-link{display:flex;align-items:center;gap:0.375rem;padding:0.625rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--neutral-600);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .nav-link:hover,.nav-link.active{color:var(--primary-700);background:var(--primary-100)}
+    .navbar-actions{display:flex;align-items:center;gap:1rem}
+    .navbar-toggle{display:none;flex-direction:column;gap:5px;padding:0.5rem;z-index:1001}
+    .navbar-toggle span{display:block;width:24px;height:2px;background:var(--neutral-800);border-radius:2px;transition:all var(--transition-base)}
+
+    .page-hero{position:relative;background:var(--primary-900);color:white;padding:5rem 0 4rem;text-align:center;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,162,39,0.15) 0%,transparent 60%);pointer-events:none}
+    .page-hero .container{position:relative;z-index:1}
+    .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em}
+    .page-hero > .container > p{font-size:1.1rem;opacity:0.85;max-width:600px;margin:0 auto 1.5rem;line-height:1.8;color:rgba(255,255,255,0.75)}
+    .breadcrumb{display:inline-flex;align-items:center;gap:0.75rem;background:rgba(255,255,255,0.08);padding:0.5rem 1.25rem;border-radius:var(--radius-full);font-size:0.875rem;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1)}
+    .breadcrumb a{color:var(--accent-500);font-weight:600}
+    .breadcrumb a:hover{text-decoration:underline}
+
+    .offices-section{background:var(--neutral-50);padding:4rem 0}
+    .offices-intro{text-align:center;max-width:700px;margin:0 auto 3rem}
+    .offices-intro h2{font-size:1.75rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.75rem}
+    .offices-intro p{color:var(--neutral-600);font-size:1rem;line-height:1.7}
+
+    .offices-search{max-width:500px;margin:0 auto 2.5rem;position:relative}
+    .offices-search input{width:100%;padding:1rem 1rem 1rem 3rem;border:2px solid var(--neutral-200);border-radius:var(--radius-full);font-size:0.9375rem;font-family:inherit;color:var(--neutral-800);background:white;transition:all var(--transition-base);outline:none}
+    .offices-search input:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(26,156,94,0.1)}
+    .offices-search i{position:absolute;left:1.125rem;top:50%;transform:translateY(-50%);color:var(--neutral-400);font-size:1rem}
+
+    .offices-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem}
+    .office-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);overflow:hidden;transition:all var(--transition-base);position:relative}
+    .office-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--primary-200)}
+    .office-card-header{background:var(--primary-700);color:white;padding:1.25rem 1.5rem;position:relative;overflow:hidden}
+    .office-card-header::before{content:'';position:absolute;right:-20px;top:-20px;width:80px;height:80px;background:rgba(255,255,255,0.06);border-radius:50%}
+    .office-card-header::after{content:'';position:absolute;right:30px;bottom:-30px;width:60px;height:60px;background:rgba(255,255,255,0.04);border-radius:50%}
+    .office-card-header h3{font-size:1.125rem;font-weight:700;position:relative;z-index:1}
+    .office-card-header span{font-size:0.8125rem;opacity:0.85;display:flex;align-items:center;gap:0.375rem;margin-top:0.25rem;position:relative;z-index:1}
+    .office-card-body{padding:1.5rem}
+    .office-detail{display:flex;align-items:flex-start;gap:0.875rem;margin-bottom:1rem}
+    .office-detail:last-child{margin-bottom:0}
+    .office-detail i{width:36px;height:36px;background:var(--primary-100);color:var(--primary-700);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:0.875rem;flex-shrink:0;margin-top:2px}
+    .office-detail div{flex:1}
+    .office-detail strong{display:block;font-size:0.8125rem;color:var(--neutral-500);font-weight:600;margin-bottom:0.125rem;text-transform:uppercase;letter-spacing:0.025em}
+    .office-detail p{font-size:0.9375rem;color:var(--neutral-700);font-weight:500;line-height:1.5}
+    .office-detail a{color:var(--primary-700);font-weight:600}
+    .office-detail a:hover{color:var(--primary-900);text-decoration:underline}
+    .office-card-footer{padding:1rem 1.5rem;border-top:1px solid var(--neutral-100);display:flex;justify-content:space-between;align-items:center;background:var(--neutral-50)}
+    .office-status{font-size:0.75rem;padding:0.375rem 0.875rem;background:var(--primary-100);color:var(--primary-800);border-radius:var(--radius-full);font-weight:600;display:inline-flex;align-items:center;gap:0.375rem}
+    .office-status::before{content:'';width:6px;height:6px;background:var(--primary-500);border-radius:50%;display:inline-block}
+    .office-card-footer a{font-size:0.8125rem;font-weight:600;color:var(--primary-700);display:inline-flex;align-items:center;gap:0.375rem;transition:all var(--transition-fast)}
+    .office-card-footer a:hover{color:var(--primary-900);gap:0.625rem}
+
+    .offices-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:3rem}
+    .stat-card{background:white;border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--neutral-200);text-align:center;transition:all var(--transition-base)}
+    .stat-card:hover{border-color:var(--primary-300);box-shadow:var(--shadow-md)}
+    .stat-card i{font-size:1.5rem;color:var(--primary-600);margin-bottom:0.75rem}
+    .stat-card h4{font-size:1.75rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.25rem}
+    .stat-card p{font-size:0.875rem;color:var(--neutral-500);font-weight:500}
+
+    .footer{background:var(--neutral-900);color:rgba(255,255,255,0.7);padding:4rem 0 0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+    .footer-brand{max-width:360px}
+    .footer-logo{display:flex;align-items:center;gap:0.875rem;margin-bottom:1.25rem}
+    .footer-logo-icon{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+    .footer-logo-text h3{font-size:1.125rem;font-weight:800;color:white;line-height:1.2}
+    .footer-logo-text span{font-family:var(--font-arabic);font-size:0.8125rem;color:var(--accent-600);font-weight:600}
+    .footer-desc{font-size:0.9375rem;line-height:1.7;margin-bottom:1.5rem;color:rgba(255,255,255,0.6)}
+    .footer-social{display:flex;gap:0.5rem}
+    .footer-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.9375rem}
+    .footer-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-3px)}
+    .footer-heading{font-size:1rem;font-weight:700;color:white;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:2px solid var(--primary-700);display:inline-block}
+    .footer-links li{margin-bottom:0.625rem}
+    .footer-links a{font-size:0.9375rem;color:rgba(255,255,255,0.6);transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:0.5rem}
+    .footer-links a:hover{color:var(--accent-500);padding-left:4px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.875rem;color:rgba(255,255,255,0.5)}
+    .footer-bottom a{color:var(--accent-600);font-weight:600}
+    .footer-bottom a:hover{color:var(--accent-500)}
+
+    .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(20px);transition:all var(--transition-base);z-index:999;border:none}
+    .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+    .back-to-top:hover{background:var(--primary-800);transform:translateY(-4px)}
+
+    @media(max-width:1024px){
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .offices-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+    }
+    @media(max-width:768px){
+      :root{--container-padding:1rem}
+      .section{padding:3rem 0}
+      .top-bar-contact span:not(:first-child){display:none}
+      .navbar-toggle{display:flex}
+      .navbar-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:white;flex-direction:column;align-items:stretch;padding:6rem 1.5rem 2rem;gap:0.5rem;transition:right var(--transition-slow);box-shadow:-10px 0 40px rgba(0,0,0,0.1);overflow-y:auto;display:flex}
+      .navbar-menu.open{right:0}
+      .nav-item{border-bottom:1px solid var(--neutral-200);width:100%}
+      .nav-link{padding:1rem 0;justify-content:space-between;width:100%}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .offices-grid{grid-template-columns:1fr}
+      .offices-stats{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="top-bar-contact">
+          <span><i class="fas fa-phone"></i> +234 8160743440 Abdullahi Umar Muazu</span>
+          <span><i class="fas fa-envelope"></i> info@hisbahsokoto.com.ng</span>
+          <span><i class="fas fa-map-marker-alt"></i> Sokoto, Jihar Sokoto, Najeriya</span>
+        </div>
+        <div class="top-bar-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNav">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo">🕋</div>
+          <div class="navbar-brand-text">
+            <h1>Hisbah Board Sokoto</h1>
+            <span class="arabic-name">هيئة الحسبة – ولاية سكوتو</span>
+            <span>Jihar Sokoto, Najeriya</span>
+          </div>
+        </a>
+        <ul class="navbar-menu" id="navMenu">
+          <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Gida</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> Game da Mu</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i> Ayyuka</a></li>
+          <li class="nav-item"><a href="offices.html" class="nav-link active"><i class="fas fa-building"></i> Ofisoshin LGA</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Labarai</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-phone-alt"></i> Tuntuɓa</a></li>
+        </ul>
+        <div class="navbar-actions">
+          <button class="navbar-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Ofisoshin Hisbah na Kananan Hukumomi</h1>
+      <p>Jerin ofisoshin Hisbah Board na kananan hukumomi 23 na Jihar Sokoto tare da bayanan tuntuɓa da adiresoshi</p>
+      <div class="breadcrumb">
+        <a href="index.html">Gida</a>
+        <span><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i></span>
+        <span>Ofisoshin LGA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICES SECTION -->
+  <section class="offices-section">
+    <div class="container">
+      <div class="offices-intro reveal">
+        <h2>Tuntuɓe Ofisoshin Hisbah</h2>
+        <p>Kowanne kananan hukumomi na da ofis na Hisbah Board da ke aiki don kare al'adun Musulunci da tabbatar da adalci a yankin.</p>
+      </div>
+
+      <div class="offices-stats reveal">
+        <div class="stat-card">
+          <i class="fas fa-building"></i>
+          <h4>23</h4>
+          <p>Ofisoshin LGA</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-user-tie"></i>
+          <h4>23</h4>
+          <p>Shugabannin Ofis</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-users"></i>
+          <h4>200+</h4>
+          <p>Jami'an Hisbah</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-clock"></i>
+          <h4>Mon–Fri</h4>
+          <p>Sati na Aiki</p>
+        </div>
+      </div>
+
+      <div class="offices-search reveal">
+        <i class="fas fa-search"></i>
+        <input type="text" id="officeSearch" placeholder="Nemi ofis ko kananan hukumomi..." autocomplete="off">
+      </div>
+
+      <div class="offices-grid" id="officesGrid">
+        <div class="office-card reveal" data-name="sokoto north">
+          <div class="office-card-header">
+            <h3>01. Sokoto North LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Kofar Rini, Sokoto Metropolis, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Musa Abdullahi</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110001">+234 803 111 0001</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:sokotonorth@hisbahsokoto.gov.ng">sokotonorth@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110001"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="sokoto south">
+          <div class="office-card-header">
+            <h3>02. Sokoto South LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Runjin Sambo, Sokoto Metropolis, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Ibrahim Bello</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110002">+234 803 111 0002</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:sokotosouth@hisbahsokoto.gov.ng">sokotosouth@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110002"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="wurno">
+          <div class="office-card-header">
+            <h3>03. Wurno LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Unguwar Yari, Wurno Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Umaru Wurno</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110003">+234 803 111 0003</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:wurno@hisbahsokoto.gov.ng">wurno@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110003"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="rabah">
+          <div class="office-card-header">
+            <h3>04. Rabah LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Rabah Market Road, Rabah Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Saidu Rabah</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110004">+234 803 111 0004</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:rabah@hisbahsokoto.gov.ng">rabah@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110004"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="bodinga">
+          <div class="office-card-header">
+            <h3>05. Bodinga LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Bodinga Central Market, Bodinga Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Abdullahi Bodinga</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110005">+234 803 111 0005</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:bodinga@hisbahsokoto.gov.ng">bodinga@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110005"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="dange-shuni">
+          <div class="office-card-header">
+            <h3>06. Dange-Shuni LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Dange Town, Along Sokoto-Gusau Road, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Hassan Dange</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110006">+234 803 111 0006</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:dangeshuni@hisbahsokoto.gov.ng">dangeshuni@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110006"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="gada">
+          <div class="office-card-header">
+            <h3>07. Gada LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Gada Town, Sokoto-Niger Border Road, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Yusuf Gada</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110007">+234 803 111 0007</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:gada@hisbahsokoto.gov.ng">gada@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110007"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="goronyo">
+          <div class="office-card-header">
+            <h3>08. Goronyo LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Goronyo Market Area, Goronyo Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Aliyu Goronyo</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110008">+234 803 111 0008</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:goronyo@hisbahsokoto.gov.ng">goronyo@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110008"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="gwadabawa">
+          <div class="office-card-header">
+            <h3>09. Gwadabawa LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Gwadabawa Town, Sokoto-Illela Road, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Sani Gwadabawa</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110009">+234 803 111 0009</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:gwadabawa@hisbahsokoto.gov.ng">gwadabawa@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110009"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="illela">
+          <div class="office-card-header">
+            <h3>10. Illela LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Illela Border Town, Sokoto-Niger Road, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Muhammad Illela</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110010">+234 803 111 0010</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:illela@hisbahsokoto.gov.ng">illela@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110010"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="isa">
+          <div class="office-card-header">
+            <h3>11. Isa LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Isa Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Abubakar Isa</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110011">+234 803 111 0011</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:isa@hisbahsokoto.gov.ng">isa@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110011"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="kebbe">
+          <div class="office-card-header">
+            <h3>12. Kebbe LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Kebbe Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Lawal Kebbe</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110012">+234 803 111 0012</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:kebbe@hisbahsokoto.gov.ng">kebbe@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110012"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="kware">
+          <div class="office-card-header">
+            <h3>13. Kware LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Kware Town, Near Sokoto City, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Dahiru Kware</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110013">+234 803 111 0013</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:kware@hisbahsokoto.gov.ng">kware@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110013"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="tambuwal">
+          <div class="office-card-header">
+            <h3>14. Tambuwal LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Tambuwal Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Musa Tambuwal</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110014">+234 803 111 0014</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:tambuwal@hisbahsokoto.gov.ng">tambuwal@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110014"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="tangaza">
+          <div class="office-card-header">
+            <h3>15. Tangaza LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Tangaza Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Ibrahim Tangaza</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110015">+234 803 111 0015</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:tangaza@hisbahsokoto.gov.ng">tangaza@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110015"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="tureta">
+          <div class="office-card-header">
+            <h3>16. Tureta LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Tureta Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Suleiman Tureta</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110016">+234 803 111 0016</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:tureta@hisbahsokoto.gov.ng">tureta@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110016"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="shagari">
+          <div class="office-card-header">
+            <h3>17. Shagari LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Shagari Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Umar Shagari</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110017">+234 803 111 0017</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:shagari@hisbahsokoto.gov.ng">shagari@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110017"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="silame">
+          <div class="office-card-header">
+            <h3>18. Silame LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Silame Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Abdullahi Silame</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110018">+234 803 111 0018</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:silame@hisbahsokoto.gov.ng">silame@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110018"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="sabon birni">
+          <div class="office-card-header">
+            <h3>19. Sabon Birni LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Sabon Birni Town, Sokoto-Niger Border, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Haruna Sabon Birni</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110019">+234 803 111 0019</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:sabonbirni@hisbahsokoto.gov.ng">sabonbirni@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110019"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="wamakko">
+          <div class="office-card-header">
+            <h3>20. Wamakko LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Wamakko Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Bello Wamakko</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110020">+234 803 111 0020</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:wamakko@hisbahsokoto.gov.ng">wamakko@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110020"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="yabo">
+          <div class="office-card-header">
+            <h3>21. Yabo LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Yabo Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Abdullahi Yabo</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110021">+234 803 111 0021</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:yabo@hisbahsokoto.gov.ng">yabo@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110021"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="binji">
+          <div class="office-card-header">
+            <h3>22. Binji LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Binji Town, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Alh. Ibrahim Binji</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110022">+234 803 111 0022</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:binji@hisbahsokoto.gov.ng">binji@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110022"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+
+        <div class="office-card reveal" data-name="gudu">
+          <div class="office-card-header">
+            <h3>23. Gudu LGA</h3>
+            <span><i class="fas fa-map-marker-alt"></i> Balle Town, Gudu LGA, Sokoto State</span>
+          </div>
+          <div class="office-card-body">
+            <div class="office-detail">
+              <i class="fas fa-user-tie"></i>
+              <div>
+                <strong>Shugaban Ofis</strong>
+                <p>Mal. Saidu Gudu</p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Lambar Wayar</strong>
+                <p><a href="tel:+2348031110023">+234 803 111 0023</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Imel</strong>
+                <p><a href="mailto:gudu@hisbahsokoto.gov.ng">gudu@hisbahsokoto.gov.ng</a></p>
+              </div>
+            </div>
+            <div class="office-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Sati na Aiki</strong>
+                <p>8:00 AM – 4:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="office-card-footer">
+            <span class="office-status">Aiki</span>
+            <a href="tel:+2348031110023"><i class="fas fa-phone"></i> Kira Yanzu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">🕋</div>
+            <div class="footer-logo-text">
+              <h3>Hisbah Board Sokoto</h3>
+              <span>هيئة الحسبة – ولاية سكوتو</span>
+            </div>
+          </div>
+          <p class="footer-desc">Hukumar Hisbah Board ta Jihar Sokoto tana aiki don tabbatar da adalci da kare al'adun Musulunci.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Shafukan Da Suka Fi Amfani</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Gida</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Game da Mu</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Ayyuka</a></li>
+            <li><a href="news.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Labarai</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Tuntuɓa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Ayyukanmu</h4>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Kare Al'adun Musulunci</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Taimakawa Marayu</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Tsaro da Lafiya</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Ilmi da Addini</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i> Taimakon Al'umma</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Tuntuɓe Mu</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+2348160743440"><i class="fas fa-phone"></i> +234 806 000 1234</a></li>
+            <li><a href="mailto:info@hisbahsokoto.com.ng"><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</a></li>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Babban Ofishin Hisbah Board, Sultan Abubakar Road, Sokoto</a></li>
+            <li><a href="complaint.html"><i class="fas fa-exclamation-circle"></i> Yi Koka</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Hisbah Board Sokoto State. Dukkan hakkokin suna da kariya.</p>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;">
+          <a href="privacy.html">Dokar Sirri</a>
+          <a href="terms.html">Sharuddan Amfani</a>
+          <a href="sitemap.html">Taswirar Shafin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Koma sama">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    const navbar = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      const spans = navToggle.querySelectorAll('span');
+      if (isOpen) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      });
+    });
+
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      revealObserver.observe(el);
+    });
+
+    const searchInput = document.getElementById('officeSearch');
+    const officesGrid = document.getElementById('officesGrid');
+    const officeCards = officesGrid.querySelectorAll('.office-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      officeCards.forEach(card => {
+        const name = card.getAttribute('data-name');
+        const text = card.textContent.toLowerCase();
+        if (name.includes(query) || text.includes(query)) {
+          card.style.display = '';
+          card.style.animation = 'fadeIn 0.3s ease';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</body>
+</html>
+i
