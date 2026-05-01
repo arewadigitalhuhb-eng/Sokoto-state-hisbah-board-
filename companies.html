@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sokoto State Hisbah Board | File a Complaint</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root{
+            --primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;
+            --primary-500:#1a9c5e;--primary-400:#2db87a;--primary-300:#6dd5a3;--primary-200:#a8e6c8;
+            --primary-100:#e6f5ed;--primary-50:#f0fdf4;
+            --accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-500:#e0c44a;
+            --accent-100:#fcf8e8;--accent-50:#fffbeb;
+            --danger-700:#991b1b;--danger-600:#b91c1c;--danger-500:#dc2626;--danger-100:#fee2e2;--danger-50:#fef2f2;
+            --warning-700:#a16207;--warning-600:#ca8a04;--warning-500:#eab308;--warning-100:#fef9c3;--warning-50:#fefce8;
+            --info-700:#1d4ed8;--info-600:#2563eb;--info-500:#3b82f6;--info-100:#dbeafe;--info-50:#eff6ff;
+            --success-700:#15803d;--success-600:#16a34a;--success-500:#22c55e;--success-100:#dcfce7;--success-50:#f0fdf4;
+            --neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;
+            --neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;
+            --neutral-100:#f1f5f9;--neutral-50:#f8fafc;
+            --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            --font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;
+            --shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;
+            --transition-fast:150ms cubic-bezier(0.4,0,0.2,1);
+            --transition-base:250ms cubic-bezier(0.4,0,0.2,1);
+            --transition-slow:350ms cubic-bezier(0.4,0,0.2,1);
+            --container-max:1280px;--container-padding:1.5rem
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+        body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;overflow-x:hidden}
+        a{text-decoration:none;color:inherit;transition:color var(--transition-fast)}
+        ul{list-style:none} button{cursor:pointer;border:none;background:none;font-family:inherit}
+        .container{width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--container-padding)}
+        .section{padding:5rem 0;position:relative}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-size:0.9375rem;font-weight:600;border-radius:var(--radius-md);transition:all var(--transition-base);border:2px solid transparent;white-space:nowrap}
+        .btn-primary{background:var(--primary-700);color:white;box-shadow:0 4px 14px 0 rgba(15,92,56,0.39)}
+        .btn-primary:hover{background:var(--primary-800);transform:translateY(-2px)}
+        .btn-secondary{background:transparent;color:var(--neutral-700);border-color:var(--neutral-300)}
+        .btn-secondary:hover{background:var(--neutral-100);border-color:var(--neutral-400);color:var(--neutral-900)}
+        .btn-danger{background:var(--danger-600);color:white}
+        .btn-danger:hover{background:var(--danger-700);transform:translateY(-2px)}
+        .btn-sm{padding:0.625rem 1.25rem;font-size:0.875rem}
+        .btn-lg{padding:1rem 2rem;font-size:1rem}
+
+        /* Top Bar */
+        .top-bar{background:var(--primary-900);color:rgba(255,255,255,0.8);font-size:0.8125rem;padding:0.625rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+        .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+        .top-bar-contact{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+        .top-bar-contact span{display:inline-flex;align-items:center;gap:0.5rem}
+        .top-bar-contact i{color:var(--accent-700);font-size:0.875rem}
+        .top-bar-social{display:flex;gap:0.5rem}
+        .top-bar-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.875rem}
+        .top-bar-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-2px)}
+
+        /* Navbar */
+        .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--neutral-200);transition:box-shadow var(--transition-base)}
+        .navbar.scrolled{box-shadow:var(--shadow-md)}
+        .navbar-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+        .navbar-brand{display:flex;align-items:center;gap:0.875rem}
+        .navbar-logo{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 12px rgba(15,92,56,0.25);flex-shrink:0}
+        .navbar-brand-text h1{font-size:1.125rem;font-weight:800;color:var(--neutral-900);line-height:1.2;letter-spacing:-0.025em}
+        .navbar-brand-text .arabic-name{display:block;font-family:var(--font-arabic);font-size:0.8125rem;color:var(--primary-700);font-weight:600;margin-top:1px}
+        .navbar-brand-text span:last-child{display:block;font-size:0.75rem;color:var(--neutral-500);margin-top:1px;font-weight:500}
+        .navbar-menu{display:flex;align-items:center;gap:0.25rem}
+        .nav-item{position:relative}
+        .nav-link{display:flex;align-items:center;gap:0.375rem;padding:0.625rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--neutral-600);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+        .nav-link:hover,.nav-link.active{color:var(--primary-700);background:var(--primary-100)}
+        .navbar-actions{display:flex;align-items:center;gap:1rem}
+        .navbar-toggle{display:none;flex-direction:column;gap:5px;padding:0.5rem;z-index:1001;background:none;border:none}
+        .navbar-toggle span{display:block;width:24px;height:2px;background:var(--neutral-800);border-radius:2px;transition:all var(--transition-base)}
+        .navbar-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .navbar-toggle.active span:nth-child(2){opacity:0}
+        .navbar-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+        /* Page Hero */
+        .page-hero{position:relative;background:var(--primary-900);color:white;padding:5rem 0 4rem;text-align:center;overflow:hidden}
+        .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,162,39,0.15) 0%,transparent 60%);pointer-events:none}
+        .page-hero .container{position:relative;z-index:1}
+        .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em}
+        .page-hero > .container > p{font-size:1.1rem;opacity:0.85;max-width:600px;margin:0 auto 1.5rem;line-height:1.8;color:rgba(255,255,255,0.75)}
+        .breadcrumb{display:inline-flex;align-items:center;gap:0.75rem;background:rgba(255,255,255,0.08);padding:0.5rem 1.25rem;border-radius:var(--radius-full);font-size:0.875rem;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1)}
+        .breadcrumb a{color:var(--accent-500);font-weight:600}
+        .breadcrumb a:hover{text-decoration:underline}
+
+        /* Stats Bar */
+        .stats-bar{background:white;border-bottom:1px solid var(--neutral-200);padding:2rem 0}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+        .stat-item{text-align:center;padding:1.5rem;border-radius:var(--radius-lg);transition:all var(--transition-base)}
+        .stat-item:hover{background:var(--neutral-50);transform:translateY(-4px)}
+        .stat-item i{font-size:1.75rem;margin-bottom:0.75rem;display:block}
+        .stat-item .stat-value{font-size:2rem;font-weight:800;color:var(--neutral-900);display:block;line-height:1}
+        .stat-item .stat-label{font-size:0.875rem;color:var(--neutral-500);margin-top:0.5rem;font-weight:500}
+        .stat-item.primary i{color:var(--primary-600)}
+        .stat-item.primary .stat-value{color:var(--primary-700)}
+        .stat-item.success i{color:var(--success-600)}
+        .stat-item.success .stat-value{color:var(--success-700)}
+        .stat-item.warning i{color:var(--warning-600)}
+        .stat-item.warning .stat-value{color:var(--warning-700)}
+        .stat-item.info i{color:var(--info-600)}
+        .stat-item.info .stat-value{color:var(--info-700)}
+
+        /* Complaint Form Section */
+        .complaint-section{background:var(--neutral-50);padding:4rem 0}
+        .section-header{text-align:center;max-width:700px;margin:0 auto 3rem}
+        .section-header h2{font-size:1.75rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.75rem}
+        .section-header p{color:var(--neutral-600);font-size:1rem;line-height:1.7}
+
+        .complaint-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:2rem;align-items:start}
+
+        /* Form Card */
+        .form-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);padding:2.5rem;box-shadow:var(--shadow-sm)}
+        .form-card h3{font-size:1.25rem;font-weight:700;color:var(--neutral-900);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem}
+        .form-card h3 i{color:var(--primary-600)}
+        .form-card > p{color:var(--neutral-500);font-size:0.9375rem;margin-bottom:2rem}
+
+        .form-step{display:none}
+        .form-step.active{display:block;animation:fadeIn 0.4s ease-out}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+        .form-group{margin-bottom:1.25rem}
+        .form-group label{display:block;font-size:0.875rem;font-weight:600;color:var(--neutral-700);margin-bottom:0.5rem}
+        .form-group label .required{color:var(--danger-500);margin-left:2px}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.875rem 1rem;border:2px solid var(--neutral-200);border-radius:var(--radius-md);font-size:0.9375rem;font-family:inherit;color:var(--neutral-800);background:white;transition:all var(--transition-base);outline:none}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(26,156,94,0.1)}
+        .form-group input.error,.form-group select.error,.form-group textarea.error{border-color:var(--danger-500);box-shadow:0 0 0 4px rgba(220,38,38,0.1)}
+        .form-group textarea{resize:vertical;min-height:120px}
+        .form-group select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+        .form-group .error-msg{color:var(--danger-600);font-size:0.8125rem;margin-top:0.375rem;display:none}
+        .form-group .error-msg.show{display:block}
+
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+        .checkbox-group{display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0}
+        .checkbox-group input[type="checkbox"]{width:20px;height:20px;accent-color:var(--primary-600);cursor:pointer}
+        .checkbox-group label{font-size:0.9375rem;color:var(--neutral-700);cursor:pointer;font-weight:500;margin:0}
+
+        /* File Upload */
+        .file-upload{border:2px dashed var(--neutral-300);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all var(--transition-base);cursor:pointer;background:var(--neutral-50)}
+        .file-upload:hover{border-color:var(--primary-400);background:var(--primary-50)}
+        .file-upload.dragover{border-color:var(--primary-500);background:var(--primary-100)}
+        .file-upload i{font-size:2.5rem;color:var(--neutral-400);margin-bottom:0.75rem;display:block}
+        .file-upload p{color:var(--neutral-600);font-size:0.9375rem;margin-bottom:0.5rem}
+        .file-upload span{color:var(--neutral-400);font-size:0.8125rem}
+        .file-upload input[type="file"]{display:none}
+        .file-list{margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.5rem}
+        .file-tag{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 0.875rem;background:var(--primary-100);border:1px solid var(--primary-200);border-radius:var(--radius-full);font-size:0.8125rem;font-weight:600;color:var(--primary-800)}
+        .file-tag button{background:none;border:none;color:var(--primary-700);cursor:pointer;font-size:0.875rem;padding:0}
+        .file-tag button:hover{color:var(--danger-600)}
+
+        /* Step Indicator */
+        .step-indicator{display:flex;align-items:center;justify-content:center;gap:0; margin-bottom:2.5rem}
+        .step{display:flex;flex-direction:column;align-items:center;gap:0.5rem;position:relative}
+        .step-circle{width:40px;height:40px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:700;border:2px solid var(--neutral-300);background:white;color:var(--neutral-500);transition:all var(--transition-base)}
+        .step.active .step-circle{border-color:var(--primary-600);background:var(--primary-600);color:white;box-shadow:0 0 0 4px rgba(26,156,94,0.2)}
+        .step.completed .step-circle{border-color:var(--primary-600);background:var(--primary-600);color:white}
+        .step-label{font-size:0.75rem;font-weight:600;color:var(--neutral-500);white-space:nowrap}
+        .step.active .step-label{color:var(--primary-700)}
+        .step.completed .step-label{color:var(--primary-600)}
+        .step-line{flex:1;height:2px;background:var(--neutral-200);max-width:60px;min-width:30px;transition:all var(--transition-base)}
+        .step-line.completed{background:var(--primary-600)}
+
+        /* Form Actions */
+        .form-actions{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--neutral-200)}
+
+        /* Info Card */
+        .info-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);padding:2rem;margin-bottom:1.5rem;transition:all var(--transition-base)}
+        .info-card:hover{box-shadow:var(--shadow-md);border-color:var(--primary-200)}
+        .info-card h4{font-size:1.125rem;font-weight:700;color:var(--neutral-900);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
+        .info-card h4 i{color:var(--primary-600)}
+        .info-card p,.info-card li{color:var(--neutral-600);font-size:0.9375rem;line-height:1.7}
+        .info-card ul{padding-left:1.25rem;list-style:disc}
+        .info-card ul li{margin-bottom:0.5rem}
+
+        /* Complaint Types */
+        .complaint-types{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-bottom:1.5rem}
+        .type-card{padding:1rem;border:2px solid var(--neutral-200);border-radius:var(--radius-md);cursor:pointer;transition:all var(--transition-base);text-align:center}
+        .type-card:hover{border-color:var(--primary-300);background:var(--primary-50)}
+        .type-card.selected{border-color:var(--primary-600);background:var(--primary-50);box-shadow:0 0 0 4px rgba(26,156,94,0.1)}
+        .type-card i{font-size:1.5rem;color:var(--primary-600);margin-bottom:0.5rem;display:block}
+        .type-card span{font-size:0.875rem;font-weight:600;color:var(--neutral-800);display:block}
+        .type-card small{font-size:0.75rem;color:var(--neutral-500)}
+
+        /* Recent Complaints */
+        .recent-section{background:white;padding:4rem 0;border-top:1px solid var(--neutral-200)}
+        .complaints-table{width:100%;border-collapse:collapse;margin-top:1.5rem}
+        .complaints-table th{background:var(--neutral-100);padding:0.875rem 1rem;text-align:left;font-size:0.8125rem;font-weight:700;color:var(--neutral-600);text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid var(--neutral-200)}
+        .complaints-table td{padding:1rem;border-bottom:1px solid var(--neutral-100);font-size:0.9375rem;color:var(--neutral-700)}
+        .complaints-table tr:hover td{background:var(--neutral-50)}
+        .status-badge{display:inline-flex;align-items:center;gap:0.375rem;padding:0.375rem 0.75rem;border-radius:var(--radius-full);font-size:0.75rem;font-weight:700}
+        .status-pending{background:var(--warning-100);color:var(--warning-700)}
+        .status-progress{background:var(--info-100);color:var(--info-700)}
+        .status-resolved{background:var(--success-100);color:var(--success-700)}
+        .status-badge::before{content:'';width:6px;height:6px;border-radius:var(--radius-full);background:currentColor}
+
+        /* Modal */
+        .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;visibility:hidden;transition:all var(--transition-base)}
+        .modal-overlay.show{opacity:1;visibility:visible}
+        .modal{background:white;border-radius:var(--radius-xl);padding:2.5rem;max-width:500px;width:90%;text-align:center;box-shadow:var(--shadow-xl);transform:scale(0.9);transition:all var(--transition-base)}
+        .modal-overlay.show .modal{transform:scale(1)}
+        .modal-icon{width:80px;height:80px;background:var(--success-100);color:var(--success-600);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1.5rem}
+        .modal h3{font-size:1.5rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.75rem}
+        .modal p{color:var(--neutral-600);line-height:1.7;margin-bottom:1.5rem}
+        .modal .ref-number{background:var(--primary-50);border:2px dashed var(--primary-300);padding:1rem;border-radius:var(--radius-md);font-family:monospace;font-size:1.25rem;font-weight:700;color:var(--primary-700);margin-bottom:1.5rem}
+
+        /* Footer */
+        .footer{background:var(--neutral-900);color:rgba(255,255,255,0.7);padding:4rem 0 0}
+        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+        .footer-brand{max-width:360px}
+        .footer-logo{display:flex;align-items:center;gap:0.875rem;margin-bottom:1.25rem}
+        .footer-logo-icon{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+        .footer-logo-text h3{font-size:1.125rem;font-weight:800;color:white;line-height:1.2}
+        .footer-logo-text span{font-family:var(--font-arabic);font-size:0.8125rem;color:var(--accent-600);font-weight:600}
+        .footer-desc{font-size:0.9375rem;line-height:1.7;margin-bottom:1.5rem;color:rgba(255,255,255,0.6)}
+        .footer-social{display:flex;gap:0.5rem}
+        .footer-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.9375rem}
+        .footer-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-3px)}
+        .footer-heading{font-size:1rem;font-weight:700;color:white;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:2px solid var(--primary-700);display:inline-block}
+        .footer-links li{margin-bottom:0.625rem}
+        .footer-links a{font-size:0.9375rem;color:rgba(255,255,255,0.6);transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:0.5rem}
+        .footer-links a:hover{color:var(--accent-500);padding-left:4px}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.875rem;color:rgba(255,255,255,0.5)}
+        .footer-bottom a{color:var(--accent-600);font-weight:600}
+        .footer-bottom a:hover{color:var(--accent-500)}
+
+        /* Back to Top */
+        .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(20px);transition:all var(--transition-base);z-index:999;border:none;cursor:pointer}
+        .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+        .back-to-top:hover{background:var(--primary-800);transform:translateY(-4px)}
+
+        /* Animations */
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        .animate-in{animation:fadeInUp 0.6s ease-out forwards}
+
+        @media(max-width:1024px){
+            .complaint-grid{grid-template-columns:1fr}
+            .footer-grid{grid-template-columns:1fr 1fr}
+            .stats-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(max-width:768px){
+            :root{--container-padding:1rem}
+            .section{padding:3rem 0}
+            .top-bar-contact span:not(:first-child){display:none}
+            .navbar-toggle{display:flex}
+            .navbar-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:white;flex-direction:column;align-items:stretch;padding:6rem 1.5rem 2rem;gap:0.5rem;transition:right var(--transition-slow);box-shadow:-10px 0 40px rgba(0,0,0,0.1);overflow-y:auto;display:flex;z-index:1000}
+            .navbar-menu.open{right:0}
+            .nav-item{border-bottom:1px solid var(--neutral-200);width:100%}
+            .nav-link{padding:1rem 0;justify-content:space-between;width:100%;border-radius:0}
+            .form-row{grid-template-columns:1fr}
+            .complaint-types{grid-template-columns:1fr}
+            .stats-grid{grid-template-columns:repeat(2,1fr)}
+            .footer-grid{grid-template-columns:1fr;gap:2rem}
+            .footer-bottom{flex-direction:column;text-align:center}
+            .step-label{display:none}
+            .complaints-table{display:block;overflow-x:auto}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-inner">
+            <div class="top-bar-contact">
+                <span><i class="fas fa-phone"></i> +234 803 123 4567</span>
+                <span><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</span>
+                <span><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 4:00 PM</span>
+            </div>
+            <div class="top-bar-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-brand">
+                <div class="navbar-logo"><i class="fas fa-mosque"></i></div>
+                <div class="navbar-brand-text">
+                    <h1>Sokoto State Hisbah Board</h1>
+                    <span class="arabic-name">هيئة الحسبة — ولاية سوكوتو</span>
+                    <span>Promoting Justice & Morality</span>
+                </div>
+            </a>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i> Services</a></li>
+                <li class="nav-item"><a href="lga-directory.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> LGA Directory</a></li>
+                <li class="nav-item"><a href="complaint.html" class="nav-link active"><i class="fas fa-file-alt"></i> Complaints</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="container">
+        <h1>File a Complaint</h1>
+        <p>Report issues, disputes, or concerns to your nearest Hisbah office. Your complaint will be handled with confidentiality and professionalism.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right" style="font-size:0.625rem"></i>
+            <span>File Complaint</span>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="stats-bar">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item primary">
+                <i class="fas fa-clipboard-list"></i>
+                <span class="stat-value">1,247</span>
+                <div class="stat-label">Total Complaints</div>
+            </div>
+            <div class="stat-item success">
+                <i class="fas fa-check-circle"></i>
+                <span class="stat-value">1,089</span>
+                <div class="stat-label">Resolved</div>
+            </div>
+            <div class="stat-item warning">
+                <i class="fas fa-clock"></i>
+                <span class="stat-value">98</span>
+                <div class="stat-label">In Progress</div>
+            </div>
+            <div class="stat-item info">
+                <i class="fas fa-hourglass-half"></i>
+                <span class="stat-value">60</span>
+                <div class="stat-label">Pending</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Complaint Form Section -->
+<section class="complaint-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Submit Your Complaint</h2>
+            <p>Fill in the details below to file a complaint with the Sokoto State Hisbah Board. All information is kept strictly confidential.</p>
+        </div>
+
+        <div class="complaint-grid">
+            <!-- Form -->
+            <div class="form-card">
+                <h3><i class="fas fa-edit"></i> Complaint Form</h3>
+                <p>Please provide accurate information to help us resolve your issue promptly.</p>
+
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span class="step-label">Details</span>
+                    </div>
+                    <div class="step-line" data-line="1"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span class="step-label">Category</span>
+                    </div>
+                    <div class="step-line" data-line="2"></div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Submit</span>
+                    </div>
+                </div>
+
+                <form id="complaintForm">
+                    <!-- Step 1: Personal Details -->
+                    <div class="form-step active" data-step="1">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" name="firstName" placeholder="Enter your first name" required>
+                                <span class="error-msg">Please enter your first name</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" name="lastName" placeholder="Enter your last name" required>
+                                <span class="error-msg">Please enter your last name</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Phone Number <span class="required">*</span></label>
+                                <input type="tel" name="phone" placeholder="+234 80X XXX XXXX" required>
+                                <span class="error-msg">Please enter a valid phone number</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" name="email" placeholder="your@email.com">
+                                <span class="error-msg">Please enter a valid email</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Local Government Area <span class="required">*</span></label>
+                            <select name="lga" id="lgaSelect" required>
+                                <option value="">Select your LGA</option>
+                            </select>
+                            <span class="error-msg">Please select your LGA</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Address / Location</label>
+                            <input type="text" name="address" placeholder="Your address or landmark">
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" name="anonymous" id="anonymous">
+                            <label for="anonymous">Submit as Anonymous (your identity will be hidden)</label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Complaint Category -->
+                    <div class="form-step" data-step="2">
+                        <div class="form-group">
+                            <label>Complaint Category <span class="required">*</span></label>
+                            <div class="complaint-types">
+                                <div class="type-card" data-type="dispute">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Dispute</span>
+                                    <small>Land, property, business</small>
+                                </div>
+                                <div class="type-card" data-type="family">
+                                    <i class="fas fa-home"></i>
+                                    <span>Family Matter</span>
+                                    <small>Marriage, divorce, inheritance</small>
+                                </div>
+                                <div class="type-card" data-type="moral">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>Moral Issue</span>
+                                    <small>Public misconduct, drugs</small>
+                                </div>
+                                <div class="type-card" data-type="youth">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Youth Affairs</span>
+                                    <small>Education, delinquency</small>
+                                </div>
+                                <div class="type-card" data-type="women">
+                                    <i class="fas fa-female"></i>
+                                    <span>Women Welfare</span>
+                                    <small>Domestic, empowerment</small>
+                                </div>
+                                <div class="type-card" data-type="other">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    <span>Other</span>
+                                    <small>General concerns</small>
+                                </div>
+                            </div>
+                            <input type="hidden" name="complaintType" id="complaintTypeInput" required>
+                            <span class="error-msg">Please select a complaint category</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject / Title <span class="required">*</span></label>
+                            <input type="text" name="subject" placeholder="Brief title of your complaint" required>
+                            <span class="error-msg">Please enter a subject</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Detailed Description <span class="required">*</span></label>
+                            <textarea name="description" rows="5" placeholder="Describe your complaint in detail. Include dates, names, and any relevant information..." required></textarea>
+                            <span class="error-msg">Please describe your complaint</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Upload Evidence (Optional)</label>
+                            <div class="file-upload" id="fileUpload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & drop files here or click to browse</p>
+                                <span>Supported: JPG, PNG, PDF, DOC (Max 5MB each)</span>
+                                <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                            </div>
+                            <div class="file-list" id="fileList"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Review & Submit -->
+                    <div class="form-step" data-step="3">
+                        <div class="info-card" style="margin-bottom:1.5rem">
+                            <h4><i class="fas fa-eye"></i> Review Your Complaint</h4>
+                            <div id="reviewContent" style="margin-top:1rem">
+                                <p style="color:var(--neutral-400);text-align:center;padding:2rem 0">Please complete the previous steps to see your review.</p>
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" name="agree" id="agree" required>
+                            <label for="agree">I confirm that the information provided is accurate and true to the best of my knowledge.</label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" style="display:none"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Next <i class="fas fa-arrow-right"></i></button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none"><i class="fas fa-paper-plane"></i> Submit Complaint</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sidebar Info -->
+            <div>
+                <div class="info-card">
+                    <h4><i class="fas fa-info-circle"></i> How It Works</h4>
+                    <ul>
+                        <li><strong>Step 1:</strong> Fill in your personal details and select your LGA.</li>
+                        <li><strong>Step 2:</strong> Choose the complaint category and describe your issue.</li>
+                        <li><strong>Step 3:</strong> Review your complaint and submit.</li>
+                        <li><strong>Step 4:</strong> You will receive a reference number to track your complaint.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-shield-alt"></i> Confidentiality</h4>
+                    <p>All complaints are handled with strict confidentiality. Your personal information is protected and will only be shared with authorized Hisbah officers handling your case.</p>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-phone-alt"></i> Emergency Contact</h4>
+                    <p style="margin-bottom:0.5rem"><strong>Hisbah Hotline:</strong><br><a href="tel:+2348031234567" style="color:var(--primary-700);font-size:1.125rem;font-weight:700">+234 803 123 4567</a></p>
+                    <p style="margin-bottom:0.5rem"><strong>WhatsApp:</strong><br><a href="https://wa.me/2348031234567" style="color:var(--success-600);font-weight:600">+234 803 123 4567</a></p>
+                    <p><strong>Available:</strong> 24/7 for emergencies</p>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-clock"></i> Response Time</h4>
+                    <ul>
+                        <li><strong>Urgent:</strong> Within 24 hours</li>
+                        <li><strong>Standard:</strong> Within 3-5 working days</li>
+                        <li><strong>Complex:</strong> Within 2 weeks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Complaints -->
+<section class="recent-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Recently Filed Complaints</h2>
+            <p>Track the status of recent complaints filed across Sokoto State.</p>
+        </div>
+        <div style="overflow-x:auto">
+            <table class="complaints-table">
+                <thead>
+                    <tr>
+                        <th>Ref #</th>
+                        <th>LGA</th>
+                        <th>Category</th>
+                        <th>Subject</th>
+                        <th>Date Filed</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="complaintsTableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon"><i class="fas fa-mosque"></i></div>
+                    <div class="footer-logo-text">
+                        <h3>Sokoto State Hisbah Board</h3>
+                        <span>هيئة الحسبة — ولاية سوكوتو</span>
+                    </div>
+                </div>
+                <p class="footer-desc">Promoting justice, morality, and community welfare across all 23 Local Government Areas of Sokoto State through Islamic principles and community engagement.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Services</a></li>
+                    <li><a href="lga-directory.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> LGA Directory</a></li>
+                    <li><a href="complaint.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> File Complaint</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Dispute Mediation</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Family Counseling</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Moral Guidance</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Youth Mentorship</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Community Policing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Hisbah Headquarters, Sokoto</a></li>
+                    <li><a href="tel:+2348031234567"><i class="fas fa-phone"></i> +234 803 123 4567</a></li>
+                    <li><a href="mailto:info@hisbahsokoto.gov.ng"><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp: +234 803 123 4567</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Sokoto State Hisbah Board. All rights reserved.</div>
+            <div>Designed with <i class="fas fa-heart" style="color:var(--accent-700)"></i> for the people of Sokoto State</div>
+        </div>
+    </div>
+</footer>
+
+<!-- Success Modal -->
+<div class="modal-overlay" id="successModal">
+    <div class="modal">
+        <div class="modal-icon"><i class="fas fa-check"></i></div>
+        <h3>Complaint Submitted!</h3>
+        <p>Your complaint has been successfully received. A Hisbah officer will review your case and contact you within 3-5 working days.</p>
+        <div class="ref-number" id="refNumber">HIS-2026-001247</div>
+        <p style="font-size:0.875rem;color:var(--neutral-500)">Please save this reference number for tracking purposes.</p>
+        <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.5rem">
+            <button class="btn btn-primary" onclick="closeModal()"><i class="fas fa-home"></i> Go Home</button>
+            <button class="btn btn-secondary" onclick="closeModal();window.location.href='complaint.html'"><i class="fas fa-plus"></i> New Complaint</button>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+    // LGA Data
+    const lgas = [
+        "Sokoto North","Sokoto South","Wurno","Binji","Bodinga","Dange-Shuni",
+        "Gada","Goronyo","Gudu","Gwadabawa","Illela","Isa","Kebbe","Kware",
+        "Rabah","Sabon Birni","Shagari","Silame","Tambuwal","Tangaza","Tureta","Wamakko","Yabo"
+    ];
+
+    // Populate LGA select
+    const lgaSelect = document.getElementById('lgaSelect');
+    lgas.forEach(lga => {
+        const option = document.createElement('option');
+        option.value = lga.toLowerCase().replace(/\s+/g,'_');
+        option.textContent = lga;
+        lgaSelect.appendChild(option);
+    });
+
+    // Check URL params for LGA
+    const urlParams = new URLSearchParams(window.location.search);
+    const lgaParam = urlParams.get('lga');
+    if (lgaParam) {
+        lgaSelect.value = lgaParam;
+    }
+
+    // Multi-step form
+    let currentStep = 1;
+    const totalSteps = 3;
+    const form = document.getElementById('complaintForm');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function updateStepIndicator() {
+        document.querySelectorAll('.step').forEach(step => {
+            const stepNum = parseInt(step.dataset.step);
+            step.classList.remove('active','completed');
+            if (stepNum === currentStep) step.classList.add('active');
+            else if (stepNum < currentStep) step.classList.add('completed');
+        });
+        document.querySelectorAll('.step-line').forEach(line => {
+            const lineNum = parseInt(line.dataset.line);
+            line.classList.toggle('completed', lineNum < currentStep);
+        });
+    }
+
+    function showStep(step) {
+        document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+        document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+        updateStepIndicator();
+
+        prevBtn.style.display = step === 1 ? 'none' : 'inline-flex';
+        if (step === totalSteps) {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'inline-flex';
+            generateReview();
+        } else {
+            nextBtn.style.display = 'inline-flex';
+            submitBtn.style.display = 'none';
+        }
+    }
+
+    function validateStep(step) {
+        let valid = true;
+        const stepEl = document.querySelector(`.form-step[data-step="${step}"]`);
+        const required = stepEl.querySelectorAll('[required]');
+        required.forEach(field => {
+            const group = field.closest('.form-group');
+            const error = group?.querySelector('.error-msg');
+            if (!field.value.trim()) {
+                valid = false;
+                field.classList.add('error');
+                if (error) error.classList.add('show');
+            } else {
+                field.classList.remove('error');
+                if (error) error.classList.remove('show');
+            }
+        });
+
+        // Special validation for complaint type
+        if (step === 2) {
+            const typeInput = document.getElementById('complaintTypeInput');
+            if (!typeInput.value) {
+                valid = false;
+                typeInput.closest('.form-group').querySelector('.error-msg').classList.add('show');
+            }
+        }
+        return valid;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (validateStep(currentStep)) {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+
+    // Remove error on input
+    document.querySelectorAll('input, select, textarea').forEach(field => {
+        field.addEventListener('input', function() {
+            this.classList.remove('error');
+            const group = this.closest('.form-group');
+            if (group) {
+                const error = group.querySelector('.error-msg');
+                if (error) error.classList.remove('show');
+            }
+        });
+    });
+
+    // Complaint type selection
+    document.querySelectorAll('.type-card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.type-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            document.getElementById('complaintTypeInput').value = card.dataset.type;
+            const error = card.closest('.form-group').querySelector('.error-msg');
+            if (error) error.classList.remove('show');
+        });
+    });
+
+    // Generate review
+    function generateReview() {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        const typeMap = {
+            dispute: 'Dispute', family: 'Family Matter', moral: 'Moral Issue',
+            youth: 'Youth Affairs', women: 'Women Welfare', other: 'Other'
+        };
+        const lgaText = lgaSelect.options[lgaSelect.selectedIndex]?.text || data.lga;
+        const typeText = typeMap[data.complaintType] || data.complaintType;
+
+        document.getElementById('reviewContent').innerHTML = `
+            <div style="display:grid;gap:0.75rem">
+                <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--neutral-100, #e2e8f0)">
+                    <span style="color:var(--neutral-500)">Name:</span>
+                    <span style="font-weight:600">${data.anonymous ? 'Anonymous' : (data.firstName + ' ' + data.lastName)}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--neutral-100, #e2e8f0)">
+                    <span style="color:var(--neutral-500)">LGA:</span>
+                    <span style="font-weight:600">${lgaText}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--neutral-100, #e2e8f0)">
+                    <span style="color:var(--neutral-500)">Category:</span>
+                    <span style="font-weight:600">${typeText}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--neutral-100, #e2e8f0)">
+                    <span style="color:var(--neutral-500)">Subject:</span>
+                    <span style="font-weight:600">${data.subject || 'N/A'}</span>
+                </div>
+                <div style="padding:0.75rem 0">
+                    <span style="color:var(--neutral-500);display:block;margin-bottom:0.5rem">Description:</span>
+                    <p style="background:var(--neutral-50);padding:1rem;border-radius:8px;font-size:0.9375rem;line-height:1.6">${data.description || 'N/A'}</p>
+                </div>
+                ${data.phone ? `<div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--neutral-100, #e2e8f0)">
+                    <span style="color:var(--neutral-500)">Contact:</span>
+                    <span style="font-weight:600">${data.phone}</span>
+                </div>` : ''}
+            </div>
+        `;
+    }
+
+    // File upload
+    const fileUpload = document.getElementById('fileUpload');
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
+    let uploadedFiles = [];
+
+    fileUpload.addEventListener('click', () => fileInput.click());
+    fileUpload.addEventListener('dragover', (e) => { e.preventDefault(); fileUpload.classList.add('dragover'); });
+    fileUpload.addEventListener('dragleave', () => fileUpload.classList.remove('dragover'));
+    fileUpload.addEventListener('drop', (e) => {
+        e.preventDefault();
+        fileUpload.classList.remove('dragover');
+        handleFiles(e.dataTransfer.files);
+    });
+    fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+
+    function handleFiles(files) {
+        Array.from(files).forEach(file => {
+            if (file.size > 5 * 1024 * 1024) {
+                alert(`File "${file.name}" is too large. Max size is 5MB.`);
+                return;
+            }
+            uploadedFiles.push(file);
+            renderFileList();
+        });
+    }
+
+    function renderFileList() {
+        fileList.innerHTML = uploadedFiles.map((file, i) => `
+            <div class="file-tag">
+                <i class="fas fa-file"></i>
+                ${file.name}
+                <button type="button" onclick="removeFile(${i})"><i class="fas fa-times"></i></button>
+            </div>
+        `).join('');
+    }
+
+    window.removeFile = function(index) {
+        uploadedFiles.splice(index, 1);
+        renderFileList();
+    };
+
+    // Form submission
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!validateStep(currentStep)) return;
+        if (!document.getElementById('agree').checked) {
+            alert('Please confirm that the information is accurate.');
+            return;
+        }
+
+        const btn = submitBtn;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            const refNum = 'HIS-' + new Date().getFullYear() + '-' + String(Math.floor(Math.random() * 900000) + 100000).slice(-6);
+            document.getElementById('refNumber').textContent = refNum;
+            document.getElementById('successModal').classList.add('show');
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Complaint';
+            btn.disabled = false;
+            form.reset();
+            uploadedFiles = [];
+            renderFileList();
+            document.querySelectorAll('.type-card').forEach(c => c.classList.remove('selected'));
+            currentStep = 1;
+            showStep(1);
+        }, 2000);
+    });
+
+    function closeModal() {
+        document.getElementById('successModal').classList.remove('show');
+    }
+
+    // Demo complaints data
+    const demoComplaints = [
+        { ref: 'HIS-2026-001246', lga: 'Sokoto North', category: 'Family Matter', subject: 'Inheritance dispute between siblings', date: '2026-04-27', status: 'progress' },
+        { ref: 'HIS-2026-001245', lga: 'Wurno', category: 'Dispute', subject: 'Land boundary conflict', date: '2026-04-26', status: 'resolved' },
+        { ref: 'HIS-2026-001244', lga: 'Gwadabawa', category: 'Moral Issue', subject: 'Public disturbance at market', date: '2026-04-26', status: 'pending' },
+        { ref: 'HIS-2026-001243', lga: 'Bodinga', category: 'Youth Affairs', subject: 'School dropout concern', date: '2026-04-25', status: 'resolved' },
+        { ref: 'HIS-2026-001242', lga: 'Sabon Birni', category: 'Women Welfare', subject: 'Domestic support request', date: '2026-04-25', status: 'progress' },
+        { ref: 'HIS-2026-001241', lga: 'Tambuwal', category: 'Dispute', subject: 'Business partnership disagreement', date: '2026-04-24', status: 'pending' },
+    ];
+
+    const statusMap = {
+        pending: { class: 'status-pending', text: 'Pending' },
+        progress: { class: 'status-progress', text: 'In Progress' },
+        resolved: { class: 'status-resolved', text: 'Resolved' }
+    };
+
+    const tableBody = document.getElementById('complaintsTableBody');
+    demoComplaints.forEach(c => {
+        const status = statusMap[c.status];
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><strong>${c.ref}</strong></td>
+            <td>${c.lga}</td>
+            <td>${c.category}</td>
+            <td>${c.subject}</td>
+            <td>${c.date}</td>
+            <td><span class="status-badge ${status.class}">${status.text}</span></td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        const backToTop = document.getElementById('backToTop');
+        if (window.scrollY > 500) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    // Mobile menu toggle
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navbarMenu = document.getElementById('navbarMenu');
+    navbarToggle.addEventListener('click', () => {
+        navbarToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('open');
+        document.body.style.overflow = navbarMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbarToggle.classList.remove('active');
+            navbarMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    document.getElementById('backToTop').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Close modal on overlay click
+    document.getElementById('successModal').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) closeModal();
+    });
+</script>
+</body>
+</html>
