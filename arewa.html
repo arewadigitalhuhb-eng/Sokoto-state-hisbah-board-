@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hukumar Hisbah ta Jihohin Arewa - Hadin Gwiwa tsakanin Jihohin Musulunci na Arewa Najeriya" />
+  <title>Hukumar Hisbah ta Jihohin Arewa | Hisbah Board Sokoto State</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;--primary-500:#1a9c5e;--primary-100:#e6f5ed;--accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-100:#fcf8e8;--neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;--neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;--neutral-100:#f1f5f9;--neutral-50:#f8fafc;--danger:#dc2626;--info:#0ea5e9;--success:#16a34a;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--shadow-gold:0 10px 40px -10px rgba(201,162,39,0.3);--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--transition-fast:150ms cubic-bezier(0.4,0,0.2,1);--transition-base:250ms cubic-bezier(0.4,0,0.2,1);--transition-slow:350ms cubic-bezier(0.4,0,0.2,1);--container-max:1280px;--container-padding:1.5rem}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit;transition:color var(--transition-fast)}
+    ul{list-style:none} button{cursor:pointer;border:none;background:none;font-family:inherit}
+    .container{width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--container-padding)}
+    .section{padding:5rem 0;position:relative}
+    .section-header{text-align:center;max-width:640px;margin:0 auto 3.5rem}
+    .section-label{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--primary-600);margin-bottom:0.75rem}
+    .section-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;color:var(--neutral-900);line-height:1.2;margin-bottom:1rem}
+    .section-subtitle{font-size:1.125rem;color:var(--neutral-500);line-height:1.7}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-size:0.9375rem;font-weight:600;border-radius:var(--radius-md);transition:all var(--transition-base);border:2px solid transparent;white-space:nowrap}
+    .btn-primary{background:var(--primary-700);color:white;box-shadow:0 4px 14px 0 rgba(15,92,56,0.39)}
+    .btn-primary:hover{background:var(--primary-800);transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,92,56,0.23)}
+    .btn-gold{background:var(--accent-700);color:var(--primary-900);box-shadow:var(--shadow-gold);font-weight:700}
+    .btn-gold:hover{background:var(--accent-600);transform:translateY(-2px);box-shadow:0 20px 40px -10px rgba(201,162,39,0.4)}
+    .btn-secondary{background:transparent;color:var(--neutral-700);border-color:var(--neutral-300)}
+    .btn-secondary:hover{background:var(--neutral-100);border-color:var(--neutral-400);color:var(--neutral-900)}
+    .btn-ghost{background:rgba(255,255,255,0.1);color:white;border-color:rgba(255,255,255,0.3);backdrop-filter:blur(10px)}
+    .btn-ghost:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.5)}
+    .btn-sm{padding:0.625rem 1.25rem;font-size:0.875rem}
+    .badge{display:inline-flex;align-items:center;gap:0.375rem;padding:0.375rem 0.875rem;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;border-radius:var(--radius-full)}
+    .badge-gold{background:var(--accent-100);color:var(--accent-900)}
+    .badge-green{background:var(--primary-100);color:var(--primary-800)}
+    .badge-blue{background:#dbeafe;color:#1e40af}
+
+    .top-bar{background:var(--primary-900);color:rgba(255,255,255,0.8);font-size:0.8125rem;padding:0.625rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+    .top-bar-contact{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .top-bar-contact span{display:inline-flex;align-items:center;gap:0.5rem}
+    .top-bar-contact i{color:var(--accent-700);font-size:0.875rem}
+    .top-bar-social{display:flex;gap:0.5rem}
+    .top-bar-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.875rem}
+    .top-bar-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-2px)}
+
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--neutral-200);transition:box-shadow var(--transition-base)}
+    .navbar.scrolled{box-shadow:var(--shadow-md)}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+    .navbar-brand{display:flex;align-items:center;gap:0.875rem}
+    .navbar-logo{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 12px rgba(15,92,56,0.25);flex-shrink:0}
+    .navbar-brand-text h1{font-size:1.125rem;font-weight:800;color:var(--neutral-900);line-height:1.2;letter-spacing:-0.025em}
+    .navbar-brand-text .arabic-name{display:block;font-family:var(--font-arabic);font-size:0.8125rem;color:var(--primary-700);font-weight:600;margin-top:1px}
+    .navbar-brand-text span:last-child{display:block;font-size:0.75rem;color:var(--neutral-500);margin-top:1px;font-weight:500}
+    .navbar-menu{display:flex;align-items:center;gap:0.25rem}
+    .nav-item{position:relative}
+    .nav-link{display:flex;align-items:center;gap:0.375rem;padding:0.625rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--neutral-600);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .nav-link:hover,.nav-link.active{color:var(--primary-700);background:var(--primary-100)}
+    .nav-dropdown{position:absolute;top:calc(100% + 0.5rem);left:0;min-width:240px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);padding:0.5rem;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all var(--transition-base);border:1px solid var(--neutral-200)}
+    .nav-item:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+    .nav-dropdown a{display:flex;align-items:center;gap:0.75rem;padding:0.625rem 0.875rem;font-size:0.875rem;font-weight:500;color:var(--neutral-700);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .nav-dropdown a:hover{background:var(--primary-100);color:var(--primary-800)}
+    .nav-dropdown a i{color:var(--primary-600);font-size:0.875rem;width:20px;text-align:center}
+    .navbar-actions{display:flex;align-items:center;gap:1rem}
+    .navbar-toggle{display:none;flex-direction:column;gap:5px;padding:0.5rem;z-index:1001}
+    .navbar-toggle span{display:block;width:24px;height:2px;background:var(--neutral-800);border-radius:2px;transition:all var(--transition-base)}
+
+    .page-hero{position:relative;background:var(--primary-900);color:white;padding:5rem 0 4rem;text-align:center;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,162,39,0.15) 0%,transparent 60%);pointer-events:none}
+    .page-hero .container{position:relative;z-index:1}
+    .page-hero .basmala{font-family:var(--font-arabic);font-size:1.5rem;color:var(--accent-600);margin-bottom:1rem;opacity:0.9}
+    .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em}
+    .page-hero > .container > p{font-size:1.1rem;opacity:0.85;max-width:600px;margin:0 auto 1.5rem;line-height:1.8;color:rgba(255,255,255,0.75)}
+    .breadcrumb{display:inline-flex;align-items:center;gap:0.75rem;background:rgba(255,255,255,0.08);padding:0.5rem 1.25rem;border-radius:var(--radius-full);font-size:0.875rem;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1)}
+    .breadcrumb a{color:var(--accent-500);font-weight:600}
+    .breadcrumb a:hover{text-decoration:underline}
+
+    /* Intro Section */
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .intro-text p{color:var(--neutral-600);line-height:1.9;margin-bottom:1.25rem;font-size:1rem}
+    .intro-stats{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .intro-stat{text-align:center;padding:1rem 1.5rem;background:var(--neutral-100);border-radius:var(--radius-lg);min-width:100px}
+    .intro-stat-value{font-size:1.75rem;font-weight:800;color:var(--primary-700);line-height:1}
+    .intro-stat:nth-child(2) .intro-stat-value{color:var(--accent-700)}
+    .intro-stat:nth-child(3) .intro-stat-value{color:var(--info)}
+    .intro-stat-label{font-size:0.75rem;color:var(--neutral-500);margin-top:0.375rem;font-weight:500}
+    .verse-card{background:var(--primary-100);border-radius:var(--radius-xl);padding:3rem 2rem;text-align:center;border:2px solid rgba(15,92,56,0.1);position:relative;overflow:hidden}
+    .verse-card::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(15,92,56,0.05) 0%,transparent 70%);pointer-events:none}
+    .verse-card .emblem{font-size:4rem;margin-bottom:1.5rem;position:relative;z-index:1}
+    .verse-card .arabic-text{font-family:var(--font-arabic);font-size:1.5rem;color:var(--primary-800);direction:rtl;margin-bottom:1.25rem;line-height:1.8;position:relative;z-index:1;font-weight:600}
+    .verse-card .translation{font-size:0.9375rem;color:var(--neutral-600);line-height:1.7;font-style:italic;position:relative;z-index:1}
+    .verse-card .ref{font-size:0.8rem;color:var(--primary-600);font-weight:700;margin-top:0.75rem;position:relative;z-index:1}
+
+    /* States Grid */
+    .states-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+    .state-card{background:white;border-radius:var(--radius-xl);padding:1.75rem 1.25rem;text-align:center;border:1px solid var(--neutral-200);box-shadow:var(--shadow-sm);transition:all var(--transition-base);position:relative;overflow:hidden}
+    .state-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--primary-200)}
+    .state-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--primary-600);transform:scaleX(0);transform-origin:left;transition:transform var(--transition-base)}
+    .state-card:hover::before{transform:scaleX(1)}
+    .state-flag{width:56px;height:56px;background:var(--primary-100);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 1rem;color:var(--primary-700);transition:all var(--transition-base)}
+    .state-card:hover .state-flag{background:var(--primary-700);color:white;transform:scale(1.1)}
+    .state-card h3{font-size:1rem;font-weight:700;color:var(--neutral-900);margin-bottom:0.375rem}
+    .state-card p{font-size:0.8125rem;color:var(--neutral-500);margin-bottom:0.75rem}
+    .state-card .state-year{font-size:0.75rem;font-weight:700;color:var(--accent-700);background:var(--accent-100);padding:0.25rem 0.75rem;border-radius:var(--radius-full);display:inline-block}
+
+    /* Objectives */
+    .objectives-section{background:var(--primary-900);position:relative;overflow:hidden}
+    .objectives-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(26,156,94,0.1) 0%,transparent 70%)}
+    .objectives-section .container{position:relative;z-index:1}
+    .objectives-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .objective-card{background:rgba(255,255,255,0.04);border-radius:var(--radius-xl);padding:2rem;border:1px solid rgba(255,255,255,0.08);transition:all var(--transition-base);backdrop-filter:blur(10px)}
+    .objective-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-4px);border-color:rgba(255,255,255,0.15)}
+    .objective-icon{font-size:2.25rem;margin-bottom:1rem;display:block}
+    .objective-card h4{color:var(--accent-500);font-size:1.05rem;margin-bottom:0.5rem;font-weight:700}
+    .objective-card p{font-size:0.9375rem;color:rgba(255,255,255,0.65);line-height:1.7}
+
+    /* Programs */
+    .programs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    .program-card{background:white;border-radius:var(--radius-xl);padding:2rem;border:1px solid var(--neutral-200);box-shadow:var(--shadow-sm);display:flex;gap:1.25rem;align-items:flex-start;transition:all var(--transition-base);border-left:4px solid var(--primary-600)}
+    .program-card:hover{transform:translateX(6px);box-shadow:var(--shadow-lg)}
+    .program-icon{width:56px;height:56px;background:var(--primary-100);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;transition:all var(--transition-base)}
+    .program-card:hover .program-icon{background:var(--primary-700);color:white;transform:scale(1.1)}
+    .program-info h3{font-size:1.05rem;font-weight:700;color:var(--neutral-900);margin-bottom:0.5rem}
+    .program-info p{font-size:0.9375rem;color:var(--neutral-600);line-height:1.7}
+
+    /* Leadership */
+    .leadership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .leader-card{background:white;border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--neutral-200);box-shadow:var(--shadow-sm);transition:all var(--transition-base)}
+    .leader-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl)}
+    .leader-avatar{height:200px;background:linear-gradient(135deg,var(--primary-100),var(--primary-200));display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}
+    .leader-avatar::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230f5c38' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E")}
+    .leader-info{padding:1.5rem}
+    .leader-name{font-size:1.125rem;font-weight:700;color:var(--neutral-900);margin-bottom:0.25rem}
+    .leader-title{font-size:0.875rem;font-weight:600;color:var(--primary-700);margin-bottom:0.75rem}
+    .leader-desc{font-size:0.9375rem;color:var(--neutral-600);line-height:1.6}
+
+    /* CTA Section */
+    .cta-section{background:linear-gradient(135deg,var(--primary-800),var(--primary-900));color:white;text-align:center;position:relative;overflow:hidden}
+    .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,162,39,0.15) 0%,transparent 60%)}
+    .cta-section .container{position:relative;z-index:1}
+    .cta-section h2{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:1rem}
+    .cta-section p{font-size:1.125rem;opacity:0.85;max-width:600px;margin:0 auto 2rem;line-height:1.8}
+    .cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+    .footer{background:var(--neutral-900);color:rgba(255,255,255,0.7);padding:4rem 0 0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+    .footer-brand{max-width:360px}
+    .footer-logo{display:flex;align-items:center;gap:0.875rem;margin-bottom:1.25rem}
+    .footer-logo-icon{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+    .footer-logo-text h3{font-size:1.125rem;font-weight:800;color:white;line-height:1.2}
+    .footer-logo-text span{font-family:var(--font-arabic);font-size:0.8125rem;color:var(--accent-600);font-weight:600}
+    .footer-desc{font-size:0.9375rem;line-height:1.7;margin-bottom:1.5rem;color:rgba(255,255,255,0.6)}
+    .footer-social{display:flex;gap:0.5rem}
+    .footer-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.9375rem}
+    .footer-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-3px)}
+    .footer-heading{font-size:1rem;font-weight:700;color:white;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:2px solid var(--primary-700);display:inline-block}
+    .footer-links li{margin-bottom:0.625rem}
+    .footer-links a{font-size:0.9375rem;color:rgba(255,255,255,0.6);transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:0.5rem}
+    .footer-links a:hover{color:var(--accent-500);padding-left:4px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.875rem;color:rgba(255,255,255,0.5)}
+    .footer-bottom a{color:var(--accent-600);font-weight:600}
+    .footer-bottom a:hover{color:var(--accent-500)}
+
+    .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(20px);transition:all var(--transition-base);z-index:999;border:none}
+    .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+    .back-to-top:hover{background:var(--primary-800);transform:translateY(-4px)}
+    .whatsapp-float{position:fixed;bottom:2rem;left:2rem;width:56px;height:56px;background:#25d366;color:white;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.75rem;box-shadow:0 8px 20px rgba(37,211,102,0.3);transition:all var(--transition-base);z-index:999}
+    .whatsapp-float:hover{transform:scale(1.1) rotate(-5deg);box-shadow:0 12px 30px rgba(37,211,102,0.4)}
+
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s cubic-bezier(0.4,0,0.2,1),transform 0.8s cubic-bezier(0.4,0,0.2,1)}
+    .reveal.active{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:0.1s} .reveal-delay-2{transition-delay:0.2s} .reveal-delay-3{transition-delay:0.3s} .reveal-delay-4{transition-delay:0.4s}
+
+    @media(max-width:1024px){
+      .intro-grid{grid-template-columns:1fr;gap:3rem}
+      .states-grid{grid-template-columns:repeat(3,1fr)}
+      .objectives-grid{grid-template-columns:1fr}
+      .programs-grid{grid-template-columns:1fr}
+      .leadership-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:768px){
+      :root{--container-padding:1rem}
+      .section{padding:3rem 0}
+      .top-bar-contact span:not(:first-child){display:none}
+      .navbar-toggle{display:flex}
+      .navbar-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:white;flex-direction:column;align-items:stretch;padding:6rem 1.5rem 2rem;gap:0.5rem;transition:right var(--transition-slow);box-shadow:-10px 0 40px rgba(0,0,0,0.1);overflow-y:auto;display:flex}
+      .navbar-menu.open{right:0}
+      .nav-item{border-bottom:1px solid var(--neutral-200);width:100%}
+      .nav-link{padding:1rem 0;justify-content:space-between;width:100%}
+      .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 1rem 1.5rem;display:none}
+      .nav-item.active .nav-dropdown{display:block}
+      .states-grid{grid-template-columns:repeat(2,1fr)}
+      .leadership-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;text-align:center}
+      .intro-stats{justify-content:center}
+      .cta-actions{flex-direction:column;align-items:center}
+      .cta-actions .btn{width:100%;max-width:300px}
+    }
+    @media(max-width:480px){
+      .states-grid{grid-template-columns:1fr}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="top-bar-contact">
+          <span><i class="fas fa-phone"></i> +234 8160743440 Abdullahi Umar Muazu</span>
+          <span><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</span>
+          <span><i class="fas fa-map-marker-alt"></i> Sokoto, Jihar Sokoto, Najeriya</span>
+        </div>
+        <div class="top-bar-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNav">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo">🕋</div>
+          <div class="navbar-brand-text">
+            <h1>Hisbah Board Sokoto</h1>
+            <span class="arabic-name">هيئة الحسبة – ولاية سكوتو</span>
+            <span>Jihar Sokoto, Najeriya</span>
+          </div>
+        </a>
+        <ul class="navbar-menu" id="navMenu">
+          <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Gida</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> Game da Mu</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i> Ayyuka</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Labarai</a></li>
+          <li class="nav-item"><a href="arewa.html" class="nav-link active"><i class="fas fa-globe"></i> Jihohin Arewa</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-phone-alt"></i> Tuntuɓa</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link"><i class="fas fa-tachometer-alt"></i> Portal</a></li>
+        </ul>
+        <div class="navbar-actions">
+          <button class="navbar-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="basmala">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+      <h1>Hukumar Hisbah ta Jihohin Arewa</h1>
+      <p>Hadin gwiwa tsakanin Jihohin Musulunci na Arewa Najeriya don cimma manufa ɗaya</p>
+      <div class="breadcrumb">
+        <a href="index.html">Gida</a>
+        <span><i class="fas fa-chevron-right" style="font-size:0.65rem;"></i></span>
+        <span>Jihohin Arewa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section class="section" style="background:white;">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text reveal">
+          <span class="badge badge-green" style="margin-bottom:1rem;">Hadin Kan Jihohi</span>
+          <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight:800; color: var(--neutral-900); margin-bottom: 1.25rem; line-height: 1.3;">
+            Me ne Hukumar Hisbah ta Jihohin Arewa?
+          </h2>
+          <p>
+            Hukumar Hisbah ta Jihohin Arewa ita ce ƙungiyar hadin gwiwa da ke tattara dukkan Hukumomin Hisbah 
+            na Jihohin Musulunci na Arewa Najeriya. An kafa ta ne domin ƙarfafa hadin kai, musayar ƙwarewa, 
+            da tsara dabarun aiki iri ɗaya a fadin yankin Arewa.
+          </p>
+          <p>
+            Tare da ƙarfin Jihohi 12 na Musulunci, hukumar tana aiki don tabbatar da cewa dokokin Shari'a 
+            suna aiki cikin tsari kuma al'ummar Arewa suna jin amfani daga tsaron Musulunci da adalci.
+          </p>
+          <p>
+            Babban ofishin hukumar yana cikin Jihar Sokoto, inda ake gudanar da taron shugabannin Hisbah na 
+            jihohi duka don tattauna batutuwa masu amfani da ƙarfafa hulɗar yanki.
+          </p>
+          <div class="intro-stats">
+            <div class="intro-stat">
+              <div class="intro-stat-value">12</div>
+              <div class="intro-stat-label">Jihohi Masu Haɗin Kai</div>
+            </div>
+            <div class="intro-stat">
+              <div class="intro-stat-value">25K+</div>
+              <div class="intro-stat-label">Jami'an Hisbah Arewa</div>
+            </div>
+            <div class="intro-stat">
+              <div class="intro-stat-value">2000</div>
+              <div class="intro-stat-label">An Kafa</div>
+            </div>
+          </div>
+        </div>
+        <div class="verse-card reveal reveal-delay-2">
+          <div class="emblem">🕌</div>
+          <div class="arabic-text">
+            وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ
+          </div>
+          <div class="translation">
+            "Kuma ku taimaki juna a kan alheri da taƙawa."
+          </div>
+          <div class="ref">— Suratul Ma'idah 5:2</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBER STATES -->
+  <section class="section" style="background:var(--neutral-50);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><i class="fas fa-map-marked-alt"></i> Jihohin Da Suke Ciki</div>
+        <h2 class="section-title">Jihohin Membobin Hukumar</h2>
+        <p class="section-subtitle">Waɗannan su ne Jihohin 12 na Musulunci masu aiwatar da dokokin Shari'a da ke cikin hadin gwiwar</p>
+      </div>
+      <div class="states-grid">
+        <div class="state-card reveal">
+          <div class="state-flag">🏛️</div>
+          <h3>Sokoto</h3>
+          <p>Babban Ofis na Yanki</p>
+          <span class="state-year">Kafuwa 1999</span>
+        </div>
+        <div class="state-card reveal reveal-delay-1">
+          <div class="state-flag">🕌</div>
+          <h3>Zamfara</h3>
+          <p>Farkon Shari'a a Najeriya</p>
+          <span class="state-year">Kafuwa 1999</span>
+        </div>
+        <div class="state-card reveal reveal-delay-2">
+          <div class="state-flag">🏙️</div>
+          <h3>Kano</h3>
+          <p>Mafi Yawan Jami'ai</p>
+          <span class="state-year">Kafuwa 2000</span>
+        </div>
+        <div class="state-card reveal reveal-delay-3">
+          <div class="state-flag">🌴</div>
+          <h3>Katsina</h3>
+          <p>Cibiyar Ilimi</p>
+          <span class="state-year">Kafuwa 2000</span>
+        </div>
+        <div class="state-card reveal">
+          <div class="state-flag">🏔️</div>
+          <h3>Bauchi</h3>
+          <p>Arewa Maso Gabas</p>
+          <span class="state-year">Kafuwa 2001</span>
+        </div>
+        <div class="state-card reveal reveal-delay-1">
+          <div class="state-flag">🐪</div>
+          <h3>Borno</h3>
+          <p>Arewa Maso Gabas</p>
+          <span class="state-year">Kafuwa 2001</span>
+        </div>
+        <div class="state-card reveal reveal-delay-2">
+          <div class="state-flag">🌾</div>
+          <h3>Gombe</h3>
+          <p>Arewa Maso Gabas</p>
+          <span class="state-year">Kafuwa 2001</span>
+        </div>
+        <div class="state-card reveal reveal-delay-3">
+          <div class="state-flag">⚖️</div>
+          <h3>Jigawa</h3>
+          <p>Arewa Maso Yamma</p>
+          <span class="state-year">Kafuwa 2001</span>
+        </div>
+        <div class="state-card reveal">
+          <div class="state-flag">🌅</div>
+          <h3>Kebbi</h3>
+          <p>Arewa Maso Yamma</p>
+          <span class="state-year">Kafuwa 2000</span>
+        </div>
+        <div class="state-card reveal reveal-delay-1">
+          <div class="state-flag">🦁</div>
+          <h3>Niger</h3>
+          <p>Arewa Maso Gabas</p>
+          <span class="state-year">Kafuwa 2001</span>
+        </div>
+        <div class="state-card reveal reveal-delay-2">
+          <div class="state-flag">🌵</div>
+          <h3>Yobe</h3>
+          <p>Arewa Maso Gabas</p>
+          <span class="state-year">Kafuwa 2001</span>
+        </div>
+        <div class="state-card reveal reveal-delay-3">
+          <div class="state-flag">🏘️</div>
+          <h3>Kaduna</h3>
+          <p>Shari'a ta Yanki</p>
+          <span class="state-year">Kafuwa 2001</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTIVES -->
+  <section class="section objectives-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title" style="color:white;">Manufofin Hukumar</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.75);">Waɗannan su ne manufofi masu jagorantar hadin gwiwar mu</p>
+      </div>
+      <div class="objectives-grid">
+        <div class="objective-card reveal">
+          <span class="objective-icon">🤝</span>
+          <h4>Hadin Kai</h4>
+          <p>Ƙarfafa hulɗa da hadin gwiwa tsakanin dukkan Jihohin Arewa don cimma manufa ɗaya a fadin yankin.</p>
+        </div>
+        <div class="objective-card reveal reveal-delay-1">
+          <span class="objective-icon">📋</span>
+          <h4>Daidaita Dokoki</h4>
+          <p>Daidaita dokokin Shari'a da ka'idojin aiki don tabbatar da tsari ɗaya a dukkan jihohi.</p>
+        </div>
+        <div class="objective-card reveal reveal-delay-2">
+          <span class="objective-icon">📚</span>
+          <h4>Musayar Ilimi</h4>
+          <p>Ƙarfafa musayar ilimi da ƙwarewa tsakanin jami'an Hisbah na jihohi daban-daban.</p>
+        </div>
+        <div class="objective-card reveal">
+          <span class="objective-icon">🛡️</span>
+          <h4>Tsaron Yanki</h4>
+          <p>Aiki tare wajen tabbatar da tsaro da zaman lafiya a fadin dukkan arewa ta hanyar hadin kai.</p>
+        </div>
+        <div class="objective-card reveal reveal-delay-1">
+          <span class="objective-icon">📊</span>
+          <h4>Rahotanni na Yanki</h4>
+          <p>Tattara da wallafa rahotannin Hisbah na yanki don sanin ci gaba da bukatun yanki.</p>
+        </div>
+        <div class="objective-card reveal reveal-delay-2">
+          <span class="objective-icon">🌍</span>
+          <h4>Haɗin Kai na Duniya</h4>
+          <p>Ƙarfafa dangantaka da ƙasashen Musulunci na waje don samun taimako da ƙwarewa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section" style="background:white;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><i class="fas fa-tasks"></i> Shirye-shirye</div>
+        <h2 class="section-title">Shirye-shiryen Yanki</h2>
+        <p class="section-subtitle">Manyan shirye-shirye da hukumar take gudanar a fadin jihohin arewa</p>
+      </div>
+      <div class="programs-grid">
+        <div class="program-card reveal">
+          <div class="program-icon">🎓</div>
+          <div class="program-info">
+            <h3>Taron Horo na Shugabannin Hisbah</h3>
+            <p>Taro na shekara-shekara inda shugabannin Hisbah na jihohi duka ke taruwa don tattauna sabbin dabarun aiki da kuma warware kalubale na yanki.</p>
+          </div>
+        </div>
+        <div class="program-card reveal reveal-delay-1">
+          <div class="program-icon">📱</div>
+          <div class="program-info">
+            <h3>Digitization na Hukumomin Hisbah</h3>
+            <p>Shirin canza tsarin aiki na Hisbah zuwa na zamani ta hanyar fasahar kwamfuta da wayar hannu a dukkan jihohi.</p>
+          </div>
+        </div>
+        <div class="program-card reveal">
+          <div class="program-icon">👮</div>
+          <div class="program-info">
+            <h3>Hadakar Jami'an Tsaro na Yanki</h3>
+            <p>Hadakar jami'an Hisbah da 'yan sanda na jihohi don yaki da laifuka masu yaduwa a yankin arewa.</p>
+          </div>
+        </div>
+        <div class="program-card reveal reveal-delay-1">
+          <div class="program-icon">🏥</div>
+          <div class="program-info">
+            <h3>Kiwon Lafiya da Taimakon Gaggawa</h3>
+            <p>Shirin samar da taimakon lafiya da agaji ga masu bukata a fadin jihohin arewa ta hadin gwiwa.</p>
+          </div>
+        </div>
+        <div class="program-card reveal">
+          <div class="program-icon">📖</div>
+          <div class="program-info">
+            <h3>Rarraba Littattafan Addini</h3>
+            <p>Haɗakar jihohi wajen buga da rarraba littattafan addini da kayan koyarwa zuwa makarantu da al'umma.</p>
+          </div>
+        </div>
+        <div class="program-card reveal reveal-delay-1">
+          <div class="program-icon">🌙</div>
+          <div class="program-info">
+            <h3>Sadarwa a Lokutan Shagali</h3>
+            <p>Hadakar jihohi don tsara dabarun sintiri da tsaro a lokutan Azumi, Sallah, da shagali na Musulunci.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section" style="background:var(--neutral-50);" id="leadership">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label"><i class="fas fa-users"></i> Shugabanci</div>
+        <h2 class="section-title">Shugabancin Hukumar Yanki</h2>
+        <p class="section-subtitle">Shugabannin da ke jagorantar hadin gwiwar Jihohin Arewa</p>
+      </div>
+      <div class="leadership-grid">
+        <div class="leader-card reveal">
+          <div class="leader-avatar">👤</div>
+          <div class="leader-info">
+            <h3 class="leader-name">Sheikh Dr. Bashir Ahmed</h3>
+            <p class="leader-title">Shugaban Hukumar Jihohin Arewa</p>
+            <p class="leader-desc">Shugaban taron shugabannin Hisbah na Jihohin Arewa. Mai digiri na uku a Shari'a tare da shekaru 25 na kwarewa a fannin shari'a da gudanarwa.</p>
+          </div>
+        </div>
+        <div class="leader-card reveal reveal-delay-1">
+          <div class="leader-avatar">👤</div>
+          <div class="leader-info">
+            <h3 class="leader-name">Prof. Ibrahim Zakariya</h3>
+            <p class="leader-title">Mataimakin Shugaba</p>
+            <p class="leader-desc">Farfesa a Jami'ar Bayero Kano. Yana jagorantar shirye-shiryen ilimi da wayar da kai na yanki.</p>
+          </div>
+        </div>
+        <div class="leader-card reveal reveal-delay-2">
+          <div class="leader-avatar">👤</div>
+          <div class="leader-info">
+            <h3 class="leader-name">Alhaji Musa Abdullahi</h3>
+            <p class="leader-title">Sakataren Hukuma</p>
+            <p class="leader-desc">Ke kula da gudanarwar yau da kullum da taron taron shugabannin Hisbah na jihohi duka.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="basmala" style="color:var(--accent-600);margin-bottom:1rem;font-family:var(--font-arabic);font-size:1.5rem;">وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ</div>
+      <h2>Ku Zama ɗan Taimako na Hukumar</h2>
+      <p>Idan kuna son ƙarfafa hadin kai na Musulunci a Arewa, ku tuntuɓe mu don haɗin gwiwa ko taimako.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold"><i class="fas fa-handshake"></i> Haɗin Gwiwa</a>
+        <a href="services.html#complaints" class="btn btn-ghost"><i class="fas fa-file-alt"></i> Shigar da Koka</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">🕋</div>
+            <div class="footer-logo-text">
+              <h3>Hisbah Board Sokoto</h3>
+              <span>هيئة الحسبة – ولاية سكوتو</span>
+            </div>
+          </div>
+          <p class="footer-desc">Hukumar Hisbah Board ta Jihar Sokoto tana aiki don tabbatar da adalci da kare al'adun Musulunci.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Hanyoyi</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Gida</a></li>
+            <li><a href="about.html">Game da Mu</a></li>
+            <li><a href="services.html">Ayyuka</a></li>
+            <li><a href="news.html">Labarai</a></li>
+            <li><a href="contact.html">Tuntuɓa</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Jihohin Arewa</h4>
+          <ul class="footer-links">
+            <li><a href="#">Sokoto</a></li>
+            <li><a href="#">Zamfara</a></li>
+            <li><a href="#">Kano</a></li>
+            <li><a href="#">Katsina</a></li>
+            <li><a href="#">Kebbi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Tuntuɓa</h4>
+          <div style="font-size:0.9375rem;line-height:1.8;color:rgba(255,255,255,0.75);">
+            <p><i class="fas fa-map-marker-alt" style="width:20px;color:vr(--accent-600);"></i> Sultan Abubakar Road, Sokoto</p>
+            <p><i class="fas fa-phone" style="width:20px;color:var(--accent-600);"></i> +234 806 000 1234</p>
+            <p><i class="fas fa-envelope" style="width:20px;color:var(--accent-600);"></i> info@hisbahsokoto.com.ng</p>
+            <p><i class="fas fa-globe" style="width:20px;color:var(--accent-600);"></i> www.hisbahsokoto.com.ng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.08);">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>© 2025 Hisbah Board Sokoto State. Dukkan haƙƙoƙi an kiyaye su.</p>
+          <p style="font-family:var(--font-arabic);direction:rtl;color:var(--accent-600);font-size:0.9rem;">الأمر بالمعروف والنهي عن المنكر</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Koma saman shafi"><i class="fas fa-arrow-up"></i></button>
+  <a href="https://wa.me/2348160743440" class="whatsapp-float" title="Tuntube mu a WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    const navbar=document.getElementById('mainNav');
+    window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+    const navToggle=document.getElementById('navToggle');
+    const navMenu=document.getElementById('navMenu');
+    navToggle.addEventListener('click',()=>{
+      const isOpen=navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded',isOpen);
+      const spans=navToggle.querySelectorAll('span');
+      if(isOpen){spans[0].style.transform='rotate(45deg) translate(5px,5px)';spans[1].style.opacity='0';spans[2].style.transform='rotate(-45deg) translate(5px,-5px)';document.body.style.overflow='hidden';}
+      else{spans.forEach(s=>{s.style.transform='';s.style.opacity='';});document.body.style.overflow='';}
+    });
+    document.querySelectorAll('.nav-item').forEach(item=>{
+      const link=item.querySelector('.nav-link');
+      const dropdown=item.querySelector('.nav-dropdown');
+      if(dropdown){link.addEventListener('click',(e)=>{if(window.innerWidth<=768){e.preventDefault();item.classList.toggle('active');}});}
+    });
+    const backToTop=document.getElementById('backToTop');
+    window.addEventListener('scroll',()=>backToTop.classList.toggle('show',window.scrollY>400));
+    backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    const revealObserver=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('active');revealObserver.unobserve(entry.target);}});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){const href=this.getAttribute('href');if(href!=='#'){e.preventDefault();const target=document.querySelector(href);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});}});});
+  </script>
+</body>
+</html>
