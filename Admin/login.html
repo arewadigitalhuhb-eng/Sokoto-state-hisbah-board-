@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shafin Shiga na Admin - Hisbah Board Sokoto" />
+  <title>Admin Login | Hisbah Board Sokoto</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;--primary-500:#1a9c5e;--primary-100:#e6f5ed;--accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-100:#fcf8e8;--neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;--neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;--neutral-100:#f1f5f9;--neutral-50:#f8fafc;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--transition-fast:150ms cubic-bezier(0.4,0,0.2,1);--transition-base:250ms cubic-bezier(0.4,0,0.2,1);--transition-slow:350ms cubic-bezier(0.4,0,0.2,1)}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1rem;background:linear-gradient(135deg,var(--primary-900) 0%,var(--primary-800) 50%,var(--neutral-900) 100%)}
+    a{text-decoration:none;color:inherit}
+    .login-container{width:100%;max-width:420px}
+    .login-brand{text-align:center;margin-bottom:2rem}
+    .login-brand .logo{width:64px;height:64px;background:var(--primary-500);color:white;border-radius:var(--radius-lg);display:inline-flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1rem;box-shadow:0 8px 24px rgba(26,156,94,0.3)}
+    .login-brand h1{font-size:1.5rem;font-weight:800;color:white;margin-bottom:0.25rem}
+    .login-brand .arabic-name{font-family:var(--font-arabic);font-size:0.875rem;color:var(--accent-600);font-weight:600}
+    .login-brand p{font-size:0.875rem;color:rgba(255,255,255,0.6);margin-top:0.5rem}
+    .login-card{background:white;border-radius:var(--radius-xl);padding:2.5rem;box-shadow:var(--shadow-xl)}
+    .login-card h2{font-size:1.25rem;font-weight:700;color:var(--neutral-900);margin-bottom:0.25rem;text-align:center}
+    .login-card .subtitle{font-size:0.875rem;color:var(--neutral-500);text-align:center;margin-bottom:1.75rem}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;font-size:0.8125rem;font-weight:600;color:var(--neutral-700);margin-bottom:0.375rem}
+    .form-group .input-wrap{position:relative}
+    .form-group .input-wrap i{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--neutral-400);font-size:0.9375rem}
+    .form-group input{width:100%;padding:0.875rem 1rem 0.875rem 2.75rem;border:2px solid var(--neutral-200);border-radius:var(--radius-md);font-size:0.9375rem;font-family:inherit;color:var(--neutral-800);background:white;transition:all var(--transition-base);outline:none}
+    .form-group input:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(26,156,94,0.1)}
+    .form-group input::placeholder{color:var(--neutral-400)}
+    .form-group .toggle-password{position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:var(--neutral-400);cursor:pointer;font-size:0.875rem;transition:color var(--transition-fast)}
+    .form-group .toggle-password:hover{color:var(--neutral-600)}
+    .form-options{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:0.8125rem}
+    .form-options label{display:flex;align-items:center;gap:0.5rem;color:var(--neutral-600);cursor:pointer}
+    .form-options input[type="checkbox"]{width:16px;height:16px;accent-color:var(--primary-600)}
+    .form-options a{color:var(--primary-600);font-weight:600}
+    .form-options a:hover{color:var(--primary-800)}
+    .btn-login{width:100%;padding:1rem;font-size:0.9375rem;font-weight:700;color:white;background:var(--primary-700);border:none;border-radius:var(--radius-md);cursor:pointer;transition:all var(--transition-base);display:flex;align-items:center;justify-content:center;gap:0.5rem}
+    .btn-login:hover{background:var(--primary-800);transform:translateY(-2px);box-shadow:0 4px 14px rgba(15,92,56,0.3)}
+    .btn-login:active{transform:translateY(0)}
+    .login-footer{text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--neutral-200)}
+    .login-footer p{font-size:0.8125rem;color:var(--neutral-500)}
+    .login-footer a{color:var(--primary-600);font-weight:600}
+    .login-footer a:hover{color:var(--primary-800)}
+    .alert{display:flex;align-items:center;gap:0.75rem;padding:0.875rem 1rem;border-radius:var(--radius-md);font-size:0.875rem;margin-bottom:1rem;display:none}
+    .alert-error{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+    .alert-success{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+    .alert.show{display:flex}
+    .back-link{display:inline-flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.7);font-size:0.875rem;margin-top:1.5rem;transition:color var(--transition-fast)}
+    .back-link:hover{color:white}
+    @media(max-width:480px){.login-card{padding:1.75rem}.login-brand h1{font-size:1.25rem}}
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-brand">
+      <div class="logo">🕋</div>
+      <h1>Hisbah Board Sokoto</h1>
+      <span class="arabic-name">هيئة الحسبة – ولاية سكوتو</span>
+      <p>Shafin Gudanarwa na Musamman</p>
+    </div>
+
+    <div class="login-card">
+      <h2>Barka da zuwa Admin</h2>
+      <p class="subtitle">Shigar da bayananku don shiga cikin tsarin gudanarwa</p>
+
+      <div class="alert alert-error" id="errorAlert">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>Imel ko kalmar sirri ba daidai ba ce. Ku sake gwadawa.</span>
+      </div>
+
+      <form id="loginForm" onsubmit="return handleLogin(event)">
+        <div class="form-group">
+          <label for="email">Adireshin Imel</label>
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" placeholder="admin@hisbahsokoto.gov.ng" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Kalmar Sirri</label>
+          <div class="input-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Shigar da kalmar sirri" required autocomplete="current-password">
+            <i class="fas fa-eye toggle-password" id="togglePassword" onclick="togglePassword()"></i>
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label><input type="checkbox" id="remember"> Ka tuna ni</label>
+          <a href="#" onclick="alert('Tuntuɓar Admin don sake saita kalmar sirri')">Manta kalmar sirri?</a>
+        </div>
+
+        <button type="submit" class="btn-login" id="loginBtn">
+          <i class="fas fa-sign-in-alt"></i> Shiga
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <p>Ba ku da asusun admin? <a href="../contact.html">Tuntuɓe Mu</a></p>
+      </div>
+    </div>
+
+    <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Koma shafin gida</a>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const input = document.getElementById('password');
+      const icon = document.getElementById('togglePassword');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('fa-eye', 'fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.replace('fa-eye-slash', 'fa-eye');
+      }
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const btn = document.getElementById('loginBtn');
+      const errorAlert = document.getElementById('errorAlert');
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Ana shiga...';
+      btn.disabled = true;
+      errorAlert.classList.remove('show');
+
+      setTimeout(() => {
+        // Demo login - in real app, this would validate against Firebase/backend
+        if (email && password.length >= 6) {
+          localStorage.setItem('adminLoggedIn', 'true');
+          localStorage.setItem('adminEmail', email);
+          window.location.href = 'dashboard.html';
+        } else {
+          errorAlert.classList.add('show');
+          btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Shiga';
+          btn.disabled = false;
+        }
+      }, 1500);
+
+      return false;
+    }
+  </script>
+</body>
+</html>
