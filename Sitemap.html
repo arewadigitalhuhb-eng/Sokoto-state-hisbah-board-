@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sokoto State Hisbah Board | Complete LGA Directory</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        :root{
+            --primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;
+            --primary-500:#1a9c5e;--primary-400:#2db87a;--primary-300:#6dd5a3;--primary-200:#a8e6c8;
+            --primary-100:#e6f5ed;--primary-50:#f0fdf4;
+            --accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-500:#e0c44a;
+            --accent-100:#fcf8e8;--accent-50:#fffbeb;
+            --neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;
+            --neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;
+            --neutral-100:#f1f5f9;--neutral-50:#f8fafc;
+            --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            --font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;
+            --shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;
+            --transition-fast:150ms cubic-bezier(0.4,0,0.2,1);
+            --transition-base:250ms cubic-bezier(0.4,0,0.2,1);
+            --transition-slow:350ms cubic-bezier(0.4,0,0.2,1);
+            --container-max:1280px;--container-padding:1.5rem
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+        body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;overflow-x:hidden}
+        a{text-decoration:none;color:inherit;transition:color var(--transition-fast)}
+        ul{list-style:none} button{cursor:pointer;border:none;background:none;font-family:inherit}
+        .container{width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--container-padding)}
+        .section{padding:5rem 0;position:relative}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-size:0.9375rem;font-weight:600;border-radius:var(--radius-md);transition:all var(--transition-base);border:2px solid transparent;white-space:nowrap}
+        .btn-primary{background:var(--primary-700);color:white;box-shadow:0 4px 14px 0 rgba(15,92,56,0.39)}
+        .btn-primary:hover{background:var(--primary-800);transform:translateY(-2px)}
+        .btn-secondary{background:transparent;color:var(--neutral-700);border-color:var(--neutral-300)}
+        .btn-secondary:hover{background:var(--neutral-100);border-color:var(--neutral-400);color:var(--neutral-900)}
+        .btn-sm{padding:0.625rem 1.25rem;font-size:0.875rem}
+
+        /* Top Bar */
+        .top-bar{background:var(--primary-900);color:rgba(255,255,255,0.8);font-size:0.8125rem;padding:0.625rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+        .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+        .top-bar-contact{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+        .top-bar-contact span{display:inline-flex;align-items:center;gap:0.5rem}
+        .top-bar-contact i{color:var(--accent-700);font-size:0.875rem}
+        .top-bar-social{display:flex;gap:0.5rem}
+        .top-bar-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.875rem}
+        .top-bar-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-2px)}
+
+        /* Navbar */
+        .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--neutral-200);transition:box-shadow var(--transition-base)}
+        .navbar.scrolled{box-shadow:var(--shadow-md)}
+        .navbar-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+        .navbar-brand{display:flex;align-items:center;gap:0.875rem}
+        .navbar-logo{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 12px rgba(15,92,56,0.25);flex-shrink:0}
+        .navbar-brand-text h1{font-size:1.125rem;font-weight:800;color:var(--neutral-900);line-height:1.2;letter-spacing:-0.025em}
+        .navbar-brand-text .arabic-name{display:block;font-family:var(--font-arabic);font-size:0.8125rem;color:var(--primary-700);font-weight:600;margin-top:1px}
+        .navbar-brand-text span:last-child{display:block;font-size:0.75rem;color:var(--neutral-500);margin-top:1px;font-weight:500}
+        .navbar-menu{display:flex;align-items:center;gap:0.25rem}
+        .nav-item{position:relative}
+        .nav-link{display:flex;align-items:center;gap:0.375rem;padding:0.625rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--neutral-600);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+        .nav-link:hover,.nav-link.active{color:var(--primary-700);background:var(--primary-100)}
+        .navbar-actions{display:flex;align-items:center;gap:1rem}
+        .navbar-toggle{display:none;flex-direction:column;gap:5px;padding:0.5rem;z-index:1001;background:none;border:none}
+        .navbar-toggle span{display:block;width:24px;height:2px;background:var(--neutral-800);border-radius:2px;transition:all var(--transition-base)}
+        .navbar-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .navbar-toggle.active span:nth-child(2){opacity:0}
+        .navbar-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+        /* Page Hero */
+        .page-hero{position:relative;background:var(--primary-900);color:white;padding:5rem 0 4rem;text-align:center;overflow:hidden}
+        .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,162,39,0.15) 0%,transparent 60%);pointer-events:none}
+        .page-hero .container{position:relative;z-index:1}
+        .page-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em}
+        .page-hero > .container > p{font-size:1.1rem;opacity:0.85;max-width:600px;margin:0 auto 1.5rem;line-height:1.8;color:rgba(255,255,255,0.75)}
+        .breadcrumb{display:inline-flex;align-items:center;gap:0.75rem;background:rgba(255,255,255,0.08);padding:0.5rem 1.25rem;border-radius:var(--radius-full);font-size:0.875rem;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1)}
+        .breadcrumb a{color:var(--accent-500);font-weight:600}
+        .breadcrumb a:hover{text-decoration:underline}
+
+        /* LGA Selector Section */
+        .lga-selector-section{background:var(--neutral-50);padding:4rem 0 2rem}
+        .selector-title{font-size:1.5rem;font-weight:800;color:var(--neutral-900);margin-bottom:1.5rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.75rem}
+        .selector-title i{color:var(--primary-600)}
+        .lga-dropdown{max-width:500px;margin:0 auto 2rem}
+        .lga-dropdown select{width:100%;padding:1rem 1rem 1rem 3rem;border:2px solid var(--neutral-200);border-radius:var(--radius-full);font-size:0.9375rem;font-family:inherit;color:var(--neutral-800);background:white;transition:all var(--transition-base);outline:none;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+        .lga-dropdown select:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(26,156,94,0.1)}
+        .lga-buttons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.75rem;max-width:900px;margin:0 auto}
+        .lga-btn{padding:0.75rem 1rem;background:white;border:2px solid var(--neutral-200);border-radius:var(--radius-md);font-size:0.875rem;font-weight:600;color:var(--neutral-700);cursor:pointer;transition:all var(--transition-base);text-align:center}
+        .lga-btn:hover{border-color:var(--primary-400);color:var(--primary-700);background:var(--primary-50);transform:translateY(-2px)}
+        .lga-btn.active{background:var(--primary-700);color:white;border-color:var(--primary-700);box-shadow:0 4px 12px rgba(15,92,56,0.3)}
+
+        /* Office Detail Section */
+        .office-detail-section{padding:2rem 0 4rem;background:var(--neutral-50)}
+        .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+        .info-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);padding:2rem;transition:all var(--transition-base)}
+        .info-card:hover{box-shadow:var(--shadow-lg);border-color:var(--primary-200)}
+        .info-icon{width:56px;height:56px;background:var(--primary-100);color:var(--primary-700);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
+        .info-card h2{font-size:1.5rem;font-weight:800;color:var(--neutral-900);margin-bottom:1rem}
+        .info-card h3{font-size:1.25rem;font-weight:700;color:var(--neutral-900);margin-bottom:1rem}
+        .detail-row{display:flex;align-items:flex-start;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid var(--neutral-100);font-size:0.9375rem;color:var(--neutral-700)}
+        .detail-row:last-child{border-bottom:none}
+        .detail-row i{color:var(--primary-600);width:20px;text-align:center;margin-top:3px;font-size:0.9375rem}
+        .detail-row strong{color:var(--neutral-900);font-weight:600}
+        .stats-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1rem}
+        .stat-badge{background:var(--primary-50);border:1px solid var(--primary-200);border-radius:var(--radius-md);padding:0.875rem;text-align:center;transition:all var(--transition-fast)}
+        .stat-badge:hover{background:var(--primary-100);transform:translateY(-2px)}
+        .stat-number{font-size:1.25rem;font-weight:800;color:var(--primary-700);display:block}
+        .stat-badge{font-size:0.75rem;color:var(--neutral-600);font-weight:500}
+        .services-list{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem}
+        .service-tag{display:inline-flex;align-items:center;gap:0.375rem;padding:0.5rem 0.875rem;background:var(--accent-50);border:1px solid var(--accent-100);border-radius:var(--radius-full);font-size:0.8125rem;font-weight:600;color:var(--accent-900)}
+        .service-tag::before{content:'✓';font-size:0.75rem;color:var(--primary-600)}
+
+        /* Map */
+        .map-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--neutral-200);overflow:hidden;box-shadow:var(--shadow-sm)}
+        #dynamicMap{height:400px;width:100%}
+        .leaflet-popup-content-wrapper{border-radius:var(--radius-md);box-shadow:var(--shadow-lg)}
+        .leaflet-popup-content{font-family:var(--font-sans);font-size:0.9375rem;line-height:1.6}
+        .leaflet-popup-content b{color:var(--primary-700);font-size:1rem}
+
+        /* Contact Section */
+        .contact-section{background:var(--neutral-100);padding:4rem 0}
+        .contact-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+        .contact-wrapper h3{font-size:1.25rem;font-weight:700;color:var(--neutral-900);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
+        .contact-wrapper h3 i{color:var(--primary-600)}
+        .contact-wrapper p{color:var(--neutral-600);line-height:1.7}
+        .form-group{margin-bottom:1rem}
+        .form-group input,.form-group textarea{width:100%;padding:0.875rem 1rem;border:2px solid var(--neutral-200);border-radius:var(--radius-md);font-size:0.9375rem;font-family:inherit;color:var(--neutral-800);background:white;transition:all var(--transition-base);outline:none}
+        .form-group input:focus,.form-group textarea:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(26,156,94,0.1)}
+        .form-group textarea{resize:vertical;min-height:100px}
+
+        /* Footer */
+        .footer{background:var(--neutral-900);color:rgba(255,255,255,0.7);padding:4rem 0 0}
+        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
+        .footer-brand{max-width:360px}
+        .footer-logo{display:flex;align-items:center;gap:0.875rem;margin-bottom:1.25rem}
+        .footer-logo-icon{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+        .footer-logo-text h3{font-size:1.125rem;font-weight:800;color:white;line-height:1.2}
+        .footer-logo-text span{font-family:var(--font-arabic);font-size:0.8125rem;color:var(--accent-600);font-weight:600}
+        .footer-desc{font-size:0.9375rem;line-height:1.7;margin-bottom:1.5rem;color:rgba(255,255,255,0.6)}
+        .footer-social{display:flex;gap:0.5rem}
+        .footer-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.9375rem}
+        .footer-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-3px)}
+        .footer-heading{font-size:1rem;font-weight:700;color:white;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:2px solid var(--primary-700);display:inline-block}
+        .footer-links li{margin-bottom:0.625rem}
+        .footer-links a{font-size:0.9375rem;color:rgba(255,255,255,0.6);transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:0.5rem}
+        .footer-links a:hover{color:var(--accent-500);padding-left:4px}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.875rem;color:rgba(255,255,255,0.5)}
+        .footer-bottom a{color:var(--accent-600);font-weight:600}
+        .footer-bottom a:hover{color:var(--accent-500)}
+
+        /* Back to Top */
+        .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(20px);transition:all var(--transition-base);z-index:999;border:none;cursor:pointer}
+        .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+        .back-to-top:hover{background:var(--primary-800);transform:translateY(-4px)}
+
+        /* Animations */
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        .animate-in{animation:fadeInUp 0.6s ease-out forwards}
+        .delay-1{animation-delay:0.1s}
+        .delay-2{animation-delay:0.2s}
+        .delay-3{animation-delay:0.3s}
+
+        @media(max-width:1024px){
+            .footer-grid{grid-template-columns:1fr 1fr}
+            .contact-wrapper{gap:2rem}
+        }
+        @media(max-width:768px){
+            :root{--container-padding:1rem}
+            .section{padding:3rem 0}
+            .top-bar-contact span:not(:first-child){display:none}
+            .navbar-toggle{display:flex}
+            .navbar-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:white;flex-direction:column;align-items:stretch;padding:6rem 1.5rem 2rem;gap:0.5rem;transition:right var(--transition-slow);box-shadow:-10px 0 40px rgba(0,0,0,0.1);overflow-y:auto;display:flex;z-index:1000}
+            .navbar-menu.open{right:0}
+            .nav-item{border-bottom:1px solid var(--neutral-200);width:100%}
+            .nav-link{padding:1rem 0;justify-content:space-between;width:100%;border-radius:0}
+            .info-grid{grid-template-columns:1fr}
+            .contact-wrapper{grid-template-columns:1fr}
+            .footer-grid{grid-template-columns:1fr;gap:2rem}
+            .footer-bottom{flex-direction:column;text-align:center}
+            .lga-buttons-grid{grid-template-columns:repeat(2,1fr)}
+            .stats-mini{grid-template-columns:repeat(2,1fr)}
+            #dynamicMap{height:300px}
+        }
+        @media(max-width:480px){
+            .lga-buttons-grid{grid-template-columns:1fr}
+            .stats-mini{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-inner">
+            <div class="top-bar-contact">
+                <span><i class="fas fa-phone"></i> +234 803 123 4567</span>
+                <span><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</span>
+                <span><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 4:00 PM</span>
+            </div>
+            <div class="top-bar-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-brand">
+                <div class="navbar-logo"><i class="fas fa-mosque"></i></div>
+                <div class="navbar-brand-text">
+                    <h1>Sokoto State Hisbah Board</h1>
+                    <span class="arabic-name">هيئة الحسبة — ولاية سوكوتو</span>
+                    <span>Promoting Justice & Morality</span>
+                </div>
+            </a>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i> Services</a></li>
+                <li class="nav-item"><a href="lga-directory.html" class="nav-link active"><i class="fas fa-map-marked-alt"></i> LGA Directory</a></li>
+                <li class="nav-item"><a href="complaint.html" class="nav-link"><i class="fas fa-file-alt"></i> Complaints</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="container">
+        <h1>Complete LGA Directory</h1>
+        <p>Find Hisbah offices, contact details, and services across all 23 Local Government Areas of Sokoto State.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right" style="font-size:0.625rem"></i>
+            <span>LGA Directory</span>
+        </div>
+    </div>
+</section>
+
+<!-- LGA Selector -->
+<section class="lga-selector-section">
+    <div class="container">
+        <h2 class="selector-title"><i class="fas fa-map-marked-alt"></i> Select Local Government Area</h2>
+        <div class="lga-dropdown">
+            <select id="lgaSelect"></select>
+        </div>
+        <div class="lga-buttons-grid" id="lgaButtonsContainer"></div>
+    </div>
+</section>
+
+<!-- Office Detail -->
+<section class="office-detail-section">
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-card animate-in">
+                <div class="info-icon"><i class="fas fa-landmark"></i></div>
+                <h2 id="officeName">Sokoto North Hisbah Office</h2>
+                <div class="detail-row"><i class="fas fa-map-marker-alt"></i><div><strong>Address:</strong> <span id="lgaAddress">Hisbah Office, LGA Secretariat, Sokoto</span></div></div>
+                <div class="detail-row"><i class="fas fa-phone"></i><div><strong>Phone:</strong> <span id="lgaPhone">+234 803 123 4567</span></div></div>
+                <div class="detail-row"><i class="fas fa-envelope"></i><div><strong>Email:</strong> <span id="lgaEmail">sokotonorth@hisbahsokoto.gov.ng</span></div></div>
+                <div class="detail-row"><i class="fas fa-clock"></i><div><strong>Hours:</strong> Mon-Fri: 8:00 AM - 4:00 PM</div></div>
+                <div class="detail-row"><i class="fas fa-globe"></i><div><strong>Website:</strong> <span id="lgaWebsite">hisbahsokoto.gov.ng/lga</span></div></div>
+                <a href="#" class="btn btn-primary" id="fileComplaintBtn" style="margin-top:1rem"><i class="fas fa-file-alt"></i> File a Complaint</a>
+            </div>
+            <div class="info-card animate-in delay-1">
+                <div class="info-icon"><i class="fas fa-user-tie"></i></div>
+                <h3>Officer in Charge</h3>
+                <div style="display:flex;gap:16px;align-items:center;margin:16px 0;">
+                    <div style="background:var(--primary-100);width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--primary-700)"><i class="fas fa-user-circle"></i></div>
+                    <div><h4 id="officerName" style="font-size:1.125rem;font-weight:700;color:var(--neutral-900)">Alh. Umar Faruq</h4><p id="officerTitle" style="color:var(--neutral-500);font-size:0.9375rem">Commander, Hisbah</p></div>
+                </div>
+                <div class="stats-mini">
+                    <div class="stat-badge"><span class="stat-number" id="statCases">500+</span>Cases Handled</div>
+                    <div class="stat-badge"><span class="stat-number" id="statResolved">420+</span>Resolved</div>
+                    <div class="stat-badge"><span class="stat-number" id="statStaff">24</span>Staff</div>
+                    <div class="stat-badge"><span class="stat-number" id="statWards">15</span>Wards</div>
+                </div>
+                <h4 style="margin:20px 0 8px;font-size:1rem;font-weight:700;color:var(--neutral-900)">Key Services</h4>
+                <div class="services-list" id="servicesList"></div>
+            </div>
+        </div>
+        <div class="map-card animate-in delay-2">
+            <div id="dynamicMap"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="animate-in">
+                <h3><i class="fas fa-headset"></i> Contact This Office</h3>
+                <p id="contactDesc">Reach out directly for inquiries, complaints, or community support.</p>
+                <div class="detail-row" style="margin-top:20px;border-bottom:none"><i class="fab fa-whatsapp" style="color:#25d366"></i><div><strong>WhatsApp Line:</strong> <span id="whatsappLine">+234 803 123 4567</span></div></div>
+                <div class="detail-row" style="border-bottom:none"><i class="fas fa-globe"></i><div><strong>Website:</strong> <span id="contactWebsite">hisbahsokoto.gov.ng/lga</span></div></div>
+            </div>
+            <div class="animate-in delay-1">
+                <h3>Send a Message</h3>
+                <form id="dynamicContactForm">
+                    <div class="form-group"><input type="text" placeholder="Your full name" required></div>
+                    <div class="form-group"><input type="email" placeholder="Email address" required></div>
+                    <div class="form-group"><input type="tel" placeholder="Phone number"></div>
+                    <div class="form-group"><textarea rows="3" placeholder="Your message..." required></textarea></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon"><i class="fas fa-mosque"></i></div>
+                    <div class="footer-logo-text">
+                        <h3>Sokoto State Hisbah Board</h3>
+                        <span>هيئة الحسبة — ولاية سوكوتو</span>
+                    </div>
+                </div>
+                <p class="footer-desc">Promoting justice, morality, and community welfare across all 23 Local Government Areas of Sokoto State through Islamic principles and community engagement.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Services</a></li>
+                    <li><a href="lga-directory.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> LGA Directory</a></li>
+                    <li><a href="complaint.html"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> File Complaint</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Dispute Mediation</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Family Counseling</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Moral Guidance</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Youth Mentorship</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" style="font-size:0.625rem"></i> Community Policing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Hisbah Headquarters, Sokoto</a></li>
+                    <li><a href="tel:+2348031234567"><i class="fas fa-phone"></i> +234 803 123 4567</a></li>
+                    <li><a href="mailto:info@hisbahsokoto.gov.ng"><i class="fas fa-envelope"></i> info@hisbahsokoto.gov.ng</a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp: +234 803 123 4567</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Sokoto State Hisbah Board. All rights reserved.</div>
+            <div>Designed with <i class="fas fa-heart" style="color:var(--accent-700)"></i> for the people of Sokoto State</div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // -------------------------------------------------------------
+    // COMPLETE DATA FOR ALL 23 LOCAL GOVERNMENT AREAS (SOKOTO STATE)
+    // -------------------------------------------------------------
+    const lgasData = [
+        { id: "sokoto_north", name: "Sokoto North", lat: 13.0650, lng: 5.2340, address: "Hisbah Office, Sokoto North LGA Secretariat, Opposite Emir's Palace", phone: "+234 803 111 001", email: "sokotonorth@hisbahsokoto.gov.ng", officer: "Alh. Umar Faruq", officerTitle: "Chief Commander", cases: "650+", resolved: "580+", staff: "28", wards: "15", services: ["Dispute Mediation","Moral Guidance","Family Counseling","Islamic Dawah","Community Outreach"] },
+        { id: "sokoto_south", name: "Sokoto South", lat: 13.0369, lng: 5.2320, address: "Sokoto South LGA Secretariat, Sultan Abubakar Road", phone: "+234 803 222 002", email: "sokotosouth@hisbahsokoto.gov.ng", officer: "Malam Aminu Bello", officerTitle: "Area Commander", cases: "520+", resolved: "460+", staff: "22", wards: "12", services: ["Youth Mentorship","Women Welfare","Community Policing","Education Support"] },
+        { id: "wurno", name: "Wurno", lat: 13.2828, lng: 5.3992, address: "Wurno LGA Secretariat, Wurno Town", phone: "+234 803 333 003", email: "wurno@hisbahsokoto.gov.ng", officer: "Alh. Shehu Abubakar", officerTitle: "Commander", cases: "310+", resolved: "280+", staff: "18", wards: "10", services: ["Rural Outreach","Land Disputes","Charity Coordination","Islamic Classes"] },
+        { id: "binji", name: "Binji", lat: 13.2221, lng: 4.9053, address: "Binji LGA Secretariat, Binji", phone: "+234 803 444 004", email: "binji@hisbahsokoto.gov.ng", officer: "Alh. Idris Garba", officerTitle: "Head of Office", cases: "210+", resolved: "185+", staff: "14", wards: "9", services: ["Mediation","Religious Awareness","Community Dialogue"] },
+        { id: "bodinga", name: "Bodinga", lat: 12.9689, lng: 5.2608, address: "Bodinga LGA, Near Central Market", phone: "+234 803 555 005", email: "bodinga@hisbahsokoto.gov.ng", officer: "Malam Musa Bodinga", officerTitle: "Commander", cases: "390+", resolved: "340+", staff: "20", wards: "11", services: ["Family Reconciliation","Social Ethics","Youth Programs","Women Empowerment"] },
+        { id: "dange_shuni", name: "Dange-Shuni", lat: 12.8528, lng: 5.3333, address: "Dange Town, LGA Secretariat", phone: "+234 803 666 006", email: "dangeshuni@hisbahsokoto.gov.ng", officer: "Alh. Sani Dange", officerTitle: "Area Officer", cases: "275+", resolved: "240+", staff: "16", wards: "8", services: ["Counseling","Public Morality","Community Sensitization"] },
+        { id: "gada", name: "Gada", lat: 13.4247, lng: 5.7294, address: "Gada LGA Secretariat, Gada", phone: "+234 803 777 007", email: "gada@hisbahsokoto.gov.ng", officer: "Alh. Bello Gada", officerTitle: "Commander", cases: "340+", resolved: "300+", staff: "19", wards: "12", services: ["Community Dispute","Islamic Classes","Rural Justice","Charity Distribution"] },
+        { id: "goronyo", name: "Goronyo", lat: 13.4392, lng: 5.6756, address: "Goronyo LGA, Near Dam", phone: "+234 803 888 008", email: "goronyo@hisbahsokoto.gov.ng", officer: "Malam Lawal Goronyo", officerTitle: "Head", cases: "280+", resolved: "250+", staff: "15", wards: "10", services: ["Water Conflict Resolution","Welfare Programs","Community Policing"] },
+        { id: "gudu", name: "Gudu", lat: 13.1078, lng: 4.8631, address: "Gudu LGA Secretariat, Gudu", phone: "+234 803 999 009", email: "gudu@hisbahsokoto.gov.ng", officer: "Alh. Abubakar Gudu", officerTitle: "Commander", cases: "180+", resolved: "155+", staff: "12", wards: "7", services: ["Border Morality","Moral Patrol","Community Engagement"] },
+        { id: "gwadabawa", name: "Gwadabawa", lat: 13.2608, lng: 5.2328, address: "Gwadabawa LGA, Main Road", phone: "+234 803 000 010", email: "gwadabawa@hisbahsokoto.gov.ng", officer: "Alh. Mamman Gwadabawa", officerTitle: "Commander", cases: "470+", resolved: "420+", staff: "24", wards: "14", services: ["Public Order","Sharia Compliance","Youth Reform","Family Affairs"] },
+        { id: "illela", name: "Illela", lat: 13.7267, lng: 5.3036, address: "Illela LGA Secretariat, Border Town", phone: "+234 803 111 011", email: "illela@hisbahsokoto.gov.ng", officer: "Alh. Usman Illela", officerTitle: "Commander", cases: "290+", resolved: "255+", staff: "17", wards: "9", services: ["Cross-border Ethics","Trade Disputes","Community Welfare"] },
+        { id: "isa", name: "Isa", lat: 13.2014, lng: 6.4058, address: "Isa LGA, Isa Town", phone: "+234 803 222 012", email: "isa@hisbahsokoto.gov.ng", officer: "Malam Abubakar Isa", officerTitle: "Area Commander", cases: "320+", resolved: "290+", staff: "18", wards: "11", services: ["Youth Reform","Education Support","Community Policing","Moral Guidance"] },
+        { id: "kebbe", name: "Kebbe", lat: 12.8575, lng: 4.7394, address: "Kebbe LGA Secretariat, Kebbe", phone: "+234 803 333 013", email: "kebbe@hisbahsokoto.gov.ng", officer: "Alh. Ahmad Kebbe", officerTitle: "Commander", cases: "235+", resolved: "210+", staff: "13", wards: "8", services: ["Livestock Disputes","Family Affairs","Rural Mediation"] },
+        { id: "kware", name: "Kware", lat: 12.9675, lng: 5.2542, address: "Kware LGA, Near Kware Dam", phone: "+234 803 444 014", email: "kware@hisbahsokoto.gov.ng", officer: "Alh. Nura Kware", officerTitle: "Head", cases: "195+", resolved: "170+", staff: "14", wards: "8", services: ["Social Welfare","Mediation","Community Development"] },
+        { id: "rabah", name: "Rabah", lat: 13.1239, lng: 5.5036, address: "Rabah LGA, Rabah Town", phone: "+234 803 555 015", email: "rabah@hisbahsokoto.gov.ng", officer: "Malam Shehu Rabah", officerTitle: "Commander", cases: "305+", resolved: "270+", staff: "16", wards: "10", services: ["Islamic Arbitration","Counseling","Youth Mentorship","Family Support"] },
+        { id: "sabon_birni", name: "Sabon Birni", lat: 13.5511, lng: 6.3106, address: "Sabon Birni LGA, Main Market Road", phone: "+234 803 666 016", email: "sabonbirni@hisbahsokoto.gov.ng", officer: "Alh. Yahaya Sabon", officerTitle: "Commander", cases: "410+", resolved: "365+", staff: "21", wards: "13", services: ["Community Outreach","Youth Programs","Women Welfare","Education Support"] },
+        { id: "shagari", name: "Shagari", lat: 12.6281, lng: 4.9986, address: "Shagari LGA, Shagari Town", phone: "+234 803 777 017", email: "shagari@hisbahsokoto.gov.ng", officer: "Alh. Bala Shagari", officerTitle: "Area Commander", cases: "260+", resolved: "235+", staff: "15", wards: "9", services: ["Heritage Protection","Moral Revival","Community Engagement"] },
+        { id: "silame", name: "Silame", lat: 13.0414, lng: 5.8736, address: "Silame LGA, Silame", phone: "+234 803 888 018", email: "silame@hisbahsokoto.gov.ng", officer: "Malam Ibrahim Silame", officerTitle: "Head of Office", cases: "210+", resolved: "190+", staff: "12", wards: "7", services: ["Rural Justice","Education","Community Sensitization"] },
+        { id: "tambuwal", name: "Tambuwal", lat: 12.4017, lng: 4.6483, address: "Tambuwal LGA, Tambuwal Town", phone: "+234 803 999 019", email: "tambuwal@hisbahsokoto.gov.ng", officer: "Alh. Abubakar Tambuwal", officerTitle: "Commander", cases: "380+", resolved: "340+", staff: "20", wards: "11", services: ["Land Issues","Mediation","Youth Reform","Family Counseling"] },
+        { id: "tangaza", name: "Tangaza", lat: 13.5328, lng: 4.9992, address: "Tangaza LGA Secretariat, Tangaza", phone: "+234 803 000 020", email: "tangaza@hisbahsokoto.gov.ng", officer: "Alh. Suleiman Tangaza", officerTitle: "Commander", cases: "270+", resolved: "245+", staff: "15", wards: "9", services: ["Dawah","Social Harmony","Community Policing","Education Support"] },
+        { id: "tureta", name: "Tureta", lat: 12.7453, lng: 5.6017, address: "Tureta LGA, Tureta Central", phone: "+234 803 111 021", email: "tureta@hisbahsokoto.gov.ng", officer: "Malam Musa Tureta", officerTitle: "Area Officer", cases: "195+", resolved: "175+", staff: "11", wards: "7", services: ["Family Disputes","Counseling","Rural Outreach"] },
+        { id: "wamakko", name: "Wamakko", lat: 13.0806, lng: 5.1156, address: "Wamakko LGA, Wamakko Town", phone: "+234 803 222 022", email: "wamakko@hisbahsokoto.gov.ng", officer: "Alh. Umar Wamakko", officerTitle: "Commander", cases: "330+", resolved: "295+", staff: "19", wards: "11", services: ["Youth Guidance","Education Support","Community Welfare","Moral Patrol"] },
+        { id: "yabo", name: "Yabo", lat: 12.7203, lng: 4.8214, address: "Yabo LGA Secretariat, Yabo", phone: "+234 803 333 023", email: "yabo@hisbahsokoto.gov.ng", officer: "Malam Haruna Yabo", officerTitle: "Commander", cases: "245+", resolved: "220+", staff: "14", wards: "8", services: ["Community Policing","Islamic Ethics","Family Reconciliation","Youth Programs"] }
+    ];
+
+    // Populate dropdown and buttons
+    const selectEl = document.getElementById("lgaSelect");
+    const buttonsContainer = document.getElementById("lgaButtonsContainer");
+
+    function loadLGA(lgaId) {
+        const lga = lgasData.find(l => l.id === lgaId);
+        if (!lga) return;
+
+        // Update UI with animation reset
+        const cards = document.querySelectorAll('.info-card, .map-card');
+        cards.forEach(c => { c.style.animation = 'none'; c.offsetHeight; c.style.animation = ''; });
+
+        document.getElementById("officeName").innerText = lga.name + " Hisbah Office";
+        document.getElementById("lgaAddress").innerText = lga.address;
+        document.getElementById("lgaPhone").innerText = lga.phone;
+        document.getElementById("lgaEmail").innerText = lga.email;
+        document.getElementById("lgaWebsite").innerText = "hisbahsokoto.gov.ng/" + lga.id;
+        document.getElementById("officerName").innerText = lga.officer;
+        document.getElementById("officerTitle").innerText = lga.officerTitle;
+        document.getElementById("statCases").innerHTML = lga.cases;
+        document.getElementById("statResolved").innerHTML = lga.resolved;
+        document.getElementById("statStaff").innerHTML = lga.staff;
+        document.getElementById("statWards").innerHTML = lga.wards;
+        document.getElementById("whatsappLine").innerHTML = lga.phone;
+        document.getElementById("contactWebsite").innerHTML = "hisbahsokoto.gov.ng/" + lga.id;
+        document.getElementById("contactDesc").innerHTML = `Contact the ${lga.name} Hisbah office for assistance with disputes, moral guidance, family counseling, and community support services.`;
+
+        const servicesContainer = document.getElementById("servicesList");
+        servicesContainer.innerHTML = "";
+        lga.services.forEach(s => {
+            const span = document.createElement("span");
+            span.className = "service-tag";
+            span.innerText = s;
+            servicesContainer.appendChild(span);
+        });
+
+        // Update map
+        if (window.currentMap) {
+            window.currentMap.setView([lga.lat, lga.lng], 12);
+            if (window.currentMarker) window.currentMarker.remove();
+            window.currentMarker = L.marker([lga.lat, lga.lng]).addTo(window.currentMap)
+                .bindPopup(`<b>${lga.name} Hisbah Office</b><br>${lga.address}<br>📞 ${lga.phone}<br>👤 ${lga.officer}`).openPopup();
+        }
+
+        // Update complaint button
+        const complaintBtn = document.getElementById("fileComplaintBtn");
+        complaintBtn.href = `complaint.html?lga=${lga.id}`;
+        complaintBtn.onclick = (e) => {
+            // Allow navigation if complaint.html exists, otherwise show alert
+            // e.preventDefault();
+            // alert(`Complaint portal for ${lga.name} will open. Please fill in your details.`);
+        };
+
+        // Scroll to office detail on mobile
+        if (window.innerWidth <= 768) {
+            document.querySelector('.office-detail-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // Build selector
+    lgasData.forEach(lga => {
+        const option = document.createElement("option");
+        option.value = lga.id;
+        option.textContent = lga.name;
+        selectEl.appendChild(option);
+
+        const btn = document.createElement("button");
+        btn.className = "lga-btn";
+        btn.textContent = lga.name;
+        btn.dataset.id = lga.id;
+        btn.onclick = () => {
+            document.querySelectorAll(".lga-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            loadLGA(lga.id);
+            selectEl.value = lga.id;
+        };
+        buttonsContainer.appendChild(btn);
+    });
+
+    selectEl.addEventListener("change", (e) => {
+        const id = e.target.value;
+        loadLGA(id);
+        const activeBtn = Array.from(document.querySelectorAll(".lga-btn")).find(b => b.dataset.id === id);
+        if (activeBtn) {
+            document.querySelectorAll(".lga-btn").forEach(b => b.classList.remove("active"));
+            activeBtn.classList.add("active");
+        }
+    });
+
+    // Initialize Map
+    const map = L.map('dynamicMap').setView([13.0650, 5.2340], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    window.currentMap = map;
+    window.currentMarker = null;
+
+    // Load default (Sokoto North)
+    loadLGA("sokoto_north");
+    const defaultBtn = Array.from(document.querySelectorAll(".lga-btn")).find(b => b.dataset.id === "sokoto_north");
+    if (defaultBtn) defaultBtn.classList.add("active");
+
+    // Contact form submission
+    document.getElementById("dynamicContactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const btn = e.target.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        btn.disabled = true;
+        setTimeout(() => {
+            alert("Your message has been sent to the respective LGA Hisbah office. Jazakallah Khair!");
+            e.target.reset();
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }, 1500);
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        if (window.scrollY > 500) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    // Mobile menu toggle
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navbarMenu = document.getElementById('navbarMenu');
+    navbarToggle.addEventListener('click', () => {
+        navbarToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('open');
+        document.body.style.overflow = navbarMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbarToggle.classList.remove('active');
+            navbarMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Back to top
+    document.getElementById('backToTop').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>
