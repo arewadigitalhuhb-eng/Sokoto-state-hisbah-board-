@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ha" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portal Jami'i na Hisbah Board Sokoto State" />
+  <title>Portal | Hisbah Board Sokoto State</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--primary-900:#052e1b;--primary-800:#0a4a2e;--primary-700:#0f5c38;--primary-600:#147a4a;--primary-500:#1a9c5e;--primary-100:#e6f5ed;--accent-900:#7a5e10;--accent-700:#c9a227;--accent-600:#d4b43a;--accent-100:#fcf8e8;--neutral-900:#0f172a;--neutral-800:#1e293b;--neutral-700:#334155;--neutral-600:#475569;--neutral-500:#64748b;--neutral-400:#94a3b8;--neutral-300:#cbd5e1;--neutral-200:#e2e8f0;--neutral-100:#f1f5f9;--neutral-50:#f8fafc;--danger:#dc2626;--info:#0ea5e9;--success:#16a34a;--warning:#f59e0b;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-arabic:'Noto Naskh Arabic','Traditional Arabic',serif;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--shadow-gold:0 10px 40px -10px rgba(201,162,39,0.3);--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--transition-fast:150ms cubic-bezier(0.4,0,0.2,1);--transition-base:250ms cubic-bezier(0.4,0,0.2,1);--transition-slow:350ms cubic-bezier(0.4,0,0.2,1);--container-max:1280px;--container-padding:1.5rem}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-sans);color:var(--neutral-800);background:var(--neutral-50);line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit;transition:color var(--transition-fast)}
+    ul{list-style:none} button{cursor:pointer;border:none;background:none;font-family:inherit}
+    input{font-family:inherit}
+    .container{width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--container-padding)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.875rem 1.75rem;font-size:0.9375rem;font-weight:600;border-radius:var(--radius-md);transition:all var(--transition-base);border:2px solid transparent;white-space:nowrap}
+    .btn-primary{background:var(--primary-700);color:white;box-shadow:0 4px 14px 0 rgba(15,92,56,0.39)}
+    .btn-primary:hover{background:var(--primary-800);transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,92,56,0.23)}
+    .btn-gold{background:var(--accent-700);color:var(--primary-900);box-shadow:var(--shadow-gold);font-weight:700}
+    .btn-gold:hover{background:var(--accent-600);transform:translateY(-2px)}
+    .btn-secondary{background:transparent;color:var(--neutral-700);border-color:var(--neutral-300)}
+    .btn-secondary:hover{background:var(--neutral-100);border-color:var(--neutral-400);color:var(--neutral-900)}
+    .btn-sm{padding:0.625rem 1.25rem;font-size:0.875rem}
+    .btn-danger{background:var(--danger);color:white}
+    .btn-danger:hover{background:#b91c1c;transform:translateY(-2px)}
+    .btn-success{background:var(--success);color:white}
+    .btn-success:hover{background:#15803d;transform:translateY(-2px)}
+
+    .top-bar{background:var(--primary-900);color:rgba(255,255,255,0.8);font-size:0.8125rem;padding:0.625rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem}
+    .top-bar-contact{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .top-bar-contact span{display:inline-flex;align-items:center;gap:0.5rem}
+    .top-bar-contact i{color:var(--accent-700);font-size:0.875rem}
+    .top-bar-social{display:flex;gap:0.5rem}
+    .top-bar-social a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);transition:all var(--transition-base);font-size:0.875rem}
+    .top-bar-social a:hover{background:var(--accent-700);color:var(--primary-900);transform:translateY(-2px)}
+
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--neutral-200);transition:box-shadow var(--transition-base)}
+    .navbar.scrolled{box-shadow:var(--shadow-md)}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+    .navbar-brand{display:flex;align-items:center;gap:0.875rem}
+    .navbar-logo{width:48px;height:48px;background:var(--primary-700);color:white;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 12px rgba(15,92,56,0.25);flex-shrink:0}
+    .navbar-brand-text h1{font-size:1.125rem;font-weight:800;color:var(--neutral-900);line-height:1.2;letter-spacing:-0.025em}
+    .navbar-brand-text .arabic-name{display:block;font-family:var(--font-arabic);font-size:0.8125rem;color:var(--primary-700);font-weight:600;margin-top:1px}
+    .navbar-brand-text span:last-child{display:block;font-size:0.75rem;color:var(--neutral-500);margin-top:1px;font-weight:500}
+    .navbar-menu{display:flex;align-items:center;gap:0.25rem}
+    .nav-item{position:relative}
+    .nav-link{display:flex;align-items:center;gap:0.375rem;padding:0.625rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--neutral-600);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .nav-link:hover,.nav-link.active{color:var(--primary-700);background:var(--primary-100)}
+    .nav-dropdown{position:absolute;top:calc(100% + 0.5rem);left:0;min-width:240px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);padding:0.5rem;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all var(--transition-base);border:1px solid var(--neutral-200)}
+    .nav-item:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+    .nav-dropdown a{display:flex;align-items:center;gap:0.75rem;padding:0.625rem 0.875rem;font-size:0.875rem;font-weight:500;color:var(--neutral-700);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .nav-dropdown a:hover{background:var(--primary-100);color:var(--primary-800)}
+    .nav-dropdown a i{color:var(--primary-600);font-size:0.875rem;width:20px;text-align:center}
+    .navbar-actions{display:flex;align-items:center;gap:1rem}
+    .navbar-toggle{display:none;flex-direction:column;gap:5px;padding:0.5rem;z-index:1001}
+    .navbar-toggle span{display:block;width:24px;height:2px;background:var(--neutral-800);border-radius:2px;transition:all var(--transition-base)}
+
+    .page-hero{position:relative;background:var(--primary-900);color:white;padding:4rem 0 3rem;text-align:center;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,162,39,0.15) 0%,transparent 60%);pointer-events:none}
+    .page-hero .container{position:relative;z-index:1}
+    .page-hero h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:0.75rem;letter-spacing:-0.02em}
+    .page-hero > .container > p{font-size:1rem;opacity:0.85;max-width:500px;margin:0 auto;line-height:1.8;color:rgba(255,255,255,0.75)}
+
+    /* Login Section */
+    .login-section{min-height:60vh;display:flex;align-items:center;justify-content:center;padding:3rem 1rem}
+    .login-card{background:white;border-radius:var(--radius-xl);padding:2.5rem;width:100%;max-width:440px;border:1px solid var(--neutral-200);box-shadow:var(--shadow-xl);text-align:center}
+    .login-icon{width:80px;height:80px;background:var(--primary-100);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1.5rem;color:var(--primary-700)}
+    .login-card h2{font-size:1.5rem;font-weight:800;color:var(--neutral-900);margin-bottom:0.5rem}
+    .login-card > p{color:var(--neutral-500);margin-bottom:1.5rem;font-size:0.9375rem}
+    .login-form{text-align:left}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;font-size:0.875rem;font-weight:600;color:var(--neutral-700);margin-bottom:0.5rem}
+    .form-control{width:100%;padding:0.875rem 1rem;font-size:0.9375rem;border:2px solid var(--neutral-200);border-radius:var(--radius-md);background:white;color:var(--neutral-800);transition:all var(--transition-fast);outline:none}
+    .form-control:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px var(--primary-100)}
+    .form-control::placeholder{color:var(--neutral-400)}
+    .login-options{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:0.875rem}
+    .login-options label{display:flex;align-items:center;gap:0.5rem;color:var(--neutral-600);cursor:pointer}
+    .login-options a{color:var(--primary-700);font-weight:600}
+    .login-options a:hover{color:var(--primary-900)}
+    .login-card .btn{width:100%;margin-bottom:1rem}
+    .login-divider{display:flex;align-items:center;gap:1rem;margin:1.5rem 0;color:var(--neutral-400);font-size:0.875rem}
+    .login-divider::before,.login-divider::after{content:'';flex:1;height:1px;background:var(--neutral-200)}
+    .login-help{font-size:0.875rem;color:var(--neutral-500)}
+    .login-help a{color:var(--primary-700);font-weight:600}
+    .login-help a:hover{color:var(--primary-900)}
+
+    /* Dashboard (hidden by default) */
+    .dashboard{display:none}
+    .dashboard-grid{display:grid;grid-template-columns:260px 1fr;gap:2rem;align-items:start}
+    .sidebar{background:white;border-radius:var(--radius-xl);border:1px solid var(--neutral-200);box-shadow:var(--shadow-sm);padding:1.5rem;position:sticky;top:100px}
+    .sidebar-user{text-align:center;padding-bottom:1.5rem;border-bottom:1px solid var(--neutral-200);margin-bottom:1.5rem}
+    .sidebar-avatar{width:64px;height:64px;background:var(--primary-100);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 0.75rem;color:var(--primary-700)}
+    .sidebar-user h4{font-size:1rem;font-weight:700;color:var(--neutral-900)}
+    .sidebar-user p{font-size:0.8125rem;color:var(--neutral-500)}
+    .sidebar-menu{display:flex;flex-direction:column;gap:0.25rem}
+    .sidebar-menu a{display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--neutral-600);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .sidebar-menu a:hover,.sidebar-menu a.active{background:var(--primary-100);color:var(--primary-700)}
+    .sidebar-menu a i{width:20px;text-align:center;font-size:0.875rem}
+    .sidebar-footer{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--neutral-200)}
+    .sidebar-footer a{display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;font-size:0.9375rem;font-weight:600;color:var(--danger);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+    .sidebar-footer a:hover{background:var(--danger-light)}
+
+    .main-content{background:white;border-radius:var(--radius-xl);border:1px solid var(--neutral-200);box-shadow:var(--shadow-sm);padding:2rem}
+    .content-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+    .content-header h2{font-size:1.5rem;font-weight:800;color:var(--neutral-900)}
+    .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+    .stat-box{background:var(--neutral-50);border-radius:var(--radius-lg);padding:1.25rem;border:1px solid var(--neutral-200);transition:all var(--transition-base)}
+    .stat-box:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+    .stat-box .stat-label{font-size:0.75rem;font-weight:600;color:var(--neutral-500);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
+    .stat-box .stat-value{font-size:1.75rem;font-weight:800;color:var(--neutral-900);line-height:1}
+    .stat-box .stat-change{font-size:0.8125rem;color:var(--success);margin-top:0.375rem;font-weight:600}
+    .stat-box.danger .stat-change{color:var(--danger)}
+    .stat-box.warning .stat-change{color:var(--warning)}
+
+    .data-table{width:100%;border-collapse:collapse}
+    .data-table th{text-align:left;padding:0.875rem 1rem;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--neutral-500);border-bottom:2px solid var(--neutral-200);background:var(--neutral-50)}
+    .data-table td{padding:0.875rem 1rem;font-size:0.9375rem;color:var(--neutral-700);border-bottom:1px solid var(--neutral-100)}
+    .data-table tr:hover td{background:var(--neutral-50)}
+    .status-badge{display:inline-flex;align-items:center;gap:0.375rem;padding:0.25rem 0.75rem;font-size:0.75rem;font-weight:700;border-radius:var(--radius-full)}
+    .status-pending{background:#fef3c7;color:#92400e}
+    .status-progress{background:#dbeafe;color:#1e40af}
+    .status-resolved{background:#dcfce7;color:#166534}
+    .status-urgent{background:#fee2e2;color:#991b1b}
+
+    .footer{background:var(--neutral-900);color:rgba(255,255,255,0.7);padding:3rem 0 0}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.875rem;color:rgba(255,255,255,0.5)}
+    .footer-bottom a{color:var(--accent-600);font-weight:600}
+
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s cubic-bezier(0.4,0,0.2,1),transform 0.8s cubic-bezier(0.4,0,0.2,1)}
+    .reveal.active{opacity:1;transform:translateY(0)}
+
+    @media(max-width:1024px){
+      .dashboard-grid{grid-template-columns:1fr}
+      .sidebar{position:static}
+      .stats-row{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:768px){
+      :root{--container-padding:1rem}
+      .top-bar-contact span:not(:first-child){display:none}
+      .navbar-toggle{display:flex}
+      .navbar-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:white;flex-direction:column;align-items:stretch;padding:6rem 1.5rem 2rem;gap:0.5rem;transition:right var(--transition-slow);box-shadow:-10px 0 40px rgba(0,0,0,0.1);overflow-y:auto;display:flex}
+      .navbar-menu.open{right:0}
+      .nav-item{border-bottom:1px solid var(--neutral-200);width:100%}
+      .nav-link{padding:1rem 0;justify-content:space-between;width:100%}
+      .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 1rem 1.5rem;display:none}
+      .nav-item.active .nav-dropdown{display:block}
+      .stats-row{grid-template-columns:1fr}
+      .data-table{display:block;overflow-x:auto}
+      .footer-bottom{flex-direction:column;text-align:center}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="top-bar-contact">
+          <span><i class="fas fa-phone"></i> +234 8160 0743 440Abdullahi Umar Muazu </span>
+          <span><i class="fas fa-envelope"></i> info@hisbahsokoto.com.ng</span>
+          <span><i class="fas fa-map-marker-alt"></i> Sokoto, Jihar Sokoto, Najeriya</span>
+        </div>
+        <div class="top-bar-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNav">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo">🕋</div>
+          <div class="navbar-brand-text">
+            <h1>Hisbah Board Sokoto</h1>
+            <span class="arabic-name">هيئة الحسبة – ولاية سكوتو</span>
+            <span>Jihar Sokoto, Najeriya</span>
+          </div>
+        </a>
+        <ul class="navbar-menu" id="navMenu">
+          <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Gida</a></li>
+          <li class="nav-item"><a href="arewa.html" class="nav-link"><i class="fas fa-globe"></i> Jihohin Arewa</a></li>
+         <li class="nav-item"><a href="offices.html" class="nav-link active"><i class="fas fa-building"></i> Ofisoshin LGA</a></li>
+                   <li class="nav-item"><a href="lga.html" class="nav-link active"><i class="fas fa-map-marked-alt"></i> Kananan Hukumomi</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> Game da Mu</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-hands-helping"></i> Ayyuka</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Labarai</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-phone-alt"></i> Tuntuɓa</a></li>
+          <li class="nav-item"><a href="dashboard.html" class="nav-link active"><i class="fas fa-tachometer-alt"></i> Portal</a></li>
+        </ul>
+        <div class="navbar-actions">
+          <button class="navbar-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Portal Jami'i</h1>
+      <p>Shiga don duba rahotanni, koke-koke, da gudanar da ayyukan Hisbah</p>
+    </div>
+  </section>
+
+  <!-- LOGIN SECTION -->
+  <section class="login-section" id="loginSection">
+    <div class="login-card reveal">
+      <div class="login-icon">🔐</div>
+      <h2>Shiga Portal</h2>
+      <p>Shigar da username da password ɗinku don shiga</p>
+      <form class="login-form" onsubmit="event.preventDefault(); document.getElementById('loginSection').style.display='none'; document.getElementById('dashboardSection').style.display='block'; window.scrollTo(0,0);">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" class="form-control" placeholder="Shigar da username" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Shigar da password" required>
+        </div>
+        <div class="login-options">
+          <label><input type="checkbox" style="width:16px;height:16px;accent-color:var(--primary-700);"> Ƙara ni a ciki</label>
+          <a href="#">Manta da password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-sign-in-alt"></i> Shiga
+        </button>
+      </form>
+      <div class="login-divider">ko</div>
+      <p class="login-help">
+        Ba ku da asusu? <a href="contact.html">Tuntuɓe mu</a> don rajista.<br>
+        <small style="color:var(--neutral-400);">(Demo: Danna "Shiga" don ganin dashboard)</small>
+      </p>
+    </div>
+  </section>
+
+  <!-- DASHBOARD SECTION -->
+  <section class="section dashboard" id="dashboardSection" style="background:var(--neutral-50);padding-top:2rem;">
+    <div class="container">
+      <div class="dashboard-grid">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-user">
+            <div class="sidebar-avatar">👤</div>
+            <h4>Alhaji Abubakar</h4>
+            <p>Babban Darakta Janar</p>
+          </div>
+          <nav class="sidebar-menu">
+            <a href="#" class="active"><i class="fas fa-chart-line"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Koke-koke</a>
+            <a href="#"><i class="fas fa-users"></i> Jami'ai</a>
+            <a href="#"><i class="fas fa-calendar"></i> Shirye-shirye</a>
+            <a href="#"><i class="fas fa-chart-bar"></i> Rahotanni</a>
+            <a href="#"><i class="fas fa-cog"></i> Saituna</a>
+          </nav>
+          <div class="sidebar-footer">
+            <a href="#" onclick="document.getElementById('dashboardSection').style.display='none'; document.getElementById('loginSection').style.display='flex'; window.scrollTo(0,0); return false;">
+              <i class="fas fa-sign-out-alt"></i> Fita
+            </a>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+          <div class="content-header">
+            <h2><i class="fas fa-chart-line" style="color:var(--primary-600);"></i> Rahoton Yau</h2>
+            <div style="display:flex;gap:0.75rem;">
+              <button class="btn btn-secondary btn-sm"><i class="fas fa-download"></i> Sauke Rahoto</button>
+              <button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Sabon Koka</button>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <div class="stat-label">Koke Wannan Mako</div>
+              <div class="stat-value">47</div>
+              <div class="stat-change"><i class="fas fa-arrow-up"></i> +12% daga makon da ya wuce</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">An Warware</div>
+              <div class="stat-value">38</div>
+              <div class="stat-change"><i class="fas fa-arrow-up"></i> +8% daga makon da ya wuce</div>
+            </div>
+            <div class="stat-box warning">
+              <div class="stat-label">Yana aiki</div>
+              <div class="stat-value">9</div>
+              <div class="stat-change"><i class="fas fa-minus"></i> Bai canza ba</div>
+            </div>
+            <div class="stat-box danger">
+              <div class="stat-label">Gaggawa</div>
+              <div class="stat-value">3</div>
+              <div class="stat-change"><i class="fas fa-arrow-up"></i> +2 daga jiya</div>
+            </div>
+          </div>
+
+          <h3 style="font-size:1.125rem;font-weight:700;color:var(--neutral-900);margin-bottom:1rem;">Koke-koken Kwanakin Nan</h3>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Mai Koka</th>
+                  <th>Batu</th>
+                  <th>LGA</th>
+                  <th>Ranar</th>
+                  <th>Matsayi</th>
+                  <th>Aiki</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#HIS-2025-001</td>
+                  <td>Muhammad Bello</td>
+                  <td>Yaudara a kasuwa</td>
+                  <td>Sokoto North</td>
+                  <td>Jan 15, 2025</td>
+                  <td><span class="status-badge status-progress"><i class="fas fa-spinner fa-spin"></i> Yana aiki</span></td>
+                  <td><button class="btn btn-sm btn-secondary" style="padding:0.375rem 0.75rem;font-size:0.75rem;">Duba</button></td>
+                </tr>
+                <tr>
+                  <td>#HIS-2025-002</td>
+                  <td>Fatima Yusuf</td>
+                  <td>Rikici na iyali</td>
+                  <td>Wamakko</td>
+                  <td>Jan 14, 2025</td>
+                  <td><span class="status-badge status-pending"><i class="fas fa-clock"></i> Ana jira</span></td>
+                  <td><button class="btn btn-sm btn-secondary" style="padding:0.375rem 0.75rem;font-size:0.75rem;">Duba</button></td>
+                </tr>
+                <tr>
+                  <td>#HIS-2025-003</td>
+                  <td>Anonymous</td>
+                  <td>Shan giya a fili</td>
+                  <td>Kware</td>
+                  <td>Jan 14, 2025</td>
+                  <td><span class="status-badge status-urgent"><i class="fas fa-exclamation-circle"></i> Gaggawa</span></td>
+                  <td><button class="btn btn-sm btn-secondary" style="padding:0.375rem 0.75rem;font-size:0.75rem;">Duba</button></td>
+                </tr>
+                <tr>
+                  <td>#HIS-2025-004</td>
+                  <td>Amina Ibrahim</td>
+                  <td>Yaudara a kasuwa</td>
+                  <td>Dange Shuni</td>
+                  <td>Jan 13, 2025</td>
+                  <td><span class="status-badge status-resolved"><i class="fas fa-check-circle"></i> An warware</span></td>
+                  <td><button class="btn btn-sm btn-secondary" style="padding:0.375rem 0.75rem;font-size:0.75rem;">Duba</button></td>
+                </tr>
+                <tr>
+                  <td>#HIS-2025-005</td>
+                  <td>Usman Aliyu</td>
+                  <td>Haɗarin tsaro</td>
+                  <td>Tambuwal</td>
+                  <td>Jan 12, 2025</td>
+                  <td><span class="status-badge status-resolved"><i class="fas fa-check-circle"></i> An warware</span></td>
+                  <td><button class="btn btn-sm btn-secondary" style="padding:0.375rem 0.75rem;font-size:0.75rem;">Duba</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="margin-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <p style="font-size:0.875rem;color:var(--neutral-500);">Nuna 1-5 na 47 koke</p>
+            <div style="display:flex;gap:0.5rem;">
+              <button class="btn btn-sm btn-secondary" disabled>Baya</button>
+              <button class="btn btn-sm btn-primary">1</button>
+              <button class="btn btn-sm btn-secondary">2</button>
+              <button class="btn btn-sm btn-secondary">3</button>
+              <button class="btn btn-sm btn-secondary">Gaba</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 Hisbah Board Sokoto State. Dukkan haƙƙoƙi an kiyaye su.</p>
+        <p style="font-family:var(--font-arabic);direction:rtl;color:var(--accent-600);font-size:0.9rem;">الأمر بالمعروف والنهي عن المنكر</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar=document.getElementById('mainNav');
+    window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>50));
+    const navToggle=document.getElementById('navToggle');
+    const navMenu=document.getElementById('navMenu');
+    navToggle.addEventListener('click',()=>{
+      const isOpen=navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded',isOpen);
+      const spans=navToggle.querySelectorAll('span');
+      if(isOpen){spans[0].style.transform='rotate(45deg) translate(5px,5px)';spans[1].style.opacity='0';spans[2].style.transform='rotate(-45deg) translate(5px,-5px)';document.body.style.overflow='hidden';}
+      else{spans.forEach(s=>{s.style.transform='';s.style.opacity='';});document.body.style.overflow='';}
+    });
+    document.querySelectorAll('.nav-item').forEach(item=>{
+      const link=item.querySelector('.nav-link');
+      const dropdown=item.querySelector('.nav-dropdown');
+      if(dropdown){link.addEventListener('click',(e)=>{if(window.innerWidth<=768){e.preventDefault();item.classList.toggle('active');}});}
+    });
+  </script>
+</body>
+</html>
